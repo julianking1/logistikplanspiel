@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9337b62-c1d2-411b-81da-a037da277eb9" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/testIris.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -162,7 +163,7 @@
       <workItem from="1505755391180" duration="432000" />
       <workItem from="1505756830058" duration="686000" />
       <workItem from="1505801387117" duration="37000" />
-      <workItem from="1505913261663" duration="295000" />
+      <workItem from="1505913261663" duration="343000" />
     </task>
     <task id="LOCAL-00001" summary="Laura Commit">
       <created>1505911939498</created>
@@ -182,7 +183,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4262000" />
+    <option name="totallyTimeSpent" value="4310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1293" height="736" extended-state="0" />
