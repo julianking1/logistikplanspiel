@@ -2,7 +2,7 @@
 
 class suppliersOrder{
     var from = "";
-    
+
     constructor(){
 
     }
