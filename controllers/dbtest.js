@@ -11,7 +11,7 @@ module.exports = {
 
         var bestellung1 = new lieferantenBestellung({von:'W', nr:1, austellungstakt:1, artikel:'schwarz'});
         bestellung1.save(function (err) {
-            if (err) return handleError(err);
+            if (err) throw err;
             else res.send("ok");
         })
 
