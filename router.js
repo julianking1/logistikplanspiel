@@ -28,7 +28,9 @@ router.get('/distributioncenter', profile.rendering); // /localhost:3000/distrib
 router.get('/ordermanagement', profile.rendering); // /localhost:3000/ordermanagement
 
 //Test Urls
-router.get('/dbtests', dbtest.sending); // /localhost:3000/dbtests
+router.get('/dbtestCreate', dbtest.createOrder()); // /localhost:3000/dbtests
+router.get('/dbtestGet', dbtest.getOrder()); // /localhost:3000/dbtests
+
 
 //Router Tests
 router.get('/janatests', function(req, res, next) {
