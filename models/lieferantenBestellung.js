@@ -21,4 +21,4 @@ lieferantenBestellung.methods.getVon = function () {
 
 //andere getter und setter
 
-module.exports = mongoose.model('lieferantenbestellung', lieferantenBestellung);
+module.exports = mongoose.model('lieferantenBestellung', lieferantenBestellung);
