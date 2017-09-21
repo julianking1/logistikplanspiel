@@ -1,0 +1,9 @@
+extends janatests
+
+block checklist
+    ol
+        each item in rows
+            li= item
+                input(type = "checkbox")
+
+    button 'fertig'

@@ -1,7 +1,6 @@
 /* Router: Dieses File stellt URLs zur Verfügung.
 *  Für die generierung des Inhaltes sind die controler verantwortlich.
 *  Momentan sind noch keine Controler mit URLs verknüpft.
-*
 * */
 
 var express = require('express');
@@ -28,8 +27,8 @@ router.get('/distributioncenter', profile.rendering); // /localhost:3000/distrib
 router.get('/ordermanagement', profile.rendering); // /localhost:3000/ordermanagement
 
 //Test Urls
-router.get('/dbtestCreate', dbtest.createOrder()); // /localhost:3000/dbtests
-router.get('/dbtestGet', dbtest.getOrder()); // /localhost:3000/dbtests
+router.get('/dbtestCreate', dbtest.createOrder); // /localhost:3000/dbtests
+router.get('/dbtestGet', dbtest.getOrder); // /localhost:3000/dbtests
 
 
 //Router Tests

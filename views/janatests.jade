@@ -1,9 +1,15 @@
 extends layout
 
 block content
-    button mail
+
+
+    button
+        a(href= "../lieferant") mail
+
     button beschreibung
     button tabellen
 
     p testjana: profile
     |Übergabe Profil-Parameter: #{param}
+
+    block checklist
