@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+mongoose.Promise = global.Promise;
 
-var lieferantenBestellung = new Schema({
+
+var lieferantenBestellungSchema = new Schema({
     von:                {type: String, required:true},
     nr:                 {type: Number, required:true},
     austellungstakt:    {type: Number, required:true},
@@ -15,10 +17,10 @@ var lieferantenBestellung = new Schema({
     }
 );
 
-lieferantenBestellung.methods.getVon = function () {
+lieferantenBestellungSchema.methods.getVon = function () {
     return this.von;
 }
 
 //andere getter und setter
 
-module.exports = mongoose.model('lieferantenBestellung', lieferantenBestellung);
+module.exports = mongoose.model('lieferantenBestellung', lieferantenBestellungSchema);

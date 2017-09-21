@@ -1,5 +1,8 @@
-
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/logistikplanspiel', { useMongoClient: true, promiseLibrary: global.Promise });
+
+
 module.exports = {
 
     createOrder: createOrder,
