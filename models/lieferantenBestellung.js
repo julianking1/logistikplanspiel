@@ -15,4 +15,10 @@ var lieferantenBestellung = new Schema({
     }
 );
 
+lieferantenBestellung.methods.getVon = function () {
+    return this.von;
+}
+
+//andere getter und setter
+
 module.exports = mongoose.model('lieferantenbestellung', lieferantenBestellung);
