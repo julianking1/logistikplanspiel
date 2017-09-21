@@ -12,9 +12,15 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
 
+
 // /users
 router.get('/users', function(req, res, next) {
     res.send('respond with a resource');
+});
+
+// /profilechoice
+router.get('/profilechoice', function(req, res, next) {
+    res.render('profilechoice');
 });
 
 // localhost:3000/kunde
