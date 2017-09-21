@@ -16,7 +16,7 @@ body{
     border:1px solid black;
 }
 
-#button2{
+.button2{
 
     width: 170px;
     height: 100px;
@@ -44,7 +44,7 @@ body{
     border: 1px solid black;
 }
 
-#button3{
+.button3{
     width: 170px;
     height: 100px;
     background-color: coral;

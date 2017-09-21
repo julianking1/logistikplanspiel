@@ -12,18 +12,18 @@ module.exports = {
     function createOrder(req, res) {
         //normalerweise Werte aus req laden (Body-Parser)
 
-        var bestellung1 = new lieferantenBestellung({von:'W', nr:1, austellungstakt:1, artikel:'schwarz'});
+        var bestellung1 = new lieferantenBestellung({von:'W', nr:1, austellungstakt:1, artikel:'weiß'});
         bestellung1.save(function (err) {
             if (err) throw err;
-            else res.send("ok");
-        })
-
+            else res.send("ok"); //funktioniert
+        });
     }
 
     function getOrder(req, res) {
         //normalerweise ID aus req
-        var query = lieferantenBestellung.find({'von': 'W'});
-        var nr = query.select('nr');
+
+        var query = collection.findOne({'von': 'W'});
+        var nr = query.von;
         res.send (""+ nr);
         res.send("Datenbank Testseite");
 

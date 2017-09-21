@@ -10,13 +10,11 @@ var profile = require('./controllers/profile.js');
 var dbtest = require('./controllers/dbtest.js');
 
 
-//(homepage)
-router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
-});
+//Startseite
+router.get('/', profilechoice.rendering); // localhost:3000/
+
 
 //Profilansichten
-router.get('/profilechoice', profilechoice.rendering); // localhost:3000/profilechoice
 router.get('/kunde', profile.rendering); // localhost:3000/kunde
 router.get('/lieferant', profile.rendering); // localhost:3000/lieferant
 router.get('/beschaffung', profile.rendering); // /localhost:3000/beschaffung
@@ -25,6 +23,11 @@ router.get('/endmontage', profile.rendering); // /localhost:3000/endmontage
 router.get('/lieferabwicklung', profile.rendering); // /localhost:3000/lieferabwicklung
 router.get('/distributioncenter', profile.rendering); // /localhost:3000/distributioncenter
 router.get('/ordermanagement', profile.rendering); // /localhost:3000/ordermanagement
+
+//controler fehlt noch für spielleiter
+router.get('/spielleiter', function(req, res, next) {
+    res.render('gameadmin');
+}); // /localhost:3000/spielleiter
 
 //Test Urls
 router.get('/dbtestCreate', dbtest.createOrder); // /localhost:3000/dbtests
