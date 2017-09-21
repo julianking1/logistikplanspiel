@@ -8,15 +8,12 @@ var express = require('express');
 var router = express.Router();
 var profilechoice = require('./controllers/profilechoice.js');
 var profile = require('./controllers/profile.js');
+var dbtest = require('./controllers/dbtest.js');
 
-// / (homepage)
+
+//(homepage)
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
-});
-
-// /users
-router.get('/users', function(req, res, next) {
-    res.send('respond with a resource');
 });
 
 //Profilansichten
@@ -30,17 +27,13 @@ router.get('/lieferabwicklung', profile.rendering); // /localhost:3000/lieferabw
 router.get('/distributioncenter', profile.rendering); // /localhost:3000/distributioncenter
 router.get('/ordermanagement', profile.rendering); // /localhost:3000/ordermanagement
 
+//Test Urls
+router.get('/dbtests', dbtest.sending); // /localhost:3000/dbtests
 
-
-// Test URLS
-// /localhost:3000/dbtests
-router.get('/dbtests', function(req, res, next) {
-    res.send('dbtests');
-});
-
-// /localhost:3000/janatests
+//Router Tests
 router.get('/janatests', function(req, res, next) {
     res.render('janatests');
-});
+}); // /localhost:3000/janatests
+
 
 module.exports = router;
