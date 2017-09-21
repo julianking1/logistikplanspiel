@@ -1,28 +1,31 @@
 extends layout
 
+
+
 block content
 
-    link(rel='stylesheet', href='/stylesheets/profilechoice.css')
+        link(rel='stylesheet', href='/stylesheets/profilechoice.css')
 
-
-    div.first
         p Arbeitsplatzauswahl
 
-    div.second
 
-        div.button2
+        div(class="second")
 
-        button(type= "submit" onclick= ".../beschaffung") Beschaffung
-        button(type= "submit" onclick= ".../beschaffung") Teilelager
-        button(type= "submit" onclick= ".../beschaffung") Endmontage
-        button(type= "submit" onclick= ".../beschaffung") Lieferabwicklung
-        button(type= "submit" onclick= ".../beschaffung") Distribution Center
-        button(type= "submit" onclick= ".../beschaffung") Order Management
 
-    div.third
 
-        div.button3
 
-        button(type= "submit" onclick= ".../beschaffung") Kunde
-        button(type= "submit" onclick= ".../beschaffung") Lieferant
-        button(type= "submit" onclick= ".../beschaffung") Spieleleiter
+            button(type= "button" id="button2") Beschaffung
+            button(type= "button" id="button2" ) Teilelager
+            button(type= "button" id="button2") Endmontage
+            button(type= "button" id="button2") Lieferabwicklung
+            button(type= "button" id="button2") Distribution Center
+            button(type= "button" id="button2") Order Management
+
+
+
+        div(class="third")
+
+
+            button(type= "button" id="button3") Kunde
+            button(type= "button" id="button3") Lieferant
+            button(type= "button" id="button3") Spieleleiter
