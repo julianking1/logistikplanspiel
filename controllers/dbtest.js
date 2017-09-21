@@ -21,7 +21,7 @@ module.exports = {
         //normalerweise ID aus req
         var query = lieferantenBestellung.find({'von': 'W'});
         var nr = query.select('nr');
-        res.send (nr);
+        res.send (""+ nr);
         res.send("Datenbank Testseite");
 
     }
