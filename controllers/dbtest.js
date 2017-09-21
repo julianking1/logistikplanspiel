@@ -10,6 +10,7 @@ module.exports = {
         //normalerweise Werte aus req laden (Body-Parser)
 
         var bestellung1 = new lieferantenBestellung({von:'W', nr:1, austellungstakt:1, artikel:'schwarz'});
+        var mongoose = require(mongoose);
         bestellung1.save(function (err) {
             if (err) throw err;
             else res.send("ok");
