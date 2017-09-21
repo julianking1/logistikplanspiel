@@ -65,6 +65,9 @@ router.get('/ordermanagement', function(req, res, next) {
 router.get('/dbtests', function(req, res, next) {
     res.send('dbtests');
 });
-
+// /localhost:3000/janatests
+router.get('/janatests', function(req, res, next) {
+    res.render('janatests');
+});
 
 module.exports = router;
