@@ -47,5 +47,11 @@ router.get('/janatests', function(req, res, next) {
     res.render('janatests');
 }); // /localhost:3000/janatests
 
+//Formular Tests
+router.post(/.*mailbox$/, function(req, res, next) {
+        res.send(ok);
+});
+
+
 
 module.exports = router;
