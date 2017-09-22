@@ -1,4 +1,5 @@
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
+var schemaFunctions = require("../helpers/schemaFunctions");
 
 module.exports = {
 
@@ -9,6 +10,7 @@ module.exports = {
     function createOrder(req, res) {
         //normalerweise Werte aus req laden (Body-Parser)
 
+        schemaFunctions.createLieferantenBestellung('W',200,1,'schwarz');
         var bestellung1 = new lieferantenBestellung({von:'W', nr:1, austellungstakt:1, artikel:'weiß'});
         bestellung1.save(function (err) {
             if (err) throw err;
