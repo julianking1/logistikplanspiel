@@ -24,6 +24,11 @@ router.get('/lieferabwicklung', profile.rendering); // /localhost:3000/lieferabw
 router.get('/distributioncenter', profile.rendering); // /localhost:3000/distributioncenter
 router.get('/ordermanagement', profile.rendering); // /localhost:3000/ordermanagement
 
+//Toolbox in Profil-Ansicht
+router.get('/kunde/mailbox', function(req, res, next) {
+    res.render('mailbox', {profile: 'kunde/mailbox' });
+}); // /localhost:3000/*profil*/mailbox
+
 //controler fehlt noch für spielleiter
 router.get('/spielleiter', function(req, res, next) {
     res.render('gameadmin');

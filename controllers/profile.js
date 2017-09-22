@@ -8,6 +8,6 @@ module.exports = {
 
 
         //rendering der Website, momentan noch Test
-        res.render('checklist',  { param: url, rows:data});
+        res.render('checklist',  { param: url, rows:data, });
     }
 }
