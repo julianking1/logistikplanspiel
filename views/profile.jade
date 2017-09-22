@@ -4,8 +4,6 @@ block content
 
     p Periode/Takt/Phase
 
-    script.
-        
 
     form(action= "/mailbox")
         button(class="buttonTools") Mailbox
@@ -13,13 +11,15 @@ block content
     form(action= "/info")
         button(class="buttonTools") Info
 
-    form(action= "/tabellen")
+    form(action= "/tables")
         button(class="buttonTools") Tabellen
 
     form(action= "/")
         button(class="buttonTools") ToDo
 
 
-    p Übergabe Profil-Parameter: #{param}
+    p Übergabe Profil-Parameter: #{param1}
+    P Übergabe Tool-Parameter: #{param2}
+
 
     block profilecontent

@@ -10,20 +10,35 @@ module.exports = {
 
         switch(String(urlparts[2])){
             case 'mailbox':
-                res.render('mailbox', {param: url, path: 'kunde/mailbox?'}); //auslagern und andere cases
+                res.render('mailbox', {param1: urlparts[1], param2: urlparts[2]});
+                break;
 
+            case 'checklist'  :
+                var data = ['1Aufgabe' + url, '2Aufgabe' + url]; //Ausgabe der Checkliste aus DB je nach Profil
+                res.render('checklist', {param1: urlparts[1], param2: urlparts[2], rows:data});
+                break;
+
+            case 'tabellen':
+                res.render('tables', {param1: urlparts[1], param2: urlparts[2]});
+                break;
+
+            case 'info':
+                res.render('info', {param1: urlparts[1], param2: urlparts[2]});
+                break;
         }
 
     },
 
-    renderingChecklist: function (req, res, next) {
+    renderingDefault: function (req, res, next) {
 
-        //Welches Profil wird geladen?
         var url = req.url;
-        var data = ['1Aufgabe' + url, '2Aufgabe' + url]; //Ausgabe der Checkliste aus DB je nach Profil
+        var helper = url.split("?");
+        helper = helper[0];
+        var urlparts = helper.split("/");
+
 
 
         //rendering der Website, momentan noch Test
-        res.render('checklist', {param: url, rows: data});
-    },
-}
+        res.render('checklist', {param1: urlparts[1], paramTool: 'checklist', rows: data});
+    }
+};
