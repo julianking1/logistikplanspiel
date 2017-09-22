@@ -13,21 +13,24 @@ var dbtest = require('./controllers/dbtest.js');
 //Startseite
 router.get('/', profilechoice.rendering); // localhost:3000/
 
-
 //Profilansichten
-router.get('/kunde', profile.rendering); // localhost:3000/kunde
-router.get('/lieferant', profile.rendering); // localhost:3000/lieferant
-router.get('/beschaffung', profile.rendering); // /localhost:3000/beschaffung
-router.get('/teilelager', profile.rendering); // /localhost:3000/teilelager
-router.get('/endmontage', profile.rendering); // /localhost:3000/endmontage
-router.get('/lieferabwicklung', profile.rendering); // /localhost:3000/lieferabwicklung
-router.get('/distributioncenter', profile.rendering); // /localhost:3000/distributioncenter
-router.get('/ordermanagement', profile.rendering); // /localhost:3000/ordermanagement
+router.get('/kunde', profile.renderingDefault); // localhost:3000/kunde
+router.get('/lieferant', profile.renderingDefault); // localhost:3000/lieferant
+router.get('/beschaffung', profile.renderingDefault); // /localhost:3000/beschaffung
+router.get('/teilelager', profile.renderingDefault); // /localhost:3000/teilelager
+router.get('/endmontage', profile.renderingDefault); // /localhost:3000/endmontage
+router.get('/lieferabwicklung', profile.renderingDefault); // /localhost:3000/lieferabwicklung
+router.get('/distributioncenter', profile.renderingDefault); // /localhost:3000/distributioncenter
+router.get('/ordermanagement', profile.renderingDefault); // /localhost:3000/ordermanagement
 
 //Toolbox in Profil-Ansicht
-router.get('/kunde/mailbox', function(req, res, next) {
-    res.render('mailbox', {profile: 'kunde/mailbox' });
-}); // /localhost:3000/*profil*/mailbox
+router.get(/.*mailbox$/, profile.rendering); // /localhost:3000/*profil*/mailbox
+router.get(/.*tabellen$/, profile.rendering); // /localhost:3000/*profil*/tabellen
+router.get(/.*info$/, profile.rendering); // /localhost:3000/*profil*/info
+router.get(/.*checklist$/, profile.rendering); // /localhost:3000/*profil*/checklist
+
+
+
 
 //controler fehlt noch für spielleiter
 router.get('/spielleiter', function(req, res, next) {
