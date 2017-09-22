@@ -1,4 +1,43 @@
 extends layout
 
+
+
 block content
-    p "profilechoice"
+
+        link(rel='stylesheet', href='/stylesheets/profilechoice.css')
+
+        p Arbeitsplatzauswahl
+
+
+        div(class="second")
+
+
+
+            form(action= "/beschaffung")
+                button(class="button2") Beschaffung
+
+            form(action= "/teilelager")
+                button(class="button2") Teilelager
+
+            form(action= "/endmontage")
+                button(class="button2") Endmontage
+
+            form(action= "/lieferabwicklung")
+                button(class="button2") Lieferabwicklung
+
+            form(action= "/distributioncenter")
+                button( class="button2") Distribution Center
+
+            form(action= "/ordermanagement")
+                button(class="button2") Order Management
+
+
+
+        div(class="third")
+
+            form(action= "/kunde")
+                button(class="button3") Kunde
+            form(action= "/lieferant")
+                button( class="button3") Lieferant
+            form(action= "/spielleiter")
+                button( class="button3") Spieleleiter

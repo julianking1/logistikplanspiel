@@ -1,7 +1,6 @@
 /* Router: Dieses File stellt URLs zur Verfügung.
 *  Für die generierung des Inhaltes sind die controler verantwortlich.
 *  Momentan sind noch keine Controler mit URLs verknüpft.
-*
 * */
 
 var express = require('express');
@@ -11,13 +10,11 @@ var profile = require('./controllers/profile.js');
 var dbtest = require('./controllers/dbtest.js');
 
 
-//(homepage)
-router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
-});
+//Startseite
+router.get('/', profilechoice.rendering); // localhost:3000/
+
 
 //Profilansichten
-router.get('/profilechoice', profilechoice.rendering); // localhost:3000/profilechoice
 router.get('/kunde', profile.rendering); // localhost:3000/kunde
 router.get('/lieferant', profile.rendering); // localhost:3000/lieferant
 router.get('/beschaffung', profile.rendering); // /localhost:3000/beschaffung
@@ -27,9 +24,19 @@ router.get('/lieferabwicklung', profile.rendering); // /localhost:3000/lieferabw
 router.get('/distributioncenter', profile.rendering); // /localhost:3000/distributioncenter
 router.get('/ordermanagement', profile.rendering); // /localhost:3000/ordermanagement
 
+//Toolbox in Profil-Ansicht
+router.get('/kunde/mailbox', function(req, res, next) {
+    res.render('mailbox', {profile: 'kunde/mailbox' });
+}); // /localhost:3000/*profil*/mailbox
+
+//controler fehlt noch für spielleiter
+router.get('/spielleiter', function(req, res, next) {
+    res.render('gameadmin');
+}); // /localhost:3000/spielleiter
+
 //Test Urls
-router.get('/dbtestCreate', dbtest.createOrder()); // /localhost:3000/dbtests
-router.get('/dbtestGet', dbtest.getOrder()); // /localhost:3000/dbtests
+router.get('/dbtestCreate', dbtest.createOrder); // /localhost:3000/dbtests
+router.get('/dbtestGet', dbtest.getOrder); // /localhost:3000/dbtests
 
 
 //Router Tests

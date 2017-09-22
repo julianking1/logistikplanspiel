@@ -1,0 +1,9 @@
+extends profile
+
+block profilecontent
+    ol
+        each item in rows
+            li= item
+                input(type = "checkbox")
+
+    button 'fertig'

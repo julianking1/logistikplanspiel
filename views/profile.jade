@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+    p Periode/Takt/Phase
+
+    form(action= '#{profile}')
+        button(class="buttonTools") Mailbox
+
+    form(action= "./info")
+        button(class="buttonTools") Info
+
+    form(action= "./tabellen")
+        button(class="buttonTools") Tabellen
+
+    form(action= "./")
+        button(class="buttonTools") ToDo
+
+
+    p Übergabe Profil-Parameter: #{param}
+
+    block profilecontent
