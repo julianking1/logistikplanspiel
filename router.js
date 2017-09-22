@@ -15,19 +15,19 @@ router.get('/', profilechoice.rendering); // localhost:3000/
 
 
 //Profilansichten
-router.get('/kunde', profile.rendering); // localhost:3000/kunde
-router.get('/lieferant', profile.rendering); // localhost:3000/lieferant
-router.get('/beschaffung', profile.rendering); // /localhost:3000/beschaffung
-router.get('/teilelager', profile.rendering); // /localhost:3000/teilelager
-router.get('/endmontage', profile.rendering); // /localhost:3000/endmontage
-router.get('/lieferabwicklung', profile.rendering); // /localhost:3000/lieferabwicklung
-router.get('/distributioncenter', profile.rendering); // /localhost:3000/distributioncenter
-router.get('/ordermanagement', profile.rendering); // /localhost:3000/ordermanagement
+router.get('/kunde', profile.renderingChecklist); // localhost:3000/kunde
+router.get('/lieferant', profile.renderingChecklist); // localhost:3000/lieferant
+router.get('/beschaffung', profile.renderingChecklist); // /localhost:3000/beschaffung
+router.get('/teilelager', profile.renderingChecklist); // /localhost:3000/teilelager
+router.get('/endmontage', profile.renderingChecklist); // /localhost:3000/endmontage
+router.get('/lieferabwicklung', profile.renderingChecklist); // /localhost:3000/lieferabwicklung
+router.get('/distributioncenter', profile.renderingChecklist); // /localhost:3000/distributioncenter
+router.get('/ordermanagement', profile.renderingChecklist); // /localhost:3000/ordermanagement
+
+
 
 //Toolbox in Profil-Ansicht
-router.get('/kunde/mailbox', function(req, res, next) {
-    res.render('mailbox', {profile: 'kunde/mailbox' });
-}); // /localhost:3000/*profil*/mailbox
+router.get(/.*mailbox$/, profile.rendering); // /localhost:3000/*profil*/mailbox
 
 //controler fehlt noch für spielleiter
 router.get('/spielleiter', function(req, res, next) {
