@@ -17,8 +17,9 @@ function createLagerbestandEingangspruefung (req, res){
 }
 
 function sumbestandschwarz (req, res){
-    var query = lagerbestandEingangspruefung.find( {artikel: 'schwarz'}).exec();
-    return query;
+    var query = lagerbestandEingangspruefung.find( {'artikel': 'schwarz'}, function (err, lagerbestand) { if (err) return handleError (err)}
+    );
+    res.send("gefunden");
 
 
 }
