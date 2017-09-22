@@ -2,7 +2,8 @@ var lagerbestandEingangspruefung = require("../models/lagerbestandEingangspruefu
 
 module.exports = {
 
-    createLagerbestandEingangspruefung: createLagerbestandEingangspruefung
+    createLagerbestandEingangspruefung: createLagerbestandEingangspruefung,
+    sumbestandschwarz: sumbestandschwarz
 }
 
 
@@ -13,4 +14,11 @@ function createLagerbestandEingangspruefung (req, res){
         if (err) throw err;
         res.send("Saved")
     });
+}
+
+function sumbestandschwarz (req, res){
+    var query = lagerbestandEingangspruefung.find( {artikel: 'schwarz'}).exec();
+    return query;
+
+
 }
