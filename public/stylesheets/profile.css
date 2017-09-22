@@ -8,7 +8,8 @@ body{
 .first{
     width: 100%;
     height: 700px;
-    background-color: red;
+    background-color: white;
+    border:1px solid black;
 
 }
 
@@ -16,7 +17,7 @@ body{
 
     width: 150px;
     height: 100px;
-    background-color: skyblue;
+    background-color: lightgray;
     color: black;
     text-align: center;
     font-size: 16px;
@@ -36,16 +37,17 @@ body{
 .second{
     width: 100%;
     height: 55px;
-    background-color: yellow;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    border:1px solid black;
 }
 
 .done{
     width: 70px;
     height: 40px;
-    background-color: beige;
+    background-color: red;
     color: black;
     text-align: center;
     font-weight: bold;

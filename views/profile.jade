@@ -2,19 +2,29 @@ extends layout
 
 block content
 
-    p Periode/Takt/Phase
+    link(rel='stylesheet', href='/stylesheets/profile.css')
 
-    form(action= '/#{paramProfil}/mailbox')
-        button(class="buttonTools") Mailbox
+    h2 Arbeitsplatz: Beschaffung
+    h1 Periode: 1  Takt: 2  Phase: B
 
-    form(action= '/#{paramProfil}/info')
-        button(class="buttonTools") Info
+    div(class="first")
 
-    form(action= '/#{paramProfil}/tabellen')
-        button(class="buttonTools") Tabellen
+        form(action= '/#{paramProfil}/mailbox')
+            button(class="buttonTools") Mailbox
 
-    form(action= '/#{paramProfil}/checklist')
-        button(class="buttonTools") Checkliste
+        form(action= '/#{paramProfil}/info')
+            button(class="buttonTools") Info
+
+        form(action= '/#{paramProfil}/tabellen')
+            button(class="buttonTools") Tabellen
+
+        form(action= '/#{paramProfil}/checklist')
+            button(class="buttonTools") Checkliste
+
+    div(class="second")
+
+        form(action= '/fertig')
+            button(class="done") Fertig
 
 
     p Übergabe Profil-Parameter: #{paramProfil}
