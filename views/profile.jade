@@ -2,14 +2,21 @@ extends layout
 
 block content
 
+    p Periode/Takt/Phase
 
-    button
-        a(href= "../lieferant") mail
+    form(action= '#{profile}')
+        button(class="buttonTools") Mailbox
 
-    button beschreibung
-    button tabellen
+    form(action= "./info")
+        button(class="buttonTools") Info
 
-    p testwiederjanahuhuhu: profile
-    |Übergabe Profil-Parameter: #{param}
+    form(action= "./tabellen")
+        button(class="buttonTools") Tabellen
 
-    block checklist
+    form(action= "./")
+        button(class="buttonTools") ToDo
+
+
+    p Übergabe Profil-Parameter: #{param}
+
+    block profilecontent
