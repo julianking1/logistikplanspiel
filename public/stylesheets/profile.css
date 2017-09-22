@@ -1,0 +1,60 @@
+body{
+    background-color: white;
+    color: black;
+    text-align: center;
+
+}
+
+.first{
+    width: 100%;
+    height: 700px;
+    background-color: red;
+
+}
+
+.buttonTools{
+
+    width: 150px;
+    height: 100px;
+    background-color: skyblue;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 35px;
+    margin-top: 35px;
+    margin-left: 500px;
+    border-radius: 20%;
+    float:left;
+    position: relative;
+    left: 600px;
+
+
+}
+
+.second{
+    width: 100%;
+    height: 55px;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.done{
+    width: 70px;
+    height: 40px;
+    background-color: beige;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 20%;
+    padding: 5px 5px 5px 5px;
+    float:left;
+
+
+}
+
+
+

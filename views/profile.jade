@@ -2,26 +2,37 @@ extends layout
 
 block content
 
-    p Periode/Takt/Phase
+    link(rel='stylesheet', href='/stylesheets/profile.css')
 
-    script.
-        var dieUrl = '/'+#{param1}+'/mailbox';
-
-    form(action= dieUrl)
-        button(class="buttonTools") Mailbox
-
-    form(action= "/info")
-        button(class="buttonTools") Info
-
-    form(action= "/tables")
-        button(class="buttonTools") Tabellen
-
-    form(action= "/")
-        button(class="buttonTools") ToDo
+    h1 Arbeitsplatz: Beschaffung
+    p Periode: 1  Takt: 2  Phase: B
 
 
-    p Übergabe Profil-Parameter: #{param1}
-    P Übergabe Tool-Parameter: #{param2}
+    div(class="first")
+
+        script.
+            var dieUrl = '/' + #{param1} + '/mailbox';
+
+        form(action= dieUrl)
+            button(class="buttonTools") Mailbox
+
+        form(action= "/info")
+            button(class="buttonTools") Info
+
+        form(action= "/tables")
+            button(class="buttonTools") Tabellen
+
+        form(action= "/")
+            button(class="buttonTools") ToDo
+
+    div(class="second")
+
+        form(action= "/")
+            button(class="done") Fertig
 
 
-    block profilecontent
+    //p Übergabe Profil-Parameter: #{param1}
+    //P Übergabe Tool-Parameter: #{param2}
+
+
+    //block profilecontent
