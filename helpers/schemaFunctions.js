@@ -1,4 +1,4 @@
-//alle Schemas importieren
+/*alle Schemas importieren
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
 
 module.exports = {
@@ -15,5 +15,5 @@ module.exports = {
     function getLieferantenBestellung() {
 
     }
-
+*/
 
