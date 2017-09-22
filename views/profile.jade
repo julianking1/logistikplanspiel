@@ -2,21 +2,31 @@ extends layout
 
 block content
 
-    p Periode/Takt/Phase
+    link(rel='stylesheet', href='/stylesheets/profile.css')
 
-    form(action= '#{profile}')
-        button(class="buttonTools") Mailbox
+    h2 Arbeitsplatz:Beschaffung
+    h3 Periode:1  Takt:2   Phase:B
 
-    form(action= "./info")
-        button(class="buttonTools") Info
+    div(class="first")
 
-    form(action= "./tabellen")
-        button(class="buttonTools") Tabellen
+        form(action= '#{profile}')
+            button(class="buttonTools") Mailbox
 
-    form(action= "./")
-        button(class="buttonTools") ToDo
+        form(action= "./info")
+            button(class="buttonTools") Info
+
+        form(action= "./tabellen")
+            button(class="buttonTools") Tabellen
+
+        form(action= "./")
+            button(class="buttonTools") ToDo
+
+    div(class="second")
+
+        form(action= "")
+            button(class="done") Fertig
 
 
-    p Übergabe Profil-Parameter: #{param}
+    //p Übergabe Profil-Parameter: #{param}
 
-    block profilecontent
+    //block profilecontent
