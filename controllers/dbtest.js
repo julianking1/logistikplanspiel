@@ -22,9 +22,10 @@ module.exports = {
     function getOrder(req, res) {
         //normalerweise ID aus req
 
-        var query = collection.findOne({'von': 'W'});
-        var nr = query.von;
-        res.send (""+ nr);
-        res.send("Datenbank Testseite");
+        lieferantenBestellung.findOne({'nr': '1'}, function (err, data) {
+            if(err) return handleError(err)
+            res.send("Bestellung von "  + data.von + ", ausgestellt in Takt " + data.austellungstakt+
+            ", Artikel: " + data.artikel);
+        })
 
     }
