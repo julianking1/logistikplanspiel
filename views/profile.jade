@@ -4,19 +4,24 @@ block content
 
     p Periode/Takt/Phase
 
-    form(action= '#{profile}')
+    script.
+        var dieUrl = '/'+#{param1}+'/mailbox';
+
+    form(action= dieUrl)
         button(class="buttonTools") Mailbox
 
-    form(action= "./info")
+    form(action= "/info")
         button(class="buttonTools") Info
 
-    form(action= "./tabellen")
+    form(action= "/tables")
         button(class="buttonTools") Tabellen
 
-    form(action= "./")
+    form(action= "/")
         button(class="buttonTools") ToDo
 
 
-    p Übergabe Profil-Parameter: #{param}
+    p Übergabe Profil-Parameter: #{param1}
+    P Übergabe Tool-Parameter: #{param2}
+
 
     block profilecontent
