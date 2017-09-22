@@ -36,7 +36,7 @@ module.exports = {
         helper = helper[0];
         var urlparts = helper.split("/");
 
-
+        var data = ['1Aufgabe' + url, '2Aufgabe' + url]; //Ausgabe der Checkliste aus DB je nach Profil
 
         //rendering der Website, momentan noch Test
         res.render('checklist', {param1: urlparts[1], paramTool: 'checklist', rows: data});

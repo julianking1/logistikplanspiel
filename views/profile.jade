@@ -4,8 +4,10 @@ block content
 
     p Periode/Takt/Phase
 
+    script.
+        var dieUrl = '/'+#{param1}+'/mailbox';
 
-    form(action= "/mailbox")
+    form(action= dieUrl)
         button(class="buttonTools") Mailbox
 
     form(action= "/info")
