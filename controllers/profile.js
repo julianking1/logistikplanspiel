@@ -8,27 +8,29 @@ module.exports = {
         helper = helper[0];
         var urlparts = helper.split("/");
 
+        //render according to parameter of tools
         switch(String(urlparts[2])){
             case 'mailbox':
-                res.render('mailbox', {param1: urlparts[1], param2: urlparts[2]});
+                res.render('mailbox', {paramProfil: urlparts[1], paramTool: urlparts[2]});
                 break;
 
             case 'checklist'  :
                 var data = ['1Aufgabe' + url, '2Aufgabe' + url]; //Ausgabe der Checkliste aus DB je nach Profil
-                res.render('checklist', {param1: urlparts[1], param2: urlparts[2], rows:data});
+                res.render('checklist', {paramProfil: urlparts[1], paramTool: urlparts[2], rows:data});
                 break;
 
             case 'tabellen':
-                res.render('tables', {param1: urlparts[1], param2: urlparts[2]});
+                res.render('tables', {paramProfil: urlparts[1], paramTool: urlparts[2]});
                 break;
 
             case 'info':
-                res.render('info', {param1: urlparts[1], param2: urlparts[2]});
+                res.render('info', {paramProfil: urlparts[1], paramTool: urlparts[2]});
                 break;
         }
 
     },
 
+    //default
     renderingDefault: function (req, res, next) {
 
         var url = req.url;
@@ -37,8 +39,6 @@ module.exports = {
         var urlparts = helper.split("/");
 
         var data = ['1Aufgabe' + url, '2Aufgabe' + url]; //Ausgabe der Checkliste aus DB je nach Profil
-
-        //rendering der Website, momentan noch Test
-        res.render('checklist', {param1: urlparts[1], paramTool: 'checklist', rows: data});
+        res.render('checklist', {paramProfil: urlparts[1], paramTool: 'checklist', rows: data});
     }
 };
