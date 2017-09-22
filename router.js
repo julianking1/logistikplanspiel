@@ -38,8 +38,8 @@ router.get('/spielleiter', function(req, res, next) {
 }); // /localhost:3000/spielleiter
 
 //Test Urls
-router.get('/dbtestCreate', dbtest.createOrder); // /localhost:3000/dbtests
-router.get('/dbtestGet', dbtest.getOrder); // /localhost:3000/dbtests
+router.get('/dbtestCreate', dbtest.createOrder); // /localhost:3000/dbtestCreate
+router.get('/dbtestGet', dbtest.getOrder); // /localhost:3000/dbtestGet
 
 
 //Router Tests

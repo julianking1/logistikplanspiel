@@ -25,6 +25,6 @@ module.exports = {
             if(err) return handleError(err)
             res.send("Bestellung von "  + data.von + ", ausgestellt in Takt " + data.austellungstakt+
             ", Artikel: " + data.artikel);
-        })
+        });
 
     }

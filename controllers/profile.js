@@ -1,3 +1,5 @@
+var helperMailbox = require('../controllers/mailbox.js');
+
 module.exports = {
 
     rendering: function (req, res, next) {
@@ -11,7 +13,7 @@ module.exports = {
         //render according to parameter of tools
         switch(String(urlparts[2])){
             case 'mailbox':
-                res.render('mailbox', {paramProfil: urlparts[1], paramTool: urlparts[2]});
+                helperMailbox.getContent(res, urlparts[1],  urlparts[2]);
                 break;
 
             case 'checklist'  :
