@@ -9,4 +9,4 @@ var leSchema = new Schema ({
     artikel:  {type: Number, required: true}
 });
 
-module.exports = mongoose.model('lagerbestandEingangsprüfung', leSchemaSchema);
+module.exports = mongoose.model('lagerbestandEingangsprüfung', leSchema);
