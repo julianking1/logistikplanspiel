@@ -9,7 +9,8 @@ var lasummeSchema = new Schema({
         bestandschwarz: {type: Number, required: true},
         bestandweiss: {type: Number, required: true},
         zugangschwarz: {type: Number, required: true},
-        zugangweiss: {type: Number, required: true}
+        zugangweiss: {type: Number, required: true},
+        anzauftraege: {type: Number, required: false}
     }
 );
 
