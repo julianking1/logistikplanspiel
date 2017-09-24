@@ -2,14 +2,15 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-var elagersummeSchema = new Schema({
+var vfSchema = new Schema({
         spielID: {type: Number, required: true},
         periode: {type: Number, required: true},
+        takt:    {type: Number, required: true},
         artikel: {type: String, required: true},
-        bestand: {type: Number, required: true},
-        zugang: {type: Number, required: true}
+        sollmenge:{type: Number, required: true},
+        istmenge: {type: Number, required: false}
 
     }
 );
 
-module.exports = mongoose.model('endmontageLagersumme', elagersummeSchema);
+module.exports = mongoose.model('vorfertigungFertigungsplan', vfSchema);
