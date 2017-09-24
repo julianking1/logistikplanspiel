@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-var vlagerzugangSchema = new vlagerzugangSchema({
+var vlagerzugangSchema = new Schema({
     spielID: {type: Number, required: true},
     periode: {type: Number, required: true},
     takt:    {type: Number, required: true},
@@ -12,4 +12,4 @@ var vlagerzugangSchema = new vlagerzugangSchema({
 }
 );
 
-module.exports = mongoose.model('vorfertigungLagerzugang, vlagerzugangSchema);
+module.exports = mongoose.model('vorfertigungLagerzugang', vlagerzugangSchema);

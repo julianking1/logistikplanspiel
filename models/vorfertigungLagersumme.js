@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-var vlagersummeSchema = new vlagersummeSchema({
+var vlagersummeSchema = new Schema({
     spielID: {type: Number, required: true},
     periode: {type: Number, required: true},
     artikel: {type: String, required: true},

@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-var vKPISchema = new vKPISchema({
+var vKPISchema = new Schema({
     spielID: {type: Number, required: true},
     periode: {type: Number, required: true},
     ruestkosten: {type: Number, required: false},
