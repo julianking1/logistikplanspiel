@@ -32,6 +32,8 @@ function createLieferantenBestellung(spielID, von, nr, ausstellungstakt, artikel
 
 //Methoden zum Ergänzen der optionalen Attribute
 
+//TODO: (Getter), für jedes optionale Attribut jedes Schemas eine MEthode zum Updaten des Datensatzes
+
 function addWunschmengeToLieferantenBestellung (id, wunschmenge){
     //mittels Getter Objekt aus der Datenbank holen + Atribute ergänzen
 
@@ -119,7 +121,7 @@ function createVorfertigungFertigungsplan(spielID,periode,takt,artikel,sollmenge
 }
 
 function createVorfertigungsKPI(spielID,periode) {
-    var data = new beschaffungKPI({spielID:spielID,periode:periode});
+    var data = new vorfertigungKPI({spielID:spielID,periode:periode});
     data.save(function (err) {
         if (err) throw err;
         console.log("Saved: Vorfertigungs KPI");
@@ -127,7 +129,7 @@ function createVorfertigungsKPI(spielID,periode) {
 }
 
 function createVorfertigungLagerbestand(spielID,periode,takt,artikel,anzahl) {
-    var data = new vorfertigungFertigungsplan({spielID:spielID,periode:periode,
+    var data = new vorfertigungLagerbestand({spielID:spielID,periode:periode,
         takt:takt,artikel:artikel,anzahl:anzahl});
     data.save(function (err) {
         if (err) throw err;
@@ -137,7 +139,7 @@ function createVorfertigungLagerbestand(spielID,periode,takt,artikel,anzahl) {
 
 
 function createVorfertigungLagersumme(spielID,periode,artikel,bestand, zugang) {
-    var data = new vorfertigungFertigungsplan({spielID:spielID,periode:periode,
+    var data = new vorfertigungLagersumme({spielID:spielID,periode:periode,
         artikel:artikel,bestand:bestand,zugang:zugang});
     data.save(function (err) {
         if (err) throw err;
@@ -145,12 +147,12 @@ function createVorfertigungLagersumme(spielID,periode,artikel,bestand, zugang) {
     });
 }
 
-function createVorfertigungLagerbestand(spielID,periode,takt,artikel,anzahl) {
+function createVorfertigungLagerzugang(spielID,periode,takt,artikel,anzahl) {
     var data = new vorfertigungLagerzugang({spielID:spielID,periode:periode,
         takt:takt,artikel:artikel,anzahl:anzahl});
     data.save(function (err) {
         if (err) throw err;
-        console.log("Saved: Vorfertigung Lagerbestand");
+        console.log("Saved: Vorfertigung Lagerzugang");
     });
 }
 
@@ -166,6 +168,7 @@ function createVorfertigungLosesumme(spielID,periode,artikel,summe) {
 
 
 //Getter um jedes Dokument anhand (Kombinatio) eindeutiger bekannter Attribute aus DB zu holen
+// TODO: Kombinationen überlegen, Getter schreiben
 
 
 
