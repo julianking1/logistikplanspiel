@@ -1,5 +1,6 @@
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
 var schemaFunctions = require("../helpers/setterFunctions");
+var getterFunctions = require("../helpers/getterFunctions");
 
 module.exports = {
 
@@ -32,11 +33,17 @@ module.exports = {
 
     function getOrder(req, res) {
         //normalerweise ID aus req
+        var lagerbestandEingangspruefung = getterFunctions.getlagerbestandEingangspruefung(1, 1, 1, "schwarz", function(data){
+          console.log(data);
+        });
 
-        lieferantenBestellung.findOne({'nr': '200'}, function (err, data) {
+console.log("außen"+lagerbestandEingangspruefung);
+
+
+        /*lieferantenBestellung.findOne({'nr': '200'}, function (err, data) {
             if(err) return handleError(err)
             res.send("Bestellung von "  + data.von + ", ausgestellt in Takt " + data.austellungstakt+
             ", Artikel: " + data.artikel);
-        });
+        });*/
 
     }

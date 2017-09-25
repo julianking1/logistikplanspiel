@@ -17,9 +17,23 @@ function createLagerbestandEingangspruefung (req, res){
 }
 
 function sumbestandschwarz (req, res){
-    var query = lagerbestandEingangspruefung.find( {'artikel': 'schwarz'}, function (err, lagerbestand) { if (err) return handleError (err)}
-    );
-    res.send("gefunden");
+    var query = lagerbestandEingangspruefung.find( {'artikel': 'schwarz'}, function (err, lagerbestand) {
+        if (err) return handleError (err);
+        var sum = 0;
+        for (var i = 0; i < lagerbestand.length; i++){
+
+            sum = sum + lagerbestand[i].bestand;
+
+
+        }
+        res.send("wert" +sum);
+
+
+
+
+    });
+
+
 
 
 }
