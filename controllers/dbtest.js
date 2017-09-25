@@ -9,14 +9,20 @@ module.exports = {
 
     function createOrder(req, res) {
         //normalerweise Werte aus req laden (Body-Parser)
-
-        schemaFunctions.createLieferantenBestellung('W',200,1,'schwarz');
-        var bestellung1 = new lieferantenBestellung({von:'W', nr:1, austellungstakt:1, artikel:'weiß'});
-        bestellung1.save(function (err) {
-            if (err) throw err;
-            res.send("Saved")
-        });
+        schemaFunctions.createLieferantenBestellung(1,"W",200,1,"schwarz");
+        schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);
+        schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiß",23,22,10,10);
+        schemaFunctions.createBeschaffungsKPI(1,1);
+        schemaFunctions.createBeschaffungsUebersicht(1,1,1,1,1);
+        schemaFunctions.createLagerbestandEingangspruefung(1,1,1,"schwarz",20);
+        schemaFunctions.createLagerbestandVorEingangspruefung(1,1,1,"schwarz",1);
+        schemaFunctions.createVorfertigungFertigungsplan(1,1,1,"weiß",1);
+        schemaFunctions.createVorfertigungLagerbestand(1,1,1,"schwarz",1);
+        schemaFunctions.createVorfertigungLagersumme(1,1,"weiß",1,5);
+        schemaFunctions.createVorfertigungLosesumme(1,1,"schwarz", 50);
+        schemaFunctions.createVorfertigungsKPI(1,4);
     }
+
 
     function getOrder(req, res) {
         //normalerweise ID aus req

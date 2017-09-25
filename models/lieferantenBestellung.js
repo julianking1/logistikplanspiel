@@ -4,6 +4,7 @@ mongoose.Promise = global.Promise;
 
 
 var lbSchema = new Schema({
+    spielID:            {type: Number, required:true},
     von:                {type: String, required:true},
     nr:                 {type: Number, required:true},
     austellungstakt:    {type: Number, required:true},
@@ -17,10 +18,4 @@ var lbSchema = new Schema({
     }
 );
 
-
-lbSchema.methods.getVon = function () {
-    return this.von;
-};
-
-//andere getter und setter
 module.exports = mongoose.model('lieferantenBestellung', lbSchema);
