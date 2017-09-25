@@ -1,0 +1,64 @@
+body{
+    background-color: white;
+    color: black;
+    text-align: center;
+
+}
+
+.first{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border:1px solid black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.buttonTools{
+
+    width: 120px;
+    height: 60px;
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20%;
+    float:left;
+}
+
+.inhalt{
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    border:1px solid black;
+}
+
+.second{
+    width: 100%;
+    height: 55px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid black;
+}
+
+.done{
+    width: 70px;
+    height: 40px;
+    background-color: red;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 20%;
+    padding: 5px 5px 5px 5px;
+    float:left;
+}
+
+
+

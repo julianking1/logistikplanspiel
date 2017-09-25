@@ -1,0 +1,15 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: separate;
+}
+
+table{
+    margin-left: 10px;
+}
+
+caption{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

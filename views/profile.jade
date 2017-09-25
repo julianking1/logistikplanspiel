@@ -1,0 +1,39 @@
+extends layout
+
+block content
+
+    link(rel='stylesheet', href='/stylesheets/profile.css')
+
+    h2 Arbeitsplatz: Beschaffung
+    h3 Periode: 1  Takt: 2  Phase: B
+
+    div(class="first")
+
+        form(action= '/#{paramProfil}/mailbox')
+            button(class="buttonTools") Mailbox
+
+        form(action= '/#{paramProfil}/info')
+            button(class="buttonTools") Info
+
+        form(action= '/#{paramProfil}/tabellen')
+            button(class="buttonTools") Tabellen
+
+        form(action= '/#{paramProfil}/checklist')
+            button(class="buttonTools") Checkliste
+
+
+    div(class="inhalt")
+
+        block profilecontent
+
+
+    div(class="second")
+
+        form(action= '/fertig')
+            button(class="done") Fertig
+
+
+    //p Übergabe Profil-Parameter: #{paramProfil}
+    //P Übergabe Tool-Parameter: #{paramTool}
+
+
