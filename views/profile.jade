@@ -21,9 +21,8 @@ block content
 
         form(action= '/#{paramProfil}/checklist')
             button(class="buttonTools") Checkliste
+        button(class= "buttonTools" onclick= "jsTest(''+ '#{paramProfil}', ''+ '#{paramTool}')") JavaScript Test
 
-
-    button(class= "buttonTools" onclick= "jsTest(''+ '#{paramProfil}', ''+ '#{paramTool}')") JavaScript Test
 
 
     div(class="inhalt")
