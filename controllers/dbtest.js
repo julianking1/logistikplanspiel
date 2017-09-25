@@ -27,6 +27,20 @@ module.exports = {
         schemaFunctions.createEndmontageLagersumme(1,1,"weiß",2,2,2,2,2,2);
         schemaFunctions.createEndmontageLagerzugang(1,1,1,"weiß",30);
         schemaFunctions.createEndmontageLosesumme(1,1,"weis",30);
+        schemaFunctions.createDistributionAuftragsbearbeitung(1,1,1,1);
+        schemaFunctions.createDistributionKPI(1,1);
+        schemaFunctions.createDistributionLagerbestand(1,1,1,"weiß",1);
+        schemaFunctions.createDistributionLagerzugang(1,1,1,"weiß",1);
+        schemaFunctions.createDistributionSummen(1,1,"weiß",2,2,2,2);
+        schemaFunctions.createKundeAuftragsuebersicht(1,1,1,1,"weiß",2,2,2,2);
+        schemaFunctions.createKundeKPI(1,1);
+        schemaFunctions.createKundeUmsatz(1,1,1,"weiß");
+        schemaFunctions.createLieferabwicklungBestelluebersicht(1,1,1,1,1);
+        schemaFunctions.createLieferabwicklungKPI(1,1);
+        schemaFunctions.createLieferabwicklungLagerbestand(1,1,1,"weiß",2);
+        schemaFunctions.createLieferabwicklungLagerzugang(1,1,1,"weiß",2);
+        schemaFunctions.createLieferabwicklungSummen(1,1,"weiß",1,1,1,1);
+        schemaFunctions.createOrderManagement(1,1,1,"weiß",2,3);
     }
 
 

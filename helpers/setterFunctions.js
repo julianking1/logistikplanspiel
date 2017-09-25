@@ -324,14 +324,49 @@ function createLieferabwicklungKPI(spielID,periode) {
     });
 }
 
+function createLieferabwicklungLagerbestand(spielID,periode,takt,artikel,anzahl) {
+    var data = new lieferabwicklungLagerbestand({spielID:spielID,periode:periode,
+        takt:takt,artikel:artikel,anzahl:anzahl});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Lieferabwicklung Lagerbestand");
+    });
+}
 
+function createLieferabwicklungLagerzugang(spielID,periode,takt,artikel,zugang) {
+    var data = new lieferabwicklungLagerzugang({spielID:spielID,periode:periode,
+        takt:takt,artikel:artikel,zugang:zugang});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Lieferabwicklung Lagerzugang");
+    });
+}
 
+function createLieferabwicklungSummen(spielID,periode,artikel,bestandschwarz, bestandweiss,
+                                  zugangschwarz, zugangweiss) {
+    var data = new lieferabwicklungSummen({spielID:spielID,periode:periode,artikel:artikel,
+        bestandschwarz:bestandschwarz,bestandweiss:bestandweiss, zugangschwarz:zugangschwarz,
+        zugangweiss:zugangweiss});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Lieferabwicklung Summen");
+    });
+}
+
+function createOrderManagement(spielID,periode,takt,artikel,anfangsbestand,endbestand) {
+    var data = new orderManagement({spielID:spielID,periode:periode,
+        takt:takt,artikel:artikel,anfangsbestand:anfangsbestand,endbestand:endbestand});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Order Management");
+    });
+}
 
 //Getter um jedes Dokument anhand (Kombinatio) eindeutiger bekannter Attribute aus DB zu holen
 // TODO: Kombinationen überlegen, Getter schreiben
 
 
-
+//interne Bestellung Kundenbestellung fehlt noch
 
 module.exports = {
     createLieferantenBestellung: createLieferantenBestellung,
@@ -352,5 +387,18 @@ module.exports = {
     createEndmontageLagersumme:createEndmontageLagersumme,
     createEndmontageLagerzugang:createEndmontageLagerzugang,
     createEndmontageLosesumme:createEndmontageLosesumme,
-    createDistributionAuftragsbearbeitung:createDistributionAuftragsbearbeitung
+    createDistributionAuftragsbearbeitung:createDistributionAuftragsbearbeitung,
+    createDistributionKPI:createDistributionKPI,
+    createDistributionLagerbestand:createDistributionLagerbestand,
+    createDistributionLagerzugang:createDistributionLagerzugang,
+    createDistributionSummen:createDistributionSummen,
+    createKundeAuftragsuebersicht:createKundeAuftragsuebersicht,
+    createKundeKPI:createKundeKPI,
+    createKundeUmsatz:createKundeUmsatz,
+    createLieferabwicklungBestelluebersicht:createLieferabwicklungBestelluebersicht,
+    createLieferabwicklungKPI:createLieferabwicklungKPI,
+    createLieferabwicklungLagerbestand:createLieferabwicklungLagerbestand,
+    createLieferabwicklungLagerzugang:createLieferabwicklungLagerzugang,
+    createLieferabwicklungSummen:createLieferabwicklungSummen,
+    createOrderManagement:createOrderManagement
     }
