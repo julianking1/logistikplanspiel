@@ -9,7 +9,7 @@ var profilechoice = require('./controllers/profilechoice.js');
 var profile = require('./controllers/profile.js');
 var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
-var bodyparser
+var formularSpeichern = require('./controllers/formularSpeichern');
 
 //Startseite
 router.get('/', profilechoice.rendering); // localhost:3000/
@@ -49,9 +49,9 @@ router.get('/janatests', function(req, res, next) {
 }); // /localhost:3000/janatests
 
 //Formular Tests
-router.post(/.*mailbox$/, function(req, res, next) {
-
-        res.send("ok");
+router.post(/.*mailbox$/, function(req, res) {
+        formularSpeichern.saveInDB(req, res);
+        //res.send("ok"); //später weg bzw render
 });
 
 
