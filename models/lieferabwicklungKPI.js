@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-var vfSchema = new Schema({
+var laKPISchema = new Schema({
     spielID: {type: Number, required: true},
     periode: {type: Number, required: true},
     internebestellkosten: {type: Number, required: false},
@@ -12,4 +12,4 @@ var vfSchema = new Schema({
     }
 );
 
-module.exports = mongoose.model('vorfertigungFertigungsplan', vfSchema);
+module.exports = mongoose.model('lieferabwicklungKPI', laKPISchema);

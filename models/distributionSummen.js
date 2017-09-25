@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-var lasummeSchema = new Schema({
+var dbsummeSchema = new Schema({
         spielID: {type: Number, required: true},
         periode: {type: Number, required: true},
         artikel: {type: String, required: true},
@@ -14,4 +14,4 @@ var lasummeSchema = new Schema({
     }
 );
 
-module.exports = mongoose.model('lieferabwicklungSummen', lasummeSchema);
+module.exports = mongoose.model('distributionSummen', dbsummeSchema);

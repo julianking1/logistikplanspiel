@@ -22,6 +22,7 @@ var distributionAuftragsbearbeitung= require("../models/distributionAuftragsbear
 var distributionKPI = require("../models/distributionKPI");
 var distributionLagerbestand= require("../models/distributionLagerbestand");
 var distributionSummen= require("../models/distributionSummen");
+var distributionLagerzugang =require("../models/distributionLagerzugang");
 var kundeAuftragsuebersicht= require("../models/kundeAuftragsuebersicht");
 var kundeKPI= require("../models/kundeKPI");
 var kundeUmsatz= require("../models/kundeUmsatz");
@@ -306,7 +307,7 @@ function createKundeUmsatz(spielID,periode,takt,artikel) {
     });
 }
 
-function createlieferabwicklungBestelluebersicht(spielID,periode,takt,bestellnr,menge) {
+function createLieferabwicklungBestelluebersicht(spielID,periode,takt,bestellnr,menge) {
     var data = new lieferabwicklungBestelluebersicht({spielID:spielID,periode:periode,
         takt:takt,bestellnr:bestellnr,menge:menge});
     data.save(function (err) {
@@ -314,6 +315,15 @@ function createlieferabwicklungBestelluebersicht(spielID,periode,takt,bestellnr,
         console.log("Saved: Lieferabwicklung Bestellübersicht");
     });
 }
+
+function createLieferabwicklungKPI(spielID,periode) {
+    var data = new lieferabwicklungKPI({spielID:spielID,periode:periode});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Lieferabwicklung KPI");
+    });
+}
+
 
 
 
@@ -341,6 +351,6 @@ module.exports = {
     createEndmontageLagerbestand:createEndmontageLagerbestand,
     createEndmontageLagersumme:createEndmontageLagersumme,
     createEndmontageLagerzugang:createEndmontageLagerzugang,
-    createEndmontageLosesumme:createEndmontageLosesumme
+    createEndmontageLosesumme:createEndmontageLosesumme,
     createDistributionAuftragsbearbeitung:createDistributionAuftragsbearbeitung
     }
