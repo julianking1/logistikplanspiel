@@ -18,6 +18,7 @@ var vorfertigungLagerbestand = require("../models/vorfertigungLagerbestand");
 var vorfertigungLagersumme = require("../models/vorfertigungLagersumme");
 var vorfertigungLagerzugang = require("../models/vorfertigungLagerzugang");
 var vorfertigungLosesumme = require("../models/vorfertigungLosesumme");
+var dis= require("../models/distributionAuftragsbearbeitung");
 
 
 //schreibt Datensatz mit allen obligatorischen Attributen in DB
@@ -193,7 +194,7 @@ function createEndmontageLagerbestand(spielID,periode,takt,artikel,anzahl) {
 
 function createEndmontageLagersumme(spielID,periode,artikel,bestandschwarz, bestandweiss,bestandrot,
                                     zugangschwarz, zugangweiss, zugangrot) {
-    var data = new vorfertigungLagersumme({spielID:spielID,periode:periode,artikel:artikel,
+    var data = new endmontageLagersumme({spielID:spielID,periode:periode,artikel:artikel,
         bestandschwarz:bestandschwarz,bestandweiss:bestandweiss, bestandrot:bestandrot,
         zugangschwarz:zugangschwarz,zugangweiss:zugangweiss,zugangrot:zugangrot});
     data.save(function (err) {

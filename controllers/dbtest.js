@@ -1,5 +1,5 @@
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
-var schemaFunctions = require("../helpers/schemaFunctions");
+var schemaFunctions = require("../helpers/setterFunctions");
 
 module.exports = {
 
