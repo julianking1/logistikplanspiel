@@ -1,4 +1,5 @@
 var helperMailbox = require('../controllers/mailbox.js');
+var checklisten = require('../models/checklisten');
 
 module.exports = {
 
@@ -17,7 +18,7 @@ module.exports = {
                 break;
 
             case 'checklist'  :
-                var data = ['1Aufgabe' + url, '2Aufgabe' + url]; //Ausgabe der Checkliste aus DB je nach Profil
+                var data = checklisten.getDataArray(urlparts[1]);
                 res.render('checklist', {paramProfil: urlparts[1], paramTool: urlparts[2], rows:data});
                 break;
 
@@ -35,12 +36,14 @@ module.exports = {
     //default
     renderingDefault: function (req, res, next) {
 
+
         var url = req.url;
         var helper = url.split("?");
         helper = helper[0];
         var urlparts = helper.split("/");
 
-        var data = ['1Aufgabe' + url, '2Aufgabe' + url]; //Ausgabe der Checkliste aus DB je nach Profil
+        var data = checklisten.getDataArray(urlparts[1]);
         res.render('checklist', {paramProfil: urlparts[1], paramTool: 'checklist', rows: data});
     }
 };
+
