@@ -1,5 +1,4 @@
 
-
 ol{
 
     position: relative;
@@ -13,5 +12,6 @@ ol{
 
 li{
     margin-top: 10px;
+    text-align: left;
 
 }
