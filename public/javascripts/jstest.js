@@ -1,11 +1,6 @@
 
 
 function jsTest(profil, tool){
-   console.log(profil, tool);
-
-   var data = new FormData();
-   data.append('profil', profil);
-   data.append('tool', tool);
 
    var xhr = new XMLHttpRequest();
    xhr.open('POST', '/post', true);
@@ -13,6 +8,6 @@ function jsTest(profil, tool){
    xhr.onload = function(){
        console.log(this.responseText);
    };
-   xhr.send(data);
+   xhr.send('profil=test');
 
 }

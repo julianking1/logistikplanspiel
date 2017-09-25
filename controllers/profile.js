@@ -22,7 +22,6 @@ module.exports = {
             case 'tabellen':
                 if(urlparts[1]= 'kunde')
                   var tabellenart = 'kunde.jade';
-                else tabellenart = 'leer'  ;
                 res.render('tables', {paramProfil: urlparts[1], paramTool: urlparts[2], currentTable: tabellenart});
                 break;
 
