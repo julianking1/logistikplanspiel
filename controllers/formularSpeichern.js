@@ -1,5 +1,5 @@
 var urlSplitter = require('../helpers/urlSplitter');
-var schemaFunctions = require("../helpers/schemaFunctions.js");
+var setterFunctions = require("../helpers/setterFunctions.js");
 
 module.exports = {
 
@@ -13,12 +13,12 @@ module.exports = {
             case 'kunde':
                 //schemaFunctions.createLieferantenBestellung(req.body.)
                 console.log(req.body.von + req.body.nr + req.body.ausstellungstakt + req.body.artikel);
-                schemaFunctions.createLieferantenBestellung(123, req.body.von, req.body.nr, req.body.ausstellungstakt,req.body.artikel);
+                setterFunctions.createLieferantenBestellung(123, req.body.von, req.body.nr, req.body.ausstellungstakt,req.body.artikel);
                 res.send(req.body.von + req.body.nr + req.body.ausstellungstakt + req.body.artikel);
 
             case 'beschaffung':
                 console.log(req.body.von + req.body.nr + req.body.ausstellungstakt + req.body.artikel);
-                schemaFunctions.createLieferantenBestellung(123, req.body.von, req.body.nr, req.body.ausstellungstakt,req.body.artikel);
+                setterFunctions.createLieferantenBestellung(123, req.body.von, req.body.nr, req.body.ausstellungstakt,req.body.artikel);
                 res.send(req.body.von + req.body.nr + req.body.ausstellungstakt + req.body.artikel);
         }
 
