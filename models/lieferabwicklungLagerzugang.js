@@ -7,8 +7,7 @@ var lalagerzugangSchema = new Schema({
         periode: {type: Number, required: true},
         takt:    {type: Number, required: true},
         artikel: {type: String, required: true},
-        anzahl: {type: Number, required: true}
-
+        zugang: {type: Number, required: true}
     }
 );
 

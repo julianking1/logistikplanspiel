@@ -1,19 +1,27 @@
 var kundeChecklist = [
-    'Aufgabe1 von Kunde',
-    'Aufgabe2 von Kunde',
-    '...'];
+    "'Kundenbestellung' für schwarze und weiße Artikel an das Distribution Center weiterleiten",
+    ""
+    ];
 
 var beschaffungChecklist = [
-    'Aufgabe1 von Beschaffung',
-    'Aufgabe2 von Beschaffung',
-    '...'];
+    "Materialkisten aus Posteingang nehmen",
+    "Erhaltene Menge und Takt mit bestätigter Menge und Takt abgleichen",
+    "Erhaltene Menge und Takt in 'Lieferantenbestellung' ausfüllen",
+    "Material in Eingangslager sortieren und verschiedene Farben durch Rüststeine trennen",
+    "IST-Takt im Formular 'Bestellübersicht Teile' eintragen",
+    "Im Formular die Tabellenfelder 'Lagerbestand in und vor Eingangsprüfung' ausfüllen (vor Eingangsprüfung nur notwendig, wenn das Lager voll ist und eine Zwischenlagerung notwendig wird",
+    "Neue 'Lieferantenbestellung' ausfüllen, in 'Bestellübersicht Teile' eintragen und an den Lieferanten senden"
+    ];
 
-var distributioncenterChecklist = [];
+var distributioncenterChecklist = [
+    ""
+];
 var endmontageChecklist = [];
 var vormontageChecklist = [];
 var ordermanagementChecklist = [];
 var lieferabwicklungChecklist = [];
 var teilelagerChecklist = [];
+var lieferantChecklist = [];
 
 
 
