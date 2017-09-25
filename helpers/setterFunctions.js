@@ -18,8 +18,19 @@ var vorfertigungLagerbestand = require("../models/vorfertigungLagerbestand");
 var vorfertigungLagersumme = require("../models/vorfertigungLagersumme");
 var vorfertigungLagerzugang = require("../models/vorfertigungLagerzugang");
 var vorfertigungLosesumme = require("../models/vorfertigungLosesumme");
-var dis= require("../models/distributionAuftragsbearbeitung");
-
+var distributionAuftragsbearbeitung= require("../models/distributionAuftragsbearbeitung");
+var distributionKPI = require("../models/distributionKPI");
+var distributionLagerbestand= require("../models/distributionLagerbestand");
+var distributionSummen= require("../models/distributionSummen");
+var kundeAuftragsuebersicht= require("../models/kundeAuftragsuebersicht");
+var kundeKPI= require("../models/kundeKPI");
+var kundeUmsatz= require("../models/kundeUmsatz");
+var lieferabwicklungBestelluebersicht= require("../models/lieferabwicklungBestelluebersicht");
+var lieferabwicklungKPI= require("../models/lieferabwicklungKPI");
+var lieferabwicklungLagerbestand= require("../models/lieferabwicklungLagerbestand");
+var lieferabwicklungLagerzugang= require("../models/lieferabwicklungLagerzugang");
+var lieferabwicklungSummen= require("../models/lieferabwicklungSummen");
+var orderManagement= require("../models/orderManagement");
 
 //schreibt Datensatz mit allen obligatorischen Attributen in DB
 function createLieferantenBestellung(spielID, von, nr, ausstellungstakt, artikel) {
@@ -221,6 +232,88 @@ function createEndmontageLosesumme(spielID,periode,artikel,summe) {
     });
 }
 
+function createDistributionAuftragsbearbeitung(spielID,periode,takt,anzauftraege) {
+    var data = new distributionAuftragsbearbeitung({spielID:spielID,periode:periode,
+        takt:takt,anzauftraege:anzauftraege});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Distrubition Auftragsbearbeitung");
+    });
+}
+
+function createDistributionKPI(spielID,periode) {
+    var data = new distributionKPI({spielID:spielID,periode:periode});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Distribution KPI");
+    });
+}
+
+function createDistributionLagerbestand(spielID,periode,takt,artikel,anzahl) {
+    var data = new distributionLagerbestand({spielID:spielID,periode:periode,
+        takt:takt,artikel:artikel,anzahl:anzahl});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Distribution Lagerbestand");
+    });
+}
+
+function createDistributionSummen(spielID,periode,artikel,bestandschwarz, bestandweiss,
+                                    zugangschwarz, zugangweiss) {
+    var data = new distributionSummen({spielID:spielID,periode:periode,artikel:artikel,
+        bestandschwarz:bestandschwarz,bestandweiss:bestandweiss, zugangschwarz:zugangschwarz,
+        zugangweiss:zugangweiss});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Distribution Summen");
+    });
+}
+
+function createDistributionLagerzugang(spielID,periode,takt,artikel,zugang) {
+    var data = new distributionLagerzugang({spielID:spielID,periode:periode,
+        takt:takt,artikel:artikel,zugang:zugang});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Distribution Lagerzugang");
+    });
+}
+
+function createKundeAuftragsuebersicht(spielID,periode,takt,bestellnr,artikel,menge,wunschtermin,
+                                       bestaetigertermin,erhalttermin) {
+    var data = new kundeAuftragsuebersicht({spielID:spielID,periode:periode,
+        takt:takt,bestellnr:bestellnr,artikel:artikel,menge:menge,wunschtermin:wunschtermin,
+        bestaetigtertermin:bestaetigertermin,erhalttermin:erhalttermin});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Kunde Auftragsuebersicht");
+    });
+}
+
+function createKundeKPI(spielID,periode) {
+    var data = new kundeKPI({spielID:spielID,periode:periode});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Kunde KPI");
+    });
+}
+
+function createKundeUmsatz(spielID,periode,takt,artikel) {
+    var data = new kundeUmsatz({spielID:spielID,periode:periode,
+        takt:takt,artikel:artikel});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Kunde Umsatz");
+    });
+}
+
+function createlieferabwicklungBestelluebersicht(spielID,periode,takt,bestellnr,menge) {
+    var data = new lieferabwicklungBestelluebersicht({spielID:spielID,periode:periode,
+        takt:takt,bestellnr:bestellnr,menge:menge});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Lieferabwicklung Bestellübersicht");
+    });
+}
 
 
 
@@ -249,4 +342,5 @@ module.exports = {
     createEndmontageLagersumme:createEndmontageLagersumme,
     createEndmontageLagerzugang:createEndmontageLagerzugang,
     createEndmontageLosesumme:createEndmontageLosesumme
+    createDistributionAuftragsbearbeitung:createDistributionAuftragsbearbeitung
     }
