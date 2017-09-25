@@ -1,5 +1,6 @@
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
 var schemaFunctions = require("../helpers/setterFunctions");
+var test = require("../helpers/test");
 
 module.exports = {
 
@@ -9,7 +10,7 @@ module.exports = {
 
     function createOrder(req, res) {
         //normalerweise Werte aus req laden (Body-Parser)
-        schemaFunctions.createLieferantenBestellung(1,"W",200,1,"schwarz");
+        schemaFunctions.createLieferantenBestellung(1,"Julian",200,1,"schwarz");
         schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);
         schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiß",23,22,10,10);
         schemaFunctions.createBeschaffungsKPI(1,1);
@@ -46,11 +47,5 @@ module.exports = {
 
     function getOrder(req, res) {
         //normalerweise ID aus req
-
-        lieferantenBestellung.findOne({'nr': '200'}, function (err, data) {
-            if(err) return handleError(err)
-            res.send("Bestellung von "  + data.von + ", ausgestellt in Takt " + data.austellungstakt+
-            ", Artikel: " + data.artikel);
-        });
 
     }
