@@ -1,0 +1,18 @@
+extends profile
+
+
+block profilecontent
+
+       - var currentTable = "#{currentTable}"
+
+       if(currentTable =="endmontage.jade")
+            include endmontage.jade
+
+        else if (currentTable == "vorfertigung.jade")
+            include vorfertigung.jade
+
+        else if (currentTable == "kunde.jade")
+            include kunde.jade
+
+
+
