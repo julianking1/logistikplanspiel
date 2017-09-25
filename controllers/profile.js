@@ -1,15 +1,12 @@
 var helperMailbox = require('../controllers/mailbox.js');
 var checklisten = require('../models/checklisten');
+var urlSplitter = require('../helpers/urlSplitter');
 
 module.exports = {
 
     rendering: function (req, res, next) {
 
-        //get parameter
-        var url = req.url;
-        var helper = url.split("?");
-        helper = helper[0];
-        var urlparts = helper.split("/");
+        var urlparts = urlSplitter.splitUrl(req);
 
         //render according to parameter of tools
         switch(String(urlparts[2])){
@@ -36,12 +33,7 @@ module.exports = {
     //default
     renderingDefault: function (req, res, next) {
 
-
-        var url = req.url;
-        var helper = url.split("?");
-        helper = helper[0];
-        var urlparts = helper.split("/");
-
+        var urlparts =  urlSplitter.splitUrl(req);
         var data = checklisten.getDataArray(urlparts[1]);
         res.render('checklist', {paramProfil: urlparts[1], paramTool: 'checklist', rows: data});
     }

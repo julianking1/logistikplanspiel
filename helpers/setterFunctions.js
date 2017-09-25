@@ -18,6 +18,7 @@ var vorfertigungLagerbestand = require("../models/vorfertigungLagerbestand");
 var vorfertigungLagersumme = require("../models/vorfertigungLagersumme");
 var vorfertigungLagerzugang = require("../models/vorfertigungLagerzugang");
 var vorfertigungLosesumme = require("../models/vorfertigungLosesumme");
+var dis= require("../models/distributionAuftragsbearbeitung");
 
 
 //schreibt Datensatz mit allen obligatorischen Attributen in DB
@@ -138,9 +139,9 @@ function createVorfertigungLagerbestand(spielID,periode,takt,artikel,anzahl) {
 }
 
 
-function createVorfertigungLagersumme(spielID,periode,artikel,bestand, zugang) {
+function createVorfertigungLagersumme(spielID,periode,bestandschwarz,zugangschwarz, bestandweiss, zugangweiss) {
     var data = new vorfertigungLagersumme({spielID:spielID,periode:periode,
-        artikel:artikel,bestand:bestand,zugang:zugang});
+        bestandschwarz:bestandschwarz,zugangschwarz:zugangschwarz,bestandweiss:bestandweiss, zugangweiss:zugangweiss});
     data.save(function (err) {
         if (err) throw err;
         console.log("Saved: Vorfertigung Lagersumme");
@@ -165,6 +166,62 @@ function createVorfertigungLosesumme(spielID,periode,artikel,summe) {
     });
 }
 
+function createEndmontageFertigungsplan(spielID,periode,takt,artikel,sollmenge) {
+    var data = new endmontageFertigungsplan({spielID:spielID,periode:periode,
+        takt:takt,artikel:artikel,sollmenge:sollmenge});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Endmontage Fertigungsplan");
+    });
+}
+
+function createEndmontageKPI(spielID,periode) {
+    var data = new endmontageKPI({spielID:spielID,periode:periode});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Endmontage KPI");
+    });
+}
+
+function createEndmontageLagerbestand(spielID,periode,takt,artikel,anzahl) {
+    var data = new endmontageLagerbestand({spielID:spielID,periode:periode,
+        takt:takt,artikel:artikel,anzahl:anzahl});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Endmontage Lagerbestand");
+    });
+}
+
+function createEndmontageLagersumme(spielID,periode,artikel,bestandschwarz, bestandweiss,bestandrot,
+                                    zugangschwarz, zugangweiss, zugangrot) {
+    var data = new endmontageLagersumme({spielID:spielID,periode:periode,artikel:artikel,
+        bestandschwarz:bestandschwarz,bestandweiss:bestandweiss, bestandrot:bestandrot,
+        zugangschwarz:zugangschwarz,zugangweiss:zugangweiss,zugangrot:zugangrot});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Endmontage Lagersumme");
+    });
+}
+
+function createEndmontageLagerzugang(spielID,periode,takt,artikel,zugang) {
+    var data = new endmontageLagerzugang({spielID:spielID,periode:periode,
+        takt:takt,artikel:artikel,zugang:zugang});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Endmontage Lagerzugang");
+    });
+}
+
+function createEndmontageLosesumme(spielID,periode,artikel,summe) {
+    var data = new endmontageLosesumme({spielID:spielID,periode:periode,
+        artikel:artikel,summe:summe});
+    data.save(function (err) {
+        if (err) throw err;
+        console.log("Saved: Endmontage Losesumme");
+    });
+}
+
+
 
 
 //Getter um jedes Dokument anhand (Kombinatio) eindeutiger bekannter Attribute aus DB zu holen
@@ -185,5 +242,11 @@ module.exports = {
     createVorfertigungLagerbestand:createVorfertigungLagerbestand,
     createVorfertigungLagersumme:createVorfertigungLagersumme,
     createVorfertigungLosesumme:createVorfertigungLosesumme,
-    createVorfertigungsKPI:createVorfertigungsKPI
-}
+    createVorfertigungsKPI:createVorfertigungsKPI,
+    createEndmontageFertigungsplan:createEndmontageFertigungsplan,
+    createEndmontageKPI:createEndmontageKPI,
+    createEndmontageLagerbestand:createEndmontageLagerbestand,
+    createEndmontageLagersumme:createEndmontageLagersumme,
+    createEndmontageLagerzugang:createEndmontageLagerzugang,
+    createEndmontageLosesumme:createEndmontageLosesumme
+    }
