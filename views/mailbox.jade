@@ -3,3 +3,21 @@ extends profile
 block profilecontent
     p Mailbox: #{content}
 
+    
+
+    form(method='POST' action='/mailbox')
+        div.form-group
+            label(for='von') Von:
+            input#von.form-control(type='text', placeholder='z.B. Kunde'  name='von')
+        div.form-group
+            label(for='nr') Nr:
+            input#nr.form-control(type='number', placeholder='z.B. 1' name='nr')
+        div.form-group
+            label(for='ausstellungstakt') Ausstellungstakt:
+            input#ausstellungstakt.form-control(type='number', placeholder='z.B Takt 4' name='ausstellungstakt')
+        div.form-group
+            label(for='artikel') Artikel:
+            input#artikel.form-control(type='text', placeholder='z.B schwarz' name='artikel')
+
+        button.btn.btn-primary(type='submit') Speichern
+

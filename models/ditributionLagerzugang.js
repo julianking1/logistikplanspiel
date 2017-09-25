@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-var elagerbestandSchema = new Schema({
+var dclagerzugangSchema = new Schema({
         spielID: {type: Number, required: true},
         periode: {type: Number, required: true},
         takt:    {type: Number, required: true},
@@ -12,4 +12,4 @@ var elagerbestandSchema = new Schema({
     }
 );
 
-module.exports = mongoose.model('endmontageLagerbestand', elagerbestandSchema);
+module.exports = mongoose.model('distributionLagerzugang', dclagerzugangSchema);
