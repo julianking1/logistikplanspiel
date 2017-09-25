@@ -3,6 +3,7 @@ extends layout
 block content
 
     link(rel='stylesheet', href='/stylesheets/profile.css')
+    script(src='/javascripts/jstest.js')
 
     h2 Arbeitsplatz: Beschaffung
     h3 Periode: 1  Takt: 2  Phase: B
@@ -22,6 +23,9 @@ block content
             button(class="buttonTools") Checkliste
 
 
+    button(class= "buttonTools" onclick= "jsTest(''+ '#{paramProfil}', ''+ '#{paramTool}')") JavaScript Test
+
+
     div(class="inhalt")
 
         block profilecontent
@@ -32,8 +36,5 @@ block content
         form(action= '/fertig')
             button(class="done") Fertig
 
-
-    //p Übergabe Profil-Parameter: #{paramProfil}
-    //P Übergabe Tool-Parameter: #{paramTool}
 
 

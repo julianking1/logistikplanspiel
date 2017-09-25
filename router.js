@@ -54,6 +54,12 @@ router.post(/.*mailbox$/, function(req, res) {
         //res.send("ok"); //später weg bzw render
 });
 
+router.post(/.*post$/, function(req, res) {
+    console.log('hier');
+    res.send('ok');
+    //res.send("ok"); //später weg bzw render
+});
+
 
 
 module.exports = router;
