@@ -3,16 +3,33 @@ extends profile
 
 block profilecontent
 
-       - var currentTable = "#{currentTable}"
+            #{currentTable}
 
-       if(currentTable =="endmontage.jade")
-            include endmontage.jade
+            if (currentTable == "lieferant.jade")
+                include lieferant.jade
 
-        else if (currentTable == "vorfertigung.jade")
-            include vorfertigung.jade
+            else if (currentTable == "beschaffung.jade")
+                include beschaffung.jade
 
-        else if (currentTable == "kunde.jade")
-            include kunde.jade
+            else if (currentTable == "vorfertigung.jade")
+                include vorfertigung.jade
+
+            else if(currentTable =="endmontage.jade")
+                include endmontage.jade
+
+            else if (currentTable == "lagerLieferDispo.jade")
+                include lagerLieferDispo.jade
+
+            else if (currentTable == "distribution.jade")
+                include distribution.jade
+
+            else if (currentTable == "orderManagement.jade")
+                include orderManagement.jade
+
+            else if (currentTable == "kunde.jade")
+                include kunde.jade
+
+
 
 
 
