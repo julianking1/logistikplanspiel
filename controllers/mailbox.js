@@ -1,4 +1,6 @@
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
+var schemaFunctions = require("../helpers/schemaFunctions.js");
+
 
 
 module.exports ={
@@ -10,6 +12,11 @@ module.exports ={
             res.render('mailbox', {paramProfil: p1, paramTool: p2, content: data});
         });
 
+    },
+
+    createContent: function(){
+        schemaFunctions.createLieferantenBestellung(2,"Lieferant",109,2,"schwarz");
     }
+
 
 };
