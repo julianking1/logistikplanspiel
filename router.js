@@ -9,6 +9,7 @@ var profilechoice = require('./controllers/profilechoice.js');
 var profile = require('./controllers/profile.js');
 var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
+var bodyparser
 
 //Startseite
 router.get('/', profilechoice.rendering); // localhost:3000/
@@ -31,7 +32,6 @@ router.get(/.*checklist$/, profile.rendering); // /localhost:3000/*profil*/check
 
 
 
-
 //controler fehlt noch für spielleiter
 router.get('/spielleiter', function(req, res, next) {
     res.render('gameadmin');
@@ -50,7 +50,8 @@ router.get('/janatests', function(req, res, next) {
 
 //Formular Tests
 router.post(/.*mailbox$/, function(req, res, next) {
-        res.send(ok);
+
+        res.send("ok");
 });
 
 
