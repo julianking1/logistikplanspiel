@@ -2,7 +2,6 @@
 *  Für die generierung des Inhaltes sind die controler verantwortlich.
 *  Momentan sind noch keine Controler mit URLs verknüpft.
 * */
-
 var express = require('express');
 var router = express.Router();
 var profilechoice = require('./controllers/profilechoice.js');
@@ -10,6 +9,7 @@ var profile = require('./controllers/profile.js');
 var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
 var formularSpeichern = require('./controllers/formularSpeichern');
+var bodyParser = require('body-parser');
 
 //Startseite
 router.get('/', profilechoice.rendering); // localhost:3000/
@@ -55,7 +55,9 @@ router.post(/.*mailbox$/, function(req, res) {
 });
 
 router.post(/.*post$/, function(req, res) {
-    console.log('hier');
+    var request = bodyParser.json(req);
+
+    console.log(req);
     res.send('ok');
     //res.send("ok"); //später weg bzw render
 });
