@@ -28,16 +28,26 @@ module.exports = {
         schemaFunctions.createEndmontageLagersumme(1,1,"weiß",2,2,2,2,2,2);
         schemaFunctions.createEndmontageLagerzugang(1,1,1,"weiß",30);
         schemaFunctions.createEndmontageLosesumme(1,1,"weis",30);
+        schemaFunctions.createLieferabwicklungBestelluebersicht(1,1,1,102,5,3,3);
     }
 
 
     function getOrder(req, res) {
         //normalerweise ID aus req
         var lagerbestandEingangspruefung = getterFunctions.getlagerbestandEingangspruefung(1, 1, 1, "schwarz", function(data){
-          console.log(data);
+          console.log(data.artikel);
+        });
+        var lagerbestandvorEingangspruefung = getterFunctions.getlagerbestandvorEingangspruefung(1, 1, 1, "schwarz", function(data){
+            console.log(data.artikel);
+        });
+        var lieferabwicklungBestelluebersicht = getterFunctions.getlieferabwicklungBestelluebersicht(1, 1, 1, 102, function(data){
+            console.log(data.menge);
+        });
+        var lieferabwicklungKPI = getterFunctions.getlieferabwicklungKPI(1, 1, function(data){
+            console.log(data.menge);
         });
 
-console.log("außen"+lagerbestandEingangspruefung);
+
 
 
         /*lieferantenBestellung.findOne({'nr': '200'}, function (err, data) {
