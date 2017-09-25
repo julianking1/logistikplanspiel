@@ -1,5 +1,5 @@
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
-var schemaFunctions = require("../helpers/schemaFunctions.js");
+var setterFunctions = require("../helpers/setterFunctions.js");
 
 
 
@@ -15,7 +15,7 @@ module.exports ={
     },
 
     createContent: function(){
-        schemaFunctions.createLieferantenBestellung(2,"Lieferant",109,2,"schwarz");
+        setterFunctions.createLieferantenBestellung(2,"Lieferant",109,2,"schwarz");
     }
 
 
