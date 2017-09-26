@@ -80,6 +80,32 @@ function addBestaetigterTaktToLieferantenBestellung(spielid, nr, bestaetigterTak
     })
 }
 
+function addWunschterminToLieferabwicklungBestelluebersicht(spielid, periode,takt,bestellnr, wunschtermin) {
+
+    getterFunctions.getlieferabwicklungBestelluebersicht(spielid,periode,takt,bestellnr,function (data) {
+        var objectID =  data._id;
+        lieferantenBestellung.update({_id:objectID},{$set: {wunschtermin: wunschtermin}} , function (err) {
+            if (err) return handleError()
+            console.log("Objekt " + objectID + " aktualisiert")
+        })
+    })
+}
+
+function addBestaetigterterminToLieferabwicklungBestelluebersicht(spielid, periode,takt,bestellnr, bestaetigtertermin) {
+
+    getterFunctions.getlieferabwicklungBestelluebersicht(spielid,periode,takt,bestellnr,function (data) {
+        var objectID =  data._id;
+        lieferantenBestellung.update({_id:objectID},{$set: {bestaetigtertermin: bestaetigtertermin}} , function (err) {
+            if (err) return handleError()
+            console.log("Objekt " + objectID + " aktualisiert")
+        })
+    })
+}
+
+
+
+
+
 
 module.exports = {
     addErhalteneMengeToLieferantenBestellung:addErhalteneMengeToLieferantenBestellung
