@@ -1,8 +1,10 @@
+extends profile
+
 block profilecontent
 
     link(rel='stylesheet', href='/stylesheets/checklist.css')
     ol
         each item in rows
             li= item
-                input(type = "checkbox")
+            input(type = "checkbox")
 

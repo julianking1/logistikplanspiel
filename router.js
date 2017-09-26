@@ -52,6 +52,14 @@ router.post(/.*mailbox$/, function(req, res) {
         //res.send("ok"); //später weg bzw render
 });
 
+//loadContent
+router.post(/.*loadContent$/, function(req, res) {
+
+    profile.rendering(req, res);
+
+    //res.render(req.body.toolParam);
+});
+
 //POST Test
 router.post(/.*post$/, function(req, res) {
 
