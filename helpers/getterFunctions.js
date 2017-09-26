@@ -134,8 +134,8 @@ function getlagerbestandvorEingangspruefung(spielID, periode, takt, artikel, cal
     });
 };
 
-function getlieferabwicklungBestelluebersicht(spielID, periode, takt, bestellnr, callback){
-    lieferabwicklungBestelluebersicht.findOne({'spielID': spielID, 'periode': periode, 'takt':takt, 'bestellnr': bestellnr}, function(err, data){
+function getlieferabwicklungBestelluebersicht(spielID, periode, bestellnr, callback){
+    lieferabwicklungBestelluebersicht.findOne({'spielID': spielID, 'periode': periode, 'bestellnr': bestellnr}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });

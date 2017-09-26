@@ -296,9 +296,8 @@ function createKundeUmsatz(spielID,periode,takt,artikel) {
     });
 }
 
-function createLieferabwicklungBestelluebersicht(spielID,periode,takt,bestellnr,menge) {
-    var data = new lieferabwicklungBestelluebersicht({spielID:spielID,periode:periode,
-        takt:takt,bestellnr:bestellnr,menge:menge});
+function createLieferabwicklungBestelluebersicht(spielID,periode,bestellnr,menge) {
+    var data = new lieferabwicklungBestelluebersicht({spielID:spielID,periode:periode,bestellnr:bestellnr,menge:menge});
     data.save(function (err) {
         if (err) throw err;
         console.log("Saved: Lieferabwicklung Bestellübersicht");
