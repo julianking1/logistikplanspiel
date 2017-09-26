@@ -1,0 +1,38 @@
+block profilecontent
+
+    link(rel='stylesheet', href='/stylesheets/table.css')
+
+    table(class="tabelle")
+        caption Lagerzugang
+            thead
+                tr
+                    th Takt
+                    th schwarz
+                    th weiß
+                    th rot
+            tbody
+                - var versuch = [{takt: '1', white: 'w1', black: 'b1', red: 'r1'},{takt: '2', white: 'w2', black: 'b2', red: 'r2'}, {takt: '3', white: 'w3', black: 'b3', red: 'r3'}, {takt: '4', white: 'w4', black: 'b4', red: 'r4'}];
+                each item in versuch
+                    tr
+                        td= item.takt
+                        td= item.white
+                        td= item.black
+                        td= item.red
+
+                        td(class="button")
+                            button bearbeiten
+                tr
+                    td(class="Leerzeile")
+
+                tr
+                    td(class="input")
+                        input(id="takt" placeholder="Takt")
+                    td(class="input")
+                        input(id="schwarz" placeholder="Menge")
+                    td(class="input")
+                        input(id="weiß" placeholder="Menge")
+                    td(class="input")
+                        input(id="rot" placeholder="Menge")
+
+                    td(class="button")
+                        button speichern
