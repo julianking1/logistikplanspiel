@@ -40,6 +40,7 @@ router.get('/spielleiter', function(req, res, next) {
 //Test Urls
 router.get('/dbtestCreate', dbtest.createOrder); // /localhost:3000/dbtestCreate
 router.get('/dbtestGet', dbtest.getOrder); // /localhost:3000/dbtestGet
+router.get('/dbtestUpdate', dbtest.updateOrder); // /localhost:3000/dbtestGet
 router.get('/createlagerBestand',lagerbestandRechner.createLagerbestandEingangspruefung); // /localhost:3000/createlagerBestand
 router.get('/sumBestand', lagerbestandRechner.sumbestandschwarz); // /localhost:3000/sumBestand
 

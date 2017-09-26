@@ -5,12 +5,13 @@ var getterFunctions = require("../helpers/getterFunctions");
 module.exports = {
 
     createOrder: createOrder,
-    getOrder: getOrder
+    getOrder: getOrder,
+    updateOrder: updateOrder
 }
 
     function createOrder(req, res) {
         //normalerweise Werte aus req laden (Body-Parser)
-        schemaFunctions.createLieferantenBestellung(1,"W",200,1,"schwarz",1,1);
+        schemaFunctions.createLieferantenBestellung(1,200,1,"schwarz",1,1);
         schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);
         schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiß",23,22,10,10);
         schemaFunctions.createBeschaffungsKPI(1,1);
@@ -58,5 +59,10 @@ module.exports = {
             res.send("Bestellung von "  + data.von + ", ausgestellt in Takt " + data.austellungstakt+
             ", Artikel: " + data.artikel);
         });*/
+
+    }
+
+    function updateOrder(req, res) {
+        
 
     }
