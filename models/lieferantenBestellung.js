@@ -5,12 +5,11 @@ mongoose.Promise = global.Promise;
 
 var lbSchema = new Schema({
     spielID:            {type: Number, required:true},
-    von:                {type: String, required:true},
     nr:                 {type: Number, required:true},
     austellungstakt:    {type: Number, required:true},
     artikel:            {type: String, required:true},
-    wunschmenge:        {type: Number, required:false},
-    wunschtakt:         {type: Number, required:false},
+    wunschmenge:        {type: Number, required:true},
+    wunschtakt:         {type: Number, required:true},
     bestaetigteMenge:   {type: Number, required:false},
     bestaetigterTakt:   {type: Number, required:false},
     erhalteneMenge:     {type: Number, required:false},

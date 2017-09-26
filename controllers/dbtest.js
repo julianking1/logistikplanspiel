@@ -1,16 +1,18 @@
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
 var schemaFunctions = require("../helpers/setterFunctions");
 var getterFunctions = require("../helpers/getterFunctions");
+var updateFunctions = require("../helpers/updateFunctions");
 
 module.exports = {
 
     createOrder: createOrder,
-    getOrder: getOrder
+    getOrder: getOrder,
+    updateOrder: updateOrder
 }
 
     function createOrder(req, res) {
         //normalerweise Werte aus req laden (Body-Parser)
-        schemaFunctions.createLieferantenBestellung(1,"W",200,1,"schwarz");
+        schemaFunctions.createLieferantenBestellung(1,1,1,"schwarz",1,1);
         schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);
         schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiß",23,22,10,10);
         schemaFunctions.createBeschaffungsKPI(1,1);
@@ -28,16 +30,52 @@ module.exports = {
         schemaFunctions.createEndmontageLagersumme(1,1,"weiß",2,2,2,2,2,2);
         schemaFunctions.createEndmontageLagerzugang(1,1,1,"weiß",30);
         schemaFunctions.createEndmontageLosesumme(1,1,"weis",30);
+        schemaFunctions.createLieferabwicklungBestelluebersicht(1,1,1,102,5,3,3);
     }
 
 
     function getOrder(req, res) {
         //normalerweise ID aus req
         var lagerbestandEingangspruefung = getterFunctions.getlagerbestandEingangspruefung(1, 1, 1, "schwarz", function(data){
-          console.log(data);
+          console.log(data.artikel);
+        });
+        var lagerbestandvorEingangspruefung = getterFunctions.getlagerbestandvorEingangspruefung(1, 1, 1, "schwarz", function(data){
+            console.log(data.artikel);
+        });
+        var lieferabwicklungBestelluebersicht = getterFunctions.getlieferabwicklungBestelluebersicht(1, 1, 1, 102, function(data){
+            console.log(data.menge);
+        });
+        var lieferabwicklungKPI = getterFunctions.getlieferabwicklungKPI(1, 1, function(data){
+            console.log(data.lagerwert);
+        });
+        var lieferantenBestellung = getterFunctions.getlieferantenBestellung(1, 200, function(data){
+            console.log(data.nr);
         });
 
-console.log("außen"+lagerbestandEingangspruefung);
+        getterFunctions.getlieferabwicklungLagerbestand(1, 1, 2, "weiss", function(data){
+            console.log(data.anzahl);
+        });
+
+        getterFunctions.getlieferabwicklungLagerzugang(1, 1, 2, "weiss", function(data){
+            console.log(data.zugang);
+        });
+
+        getterFunctions.getlieferabwicklungSummen(1, 1, function(data){
+            console.log(data.bestellungen);
+        });
+
+        getterFunctions.getorderManagement(1, 1, 1, "schwarz", function(data){
+            console.log(data.anfangsbestand);
+        });
+
+        getterFunctions.getvorfertigungFertigungsplan(1, 1, 1, "schwarz", function(data){
+            console.log(data.sollmenge);
+        });
+
+        getterFunctions.getvorfertigungKPI(1, 1, function(data){
+            console.log(data.ruestkosten);
+        });
+
 
 
         /*lieferantenBestellung.findOne({'nr': '200'}, function (err, data) {
@@ -45,5 +83,11 @@ console.log("außen"+lagerbestandEingangspruefung);
             res.send("Bestellung von "  + data.von + ", ausgestellt in Takt " + data.austellungstakt+
             ", Artikel: " + data.artikel);
         });*/
+
+    }
+
+    function updateOrder(req, res) {
+
+        updateFunctions.addErhalteneMengeToLieferantenBestellung(1,200,5000);
 
     }
