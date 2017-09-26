@@ -74,4 +74,9 @@ router.post(/.*post$/, function(req, res) {
 
 });
 
+//Startseite Test
+router.get('/startseite', function(req, res, next) {
+    res.render('startseite');
+});
+
 module.exports = router;
