@@ -20,22 +20,24 @@ block profilecontent
                         td= item.white
                         td= item.black
                         td= item.red
-                        td
-                            button(id="bearbeiten") bearbeiten
-                tr(id="Leerzeile")
-                    td
+
+                        td(class="button")
+                            button bearbeiten
+                tr
+                    td(id="Leerzeile")
 
                 tr
-                    td
+                    td(class="input")
                         input(id="takt" placeholder="Takt")
-                    td
+                    td(class="input")
                         input(id="schwarz" placeholder="schwarz")
-                    td
+                    td(class="input")
                         input(id="weiß" placeholder="weiß")
-                    td
+                    td(class="input")
                         input(id="rot" placeholder="rot")
-                    td
-                        button(id="speichern") speichern
+
+                    td(class="button")
+                        button speichern
 
 
 

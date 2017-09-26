@@ -48,3 +48,11 @@ input{
     height:30px;
     border: none;
 }
+
+.button{
+    border:none;
+}
+
+.input{
+    border: none;
+}
