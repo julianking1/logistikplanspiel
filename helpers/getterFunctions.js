@@ -64,11 +64,11 @@ function getlieferabwicklungKPI(spielID, periode, callback){
     });
 };
 
-function getlieferantenBestellung(spielID, nr) {
-    lieferantenBestellung.findOne({'spielID': spielID, 'nr': nr},function(err, data){
+function getlieferantenBestellung(spielID, nr, callback) {
+    lieferantenBestellung.findOne({'spielID': spielID, 'nr': nr}, function(err, data){
         if (err) return handleError (err);
         return callback(data);
-});
+    });
 };
 
 module.exports = {

@@ -48,7 +48,7 @@ module.exports = {
         var lieferabwicklungKPI = getterFunctions.getlieferabwicklungKPI(1, 1, function(data){
             console.log(data.lagerwert);
         });
-        var lieferantenBestellung = getterFunctions.getlieferantenBestellung(1, 1, function(data){
+        var lieferantenBestellung = getterFunctions.getlieferantenBestellung(1, 200, function(data){
             console.log(data.nr);
         });
 
