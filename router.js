@@ -10,6 +10,7 @@ var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
 var formularSpeichern = require('./controllers/formularSpeichern');
 var getterFunctions = require('./helpers/getterFunctions');
+var setterFunctions = require('./helpers/setterFunctions');
 
 //Startseite
 router.get('/', profilechoice.rendering); // localhost:3000/
@@ -54,9 +55,22 @@ router.post(/.*mailbox$/, function(req, res) {
 //POST Test
 router.post(/.*post$/, function(req, res) {
 
-    //getterFunctions.getlieferantenBestellung(123, 3, function (data) {
-        //res.render('janatest', {pParam: req.body.profilParam, tParam: req.body.toolParam, dbParam: data.artikel});
-    //});
+    setterFunctions.createLieferantenBestellung(123,3,1,'schwarz',3,12);
+    getterFunctions.getlieferantenBestellung(123, 3, function (data) {
+
+        var versuch = [
+
+            {takt: '1', white: 'w1', black: 'b1', red: 'r1'},
+            {takt: '2', white: 'w2', black: 'b2', red: 'r2'},
+            {takt: '3', white: 'w3', black: 'b3', red: 'r3'},
+            {takt: '4', white: 'w4', black: 'b4', red: 'r4'},
+            {takt: '5', white: 'w5', black: 'b5', red: 'r5'},
+            {takt: '6', white: 'w6', black: 'b6', red: 'r6'}
+
+        ];
+
+        res.render('janatest', {pParam: req.body.profilParam, tParam: req.body.toolParam, dbParam: data.artikel, testDaten: versuch});
+    });
 
 });
 
