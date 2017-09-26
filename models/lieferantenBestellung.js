@@ -5,7 +5,6 @@ mongoose.Promise = global.Promise;
 
 var lbSchema = new Schema({
     spielID:            {type: Number, required:true},
-    von:                {type: String, required:true},
     nr:                 {type: Number, required:true},
     austellungstakt:    {type: Number, required:true},
     artikel:            {type: String, required:true},

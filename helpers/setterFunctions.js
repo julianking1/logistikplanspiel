@@ -35,7 +35,7 @@ var orderManagement= require("../models/orderManagement");
 
 //schreibt Datensatz mit allen obligatorischen Attributen in DB
 function createLieferantenBestellung(spielID, von, nr, ausstellungstakt, artikel, wunschtakt, wunschmenge) {
-    var data = new lieferantenBestellung({spielID:spielID,von:von,
+    var data = new lieferantenBestellung({spielID:spielID,
         nr:nr, austellungstakt:ausstellungstakt, artikel:artikel, wunschtakt:wunschtakt,
         wunschmenge:wunschmenge});
     data.save(function (err) {

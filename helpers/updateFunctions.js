@@ -36,6 +36,9 @@ var lieferabwicklungKPI= require("../models/lieferabwicklungKPI");
 var orderManagement= require("../models/orderManagement");
 
 
-function updateLieferantenBestellung() {
-
+function addErhalteneMengeToLieferantenBestellung(ObjectID,menge) {
+    lieferantenBestellung.update({_id:ObjectID},{$set: {erhalteneMenge: menge}} , function (err) {
+        if (err) return handleError()
+        console.log("Objekt " + ObjectID + " aktualisiert")
+    })
 }

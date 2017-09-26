@@ -10,7 +10,7 @@ module.exports = {
 
     function createOrder(req, res) {
         //normalerweise Werte aus req laden (Body-Parser)
-        schemaFunctions.createLieferantenBestellung(1,"W",200,1,"schwarz",1,1);
+        schemaFunctions.createLieferantenBestellung(1,200,1,"schwarz",1,1);
         schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);
         schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiß",23,22,10,10);
         schemaFunctions.createBeschaffungsKPI(1,1);
