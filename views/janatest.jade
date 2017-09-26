@@ -4,3 +4,21 @@ p Dies ist ein sehr wichtiger Test von Jana.
 p profil: #{pParam}
 p tool: #{tParam}
 p db inhalt: #{dbParam}
+p ______________________________
+
+table(id="Lagerbestand")
+  caption Lagerbestand
+        thead
+            tr
+                th Takt
+                th schwarz
+                th weiß
+                th rot
+        tbody
+
+            each item in testDaten
+                tr
+                    td= item.takt
+                    td= item.white
+                    td= item.black
+                    td= item.red
