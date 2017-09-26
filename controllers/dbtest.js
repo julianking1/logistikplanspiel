@@ -5,7 +5,8 @@ var getterFunctions = require("../helpers/getterFunctions");
 module.exports = {
 
     createOrder: createOrder,
-    getOrder: getOrder
+    getOrder: getOrder,
+    updateOrder: updateOrder
 }
 
     function createOrder(req, res) {
@@ -55,5 +56,10 @@ module.exports = {
             res.send("Bestellung von "  + data.von + ", ausgestellt in Takt " + data.austellungstakt+
             ", Artikel: " + data.artikel);
         });*/
+
+    }
+
+    function updateOrder(req, res) {
+        
 
     }
