@@ -33,8 +33,18 @@ var lieferabwicklungLagerzugang= require("../models/lieferabwicklungLagerzugang"
 var lieferabwicklungSummen= require("../models/lieferabwicklungSummen");
 var orderManagement= require("../models/orderManagement");
 
+function getalllieferabwicklungLagerzugang(callback) {
+        lieferabwicklungLagerzugang.find({}, function (err, data) {
+            if (err) return handleError(err);
+            return callback(data);
+    });
+}
+
+
+
+
 function getbeschaffungBestandswert(spielID, periode, callback) {
-    lagerbestandEingangspruefung.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
+    beschaffungsBestandswert.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
         if(err) return handleError (err);
         return callback(data);
     });
@@ -159,6 +169,7 @@ function getvorfertigungLosesumme(spielID, periode, artikel, callback) {
 
 
 module.exports = {
+    getalllieferabwicklungLagerzugang:getalllieferabwicklungLagerzugang,
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,
     getlieferabwicklungBestelluebersicht: getlieferabwicklungBestelluebersicht,

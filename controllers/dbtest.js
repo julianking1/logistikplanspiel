@@ -7,7 +7,8 @@ module.exports = {
 
     createOrder: createOrder,
     getOrder: getOrder,
-    updateOrder: updateOrder
+    updateOrder: updateOrder,
+    getAll : getAll
 }
 
     function createOrder(req, res) {
@@ -41,9 +42,22 @@ module.exports = {
 
     }
 
+    function  getAll(req, res){
+    getterFunctions.getalllieferabwicklungLagerzugang(function(data){
+        console.log(data);
+    });
+    }
+
 
     function getOrder(req, res) {
         //normalerweise ID aus req
+
+        getterFunctions.getbeschaffungBestandswert(1, 1, function(data){
+            console.log(data.anzahl);
+        });
+
+
+
         var lagerbestandEingangspruefung = getterFunctions.getlagerbestandEingangspruefung(1, 1, 1, "schwarz", function(data){
           console.log(data.artikel);
         });
