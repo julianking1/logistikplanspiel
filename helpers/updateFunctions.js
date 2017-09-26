@@ -47,6 +47,39 @@ function addErhalteneMengeToLieferantenBestellung(spielid, nr, erhalteneMenge) {
     })
 }
 
+function addErhaltenerTaktToLieferantenBestellung(spielid, nr, erhaltenerTakt) {
+
+    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
+        var objectID =  data._id;
+        lieferantenBestellung.update({_id:objectID},{$set: {erhaltenerTakt: erhaltenerTakt}} , function (err) {
+            if (err) return handleError()
+            console.log("Objekt " + objectID + " aktualisiert")
+        })
+    })
+}
+
+function addBestaetigteMengeToLieferantenBestellung(spielid, nr, bestaetigteMenge) {
+
+    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
+        var objectID =  data._id;
+        lieferantenBestellung.update({_id:objectID},{$set: {bestaetigteMenge: bestaetigteMenge}} , function (err) {
+            if (err) return handleError()
+            console.log("Objekt " + objectID + " aktualisiert")
+        })
+    })
+}
+
+function addBestaetigterTaktToLieferantenBestellung(spielid, nr, bestaetigterTakt) {
+
+    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
+        var objectID =  data._id;
+        lieferantenBestellung.update({_id:objectID},{$set: {bestaetigterTakt: bestaetigterTakt}} , function (err) {
+            if (err) return handleError()
+            console.log("Objekt " + objectID + " aktualisiert")
+        })
+    })
+}
+
 
 module.exports = {
     addErhalteneMengeToLieferantenBestellung:addErhalteneMengeToLieferantenBestellung
