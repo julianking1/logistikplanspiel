@@ -36,71 +36,19 @@ var lieferabwicklungKPI= require("../models/lieferabwicklungKPI");
 var orderManagement= require("../models/orderManagement");
 
 
-function addErhalteneMengeToLieferantenBestellung(spielid, nr, erhalteneMenge) {
+function updateLieferantenBestellung(objectID, attribut, neuerWert) {
+        lieferantenBestellung.findById(objectID, function (err, tank) {
+            if(err) throw err;
+            var nAttribut = "" + attribut + "";
 
-    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {erhalteneMenge: erhalteneMenge}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
+            tank.set(attribut,neuerWert);
+            tank.save(function (err,updatedTank) {
+                if (err) throw err;
+            })
         })
-    })
 }
 
-function addErhaltenerTaktToLieferantenBestellung(spielid, nr, erhaltenerTakt) {
 
-    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {erhaltenerTakt: erhaltenerTakt}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
-        })
-    })
-}
-
-function addBestaetigteMengeToLieferantenBestellung(spielid, nr, bestaetigteMenge) {
-
-    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {bestaetigteMenge: bestaetigteMenge}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
-        })
-    })
-}
-
-function addBestaetigterTaktToLieferantenBestellung(spielid, nr, bestaetigterTakt) {
-
-    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {bestaetigterTakt: bestaetigterTakt}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
-        })
-    })
-}
-
-function addWunschterminToLieferabwicklungBestelluebersicht(spielid, periode,takt,bestellnr, wunschtermin) {
-
-    getterFunctions.getlieferabwicklungBestelluebersicht(spielid,periode,takt,bestellnr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {wunschtermin: wunschtermin}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
-        })
-    })
-}
-
-function addBestaetigterterminToLieferabwicklungBestelluebersicht(spielid, periode,takt,bestellnr, bestaetigtertermin) {
-
-    getterFunctions.getlieferabwicklungBestelluebersicht(spielid,periode,takt,bestellnr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {bestaetigtertermin: bestaetigtertermin}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
-        })
-    })
-}
 
 
 
@@ -108,5 +56,5 @@ function addBestaetigterterminToLieferabwicklungBestelluebersicht(spielid, perio
 
 
 module.exports = {
-    addErhalteneMengeToLieferantenBestellung:addErhalteneMengeToLieferantenBestellung
+    updateLieferantenBestellung:updateLieferantenBestellung
 }
