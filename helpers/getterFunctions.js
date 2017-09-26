@@ -116,6 +116,8 @@ function getdistributionSummen(spielID, periode, callback){
 
 
 
+
+
 // liefert den letzten Bestand aus der Eingangsprüfung zurück
 function getlagerbestandEingangspruefung(spielID, periode, takt, artikel, callback) {
     lagerbestandEingangspruefung.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {

@@ -12,7 +12,7 @@ var omSchema = new Schema({
         zugang: {type: Number, required: false},
         abgangsnr: {type: Number, required: false},
         abgang: {type: Number, required: false},
-        endbestand: {type: Number, required: true}
+        endbestand: {type: Number, required: false}
     }
 );
 

@@ -248,11 +248,11 @@ function createDistributionLagerbestand(spielID,periode,takt,artikel,anzahl) {
     });
 }
 
-function createDistributionSummen(spielID,periode,artikel,bestandschwarz, bestandweiss,
-                                    zugangschwarz, zugangweiss) {
-    var data = new distributionSummen({spielID:spielID,periode:periode,artikel:artikel,
+function createDistributionSummen(spielID,periode,bestandschwarz, bestandweiss,
+                                    zugangschwarz, zugangweiss, anzauftraege) {
+    var data = new distributionSummen({spielID:spielID,periode:periode,
         bestandschwarz:bestandschwarz,bestandweiss:bestandweiss, zugangschwarz:zugangschwarz,
-        zugangweiss:zugangweiss});
+        zugangweiss:zugangweiss, anzauftraege:anzauftraege});
     data.save(function (err) {
         if (err) throw err;
         console.log("Saved: Distribution Summen");
@@ -342,9 +342,9 @@ function createLieferabwicklungSummen(spielID,periode,bestellungen,bestandschwar
     });
 }
 
-function createOrderManagement(spielID,periode,takt,artikel,anfangsbestand,endbestand) {
+function createOrderManagement(spielID,periode,takt,artikel,anfangsbestand) {
     var data = new orderManagement({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,anfangsbestand:anfangsbestand,endbestand:endbestand});
+        takt:takt,artikel:artikel,anfangsbestand:anfangsbestand});
     data.save(function (err) {
         if (err) throw err;
         console.log("Saved: Order Management");
