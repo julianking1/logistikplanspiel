@@ -5,32 +5,14 @@ td {
     border-collapse: separate;
 }
 
-#Lagerzugang{
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: inline-block;
 
-}
-
-#LagerUndUnterwegsbestand{
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: inline-block;
-
-}
-
-#BestellübersichtArtikel{
+.tabelle{
 
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     display: inline-block;
-
 }
 
 
@@ -41,7 +23,6 @@ caption{
 
 input{
     width:70px;
-
 }
 
 #Leerzeile{
