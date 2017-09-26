@@ -341,9 +341,9 @@ function createLieferabwicklungSummen(spielID,periode,bestellungen,bestandschwar
     });
 }
 
-function createOrderManagement(spielID,periode,takt,artikel,anfangsbestand) {
+function createOrderManagement(spielID,periode,takt,artikel) {
     var data = new orderManagement({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,anfangsbestand:anfangsbestand});
+        takt:takt,artikel:artikel});
     data.save(function (err) {
         if (err) throw err;
         console.log("Saved: Order Management");
