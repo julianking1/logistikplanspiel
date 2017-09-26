@@ -55,8 +55,8 @@ router.post(/.*mailbox$/, function(req, res) {
 //POST Test
 router.post(/.*post$/, function(req, res) {
 
-    setterFunctions.createLieferantenBestellung(123,3,1,'schwarz',3,12);
-    getterFunctions.getlieferantenBestellung(123, 3, function (data) {
+    //setterFunctions.createLieferantenBestellung(124,3,1,'schwarz',3,12);
+    getterFunctions.getlieferantenBestellung(1, 1, function (data) {
 
         var versuch = [
 
