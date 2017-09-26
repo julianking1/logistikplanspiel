@@ -69,7 +69,11 @@ module.exports = {
         });
 
         getterFunctions.getvorfertigungFertigungsplan(1, 1, 1, "schwarz", function(data){
-            console.log(data.anfangsbestand);
+            console.log(data.sollmenge);
+        });
+
+        getterFunctions.getvorfertigungKPI(1, 1, function(data){
+            console.log(data.ruestkosten);
         });
 
 
