@@ -1,6 +1,7 @@
 var helperMailbox = require('../controllers/mailbox.js');
 var checklisten = require('../models/checklisten');
 var urlSplitter = require('../helpers/urlSplitter');
+var tabellen = require('../controllers/tabellen.js');
 
 module.exports = {
 
@@ -8,6 +9,7 @@ module.exports = {
 
         var profile = req.body.profilParam;
         var type = req.body.typeParam;
+        var contentNum = req.body.contentNum;
 
 
         switch(type) {
@@ -21,10 +23,7 @@ module.exports = {
                 break;
 
             case 'tabellen':
-
-                if (profile= 'kunde')
-                    var tabellenart = 'kunde.jade';
-                res.render('tables', {paramProfil: profile, paramTool: type, currentTable: tabellenart});
+                tabellen.getContent(res, profile, contentNum);
                 break;
 
             case 'info':

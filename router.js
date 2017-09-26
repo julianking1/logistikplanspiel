@@ -10,33 +10,34 @@ var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
 var formularSpeichern = require('./controllers/formularSpeichern');
 var getterFunctions = require('./helpers/getterFunctions');
-var setterFunctions = require('./helpers/setterFunctions');
+
+//Einstieg
+router.get('/', profilechoice.rendering);                       // localhost:3000/
+
+//Profile
+router.get('/kunde', profile.renderingDefault);                 // localhost:3000/kunde
+router.get('/lieferant', profile.renderingDefault);             // localhost:3000/lieferant
+router.get('/beschaffung', profile.renderingDefault);           // /localhost:3000/beschaffung
+router.get('/teilelager', profile.renderingDefault);            // /localhost:3000/teilelager
+router.get('/endmontage', profile.renderingDefault);            // /localhost:3000/endmontage
+router.get('/lieferabwicklung', profile.renderingDefault);      // /localhost:3000/lieferabwicklung
+router.get('/distributioncenter', profile.renderingDefault);    // /localhost:3000/distributioncenter
+router.get('/ordermanagement', profile.renderingDefault);       // /localhost:3000/ordermanagement
+
+//Inhalt laden (nach profil und type)
+router.post(/.*loadContent$/, function(req, res) {
+    profile.rendering(req, res);
+});
 
 //Startseite
-router.get('/', profilechoice.rendering); // localhost:3000/
+router.get('/startseite', function(req, res, next) {
+    res.render('startseite');
+});
 
-//Profilansichten
-router.get('/kunde', profile.renderingDefault); // localhost:3000/kunde
-router.get('/lieferant', profile.renderingDefault); // localhost:3000/lieferant
-router.get('/beschaffung', profile.renderingDefault); // /localhost:3000/beschaffung
-router.get('/teilelager', profile.renderingDefault); // /localhost:3000/teilelager
-router.get('/endmontage', profile.renderingDefault); // /localhost:3000/endmontage
-router.get('/lieferabwicklung', profile.renderingDefault); // /localhost:3000/lieferabwicklung
-router.get('/distributioncenter', profile.renderingDefault); // /localhost:3000/distributioncenter
-router.get('/ordermanagement', profile.renderingDefault); // /localhost:3000/ordermanagement
-
-//Toolbox in Profil-Ansicht
-router.get(/.*mailbox$/, profile.rendering); // /localhost:3000/*profil*/mailbox
-router.get(/.*tabellen$/, profile.rendering); // /localhost:3000/*profil*/tabellen
-router.get(/.*info$/, profile.rendering); // /localhost:3000/*profil*/info
-router.get(/.*checklist$/, profile.rendering); // /localhost:3000/*profil*/checklist
-
-
-
-//controler fehlt noch für spielleiter
+//cSpielleiter
 router.get('/spielleiter', function(req, res, next) {
     res.render('gameadmin');
-}); // /localhost:3000/spielleiter
+});
 
 //Test Urls
 router.get('/dbtestCreate', dbtest.createOrder); // /localhost:3000/dbtestCreate
@@ -44,20 +45,16 @@ router.get('/dbtestGet', dbtest.getOrder); // /localhost:3000/dbtestGet
 router.get('/dbtestUpdate', dbtest.updateOrder); // /localhost:3000/dbtestGet
 router.get('/createlagerBestand',lagerbestandRechner.createLagerbestandEingangspruefung); // /localhost:3000/createlagerBestand
 router.get('/sumBestand', lagerbestandRechner.sumbestandschwarz); // /localhost:3000/sumBestand
+router.get('/dbtestgetAll', dbtest.getAll); // /localhost:3000/sumBestand
+
+
+
+
 
 
 //Formular Tests
 router.post(/.*mailbox$/, function(req, res) {
         formularSpeichern.saveInDB(req, res);
-        //res.send("ok"); //später weg bzw render
-});
-
-//loadContent
-router.post(/.*loadContent$/, function(req, res) {
-
-    profile.rendering(req, res);
-
-    //res.render(req.body.toolParam);
 });
 
 //POST Test
@@ -80,11 +77,6 @@ router.post(/.*post$/, function(req, res) {
         res.render('janatest', {pParam: req.body.profilParam, tParam: req.body.toolParam, dbParam: data.artikel, testDaten: versuch});
     });
 
-});
-
-//Startseite Test
-router.get('/startseite', function(req, res, next) {
-    res.render('startseite');
 });
 
 module.exports = router;

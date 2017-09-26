@@ -1,4 +1,8 @@
-function loadContent(profil, type) {
+function loadContent(profil, type, contentNum) {
+
+    if (contentNum === undefined){
+        contentNum = 1;
+    }
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/loadContent', true);
@@ -16,7 +20,9 @@ function loadContent(profil, type) {
     };
     xhr.send(JSON.stringify({
         profilParam: profil,
-        typeParam: type
+        typeParam: type,
+        contentNum: contentNum
     }));
+
 
 }
