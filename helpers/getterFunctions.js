@@ -58,11 +58,33 @@ function getlieferabwicklungBestelluebersicht(spielID, periode, takt, bestellnr,
 };
 
 function getlieferabwicklungKPI(spielID, periode, callback){
-    lieferabwicklungBestelluebersicht.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
+    lieferabwicklungKPI.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
 };
+
+function getlieferabwicklungLagerbestand(spielID, periode, takt, artikel, callback){
+    lieferabwicklungLagerbestand.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getlieferabwicklungLagerzugang(spielID, periode, takt, artikel, callback){
+    lieferabwicklungLagerzugang.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getlieferabwicklungSummen(spielID, periode, takt, artikel, callback){
+    lieferabwicklungLagerzugang.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
 
 function getlieferantenBestellung(spielID, nr, callback) {
     lieferantenBestellung.findOne({'spielID': spielID, 'nr': nr}, function(err, data){
@@ -76,5 +98,7 @@ module.exports = {
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,
     getlieferabwicklungBestelluebersicht: getlieferabwicklungBestelluebersicht,
     getlieferabwicklungKPI: getlieferabwicklungKPI,
-    getlieferantenBestellung:getlieferantenBestellung
+    getlieferantenBestellung:getlieferantenBestellung,
+    getlieferabwicklungLagerbestand: getlieferabwicklungLagerbestand,
+    getlieferabwicklungLagerzugang: getlieferabwicklungLagerzugang
 }

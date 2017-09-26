@@ -51,6 +51,15 @@ module.exports = {
             console.log(data.nr);
         });
 
+        getterFunctions.getlieferabwicklungLagerbestand(1, 1, 2, "weiss", function(data){
+            console.log(data.anzahl);
+        });
+
+        getterFunctions.getlieferabwicklungLagerzugang(1, 1, 2, "weiss", function(data){
+            console.log(data.zugang);
+        });
+
+
 
 
 
