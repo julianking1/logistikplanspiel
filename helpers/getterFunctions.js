@@ -33,6 +33,50 @@ var lieferabwicklungLagerzugang= require("../models/lieferabwicklungLagerzugang"
 var lieferabwicklungSummen= require("../models/lieferabwicklungSummen");
 var orderManagement= require("../models/orderManagement");
 
+function getalllieferabwicklungLagerzugang(callback) {
+        lieferabwicklungLagerzugang.find({}, function (err, data) {
+            if (err) return handleError(err);
+            return callback(data);
+    });
+}
+
+
+
+
+function getbeschaffungBestandswert(spielID, periode, callback) {
+    beschaffungsBestandswert.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+
+};
+
+function getbeschaffungBestelluebersicht(spielID, periode, takt, artikel, callback) {
+    beschaffungBestelluebersicht.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+
+};
+
+
+function getbeschaffungKPI(spielID, periode, callback) {
+    beschaffungKPI.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+
+};
+
+function getbeschaffungsUebersicht(spielID, periode, callback) {
+    beschaffungsUebersicht.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+
+};
+
+
 
 // liefert den letzten Bestand aus der Eingangsprüfung zurück
 function getlagerbestandEingangspruefung(spielID, periode, takt, artikel, callback) {
@@ -134,8 +178,17 @@ function getvorfertigungLagerzugang(spielID, periode, takt, artikel, callback) {
     });
 };
 
+function getvorfertigungLosesumme(spielID, periode, artikel, callback) {
+    vorfertigungLosesumme.findOne({'spielID': spielID, 'periode': periode, 'artikel':artikel}, function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+    });
+};
+
+
 
 module.exports = {
+    getalllieferabwicklungLagerzugang:getalllieferabwicklungLagerzugang,
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,
     getlieferabwicklungBestelluebersicht: getlieferabwicklungBestelluebersicht,
@@ -150,4 +203,9 @@ module.exports = {
     getvorfertigungLagerbestand: getvorfertigungLagerbestand,
     getvorfertigungLagersumme: getvorfertigungLagersumme,
     getvorfertigungLagerzugang: getvorfertigungLagerzugang,
+    getvorfertigungLosesumme: getvorfertigungLosesumme,
+    getbeschaffungBestandswert: getbeschaffungBestandswert,
+    getbeschaffungBestelluebersicht: getbeschaffungBestelluebersicht,
+    getbeschaffungKPI: getbeschaffungKPI,
+    getbeschaffungsUebersicht: getbeschaffungsUebersicht
 }

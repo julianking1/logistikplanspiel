@@ -7,14 +7,15 @@ module.exports = {
 
     createOrder: createOrder,
     getOrder: getOrder,
-    updateOrder: updateOrder
+    updateOrder: updateOrder,
+    getAll : getAll
 }
 
     function createOrder(req, res) {
         //normalerweise Werte aus req laden (Body-Parser)
         schemaFunctions.createLieferantenBestellung(1,2000,1,"schwarz",1,1);
         schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);
-        schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiß",23,22,10,10);
+        schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiss",23,22,10,10);
         schemaFunctions.createBeschaffungsKPI(1,1);
         schemaFunctions.createBeschaffungsUebersicht(1,1,1,1,1);
         schemaFunctions.createLagerbestandEingangspruefung(1,1,1,"schwarz",20);
@@ -41,9 +42,32 @@ module.exports = {
 
     }
 
+    function  getAll(req, res){
+    getterFunctions.getalllieferabwicklungLagerzugang(function(data){
+        console.log(data);
+    });
+    }
+
 
     function getOrder(req, res) {
         //normalerweise ID aus req
+
+        getterFunctions.getbeschaffungBestandswert(1, 1, function(data){
+            console.log(data.inSummeschwarz);
+        });
+
+        getterFunctions.getbeschaffungBestelluebersicht(1, 1, 1, "weiss", function(data){
+            console.log(data.bestellnr);
+        });
+
+        getterFunctions.getbeschaffungKPI(1, 1, function(data){
+            console.log(data.lagerwert);
+        });
+
+        getterFunctions.getbeschaffungsUebersicht(1, 1, function(data){
+            console.log(data.summebestSchwarz);
+        });
+
         var lagerbestandEingangspruefung = getterFunctions.getlagerbestandEingangspruefung(1, 1, 1, "schwarz", function(data){
           console.log(data.artikel);
         });
@@ -96,6 +120,10 @@ module.exports = {
             console.log(data.anzahl);
         });
 
+        getterFunctions.getvorfertigungLosesumme(1, 1, "schwarz", function(data){
+            console.log(data.summe);
+        });
+
 
 
         /*lieferantenBestellung.findOne({'nr': '200'}, function (err, data) {
@@ -107,6 +135,8 @@ module.exports = {
     }
 
     function updateOrder(req, res) {
+        app.set('spielID', 1);
+        res.send(app.get('spielID'));
         getterFunctions.getlieferantenBestellung(1,2000,function (data) {
             updateFunctions.updateLieferantenBestellung(data._id,"bestaetigterTakt", 1);
         })
