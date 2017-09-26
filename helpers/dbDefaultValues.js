@@ -144,7 +144,11 @@ function generateDefaultValuesInDB (){
     setterFunctions.createEndmontageFertigungsplan(app.spielID,1,10,"weiß",0);
 
     //Lieferabwicklung Bestellübersicht
-    setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,1);
+    //setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,1);
+
+    //Order Management
+    setterFunctions.createOrderManagement();
+
 
 
 }
