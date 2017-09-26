@@ -60,6 +60,6 @@ module.exports = {
     }
 
     function updateOrder(req, res) {
-        
+
 
     }
