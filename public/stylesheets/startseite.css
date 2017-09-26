@@ -9,17 +9,17 @@ body{
 
 .button{
 
-    width: 170px;
-    height: 100px;
+    width: 200px;
+    height: 120px;
     background-color: skyblue;
     color: black;
     text-align: center;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: bold;
     padding: 20px 20px 20px 20px;
 
     margin-bottom: 20px;
     margin-top: 20px;
     border-radius: 20%;
-    
+
 }
