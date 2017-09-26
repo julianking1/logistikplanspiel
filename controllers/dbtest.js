@@ -12,7 +12,7 @@ module.exports = {
 
     function createOrder(req, res) {
         //normalerweise Werte aus req laden (Body-Parser)
-        schemaFunctions.createLieferantenBestellung(1,1,1,"schwarz",1,1);
+        schemaFunctions.createLieferantenBestellung(1,2000,1,"schwarz",1,1);
         schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);
         schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiß",23,22,10,10);
         schemaFunctions.createBeschaffungsKPI(1,1);
@@ -87,7 +87,7 @@ module.exports = {
     }
 
     function updateOrder(req, res) {
-
-        updateFunctions.addErhalteneMengeToLieferantenBestellung(1,200,5000);
-
+        getterFunctions.getlieferantenBestellung(1,2000,function (data) {
+            updateFunctions.updateLieferantenBestellung(data._id,"bestaetigterTakt", 1);
+        })
     }
