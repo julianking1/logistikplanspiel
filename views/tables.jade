@@ -3,18 +3,20 @@ extends profile
 
 block profilecontent
 
+
             #{currentTable}
+
 
             if (currentTable == "lieferant.jade")
                 include lieferant.jade
 
             else if (currentTable == "beschaffung.jade")
                 include beschaffung.jade
-
+        
             else if (currentTable == "vorfertigung.jade")
                 include vorfertigung.jade
 
-            else if(currentTable =="endmontage.jade")
+            else if(currentTable == "endmontage.jade")
                 include endmontage.jade
 
             else if (currentTable == "lagerLieferDispo.jade")
@@ -28,7 +30,6 @@ block profilecontent
 
             else if (currentTable == "kunde.jade")
                 include kunde.jade
-
 
 
 

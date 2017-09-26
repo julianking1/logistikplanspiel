@@ -9,7 +9,7 @@ var profile = require('./controllers/profile.js');
 var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
 var formularSpeichern = require('./controllers/formularSpeichern');
-var bodyParser = require('body-parser');
+var getterFunctions = require('./helpers/getterFunctions');
 
 //Startseite
 router.get('/', profilechoice.rendering); // localhost:3000/
@@ -44,10 +44,6 @@ router.get('/dbtestUpdate', dbtest.updateOrder); // /localhost:3000/dbtestGet
 router.get('/createlagerBestand',lagerbestandRechner.createLagerbestandEingangspruefung); // /localhost:3000/createlagerBestand
 router.get('/sumBestand', lagerbestandRechner.sumbestandschwarz); // /localhost:3000/sumBestand
 
-//Router Tests
-router.get('/janatests', function(req, res, next) {
-    res.render('janatests');
-}); // /localhost:3000/janatests
 
 //Formular Tests
 router.post(/.*mailbox$/, function(req, res) {
@@ -55,14 +51,13 @@ router.post(/.*mailbox$/, function(req, res) {
         //res.send("ok"); //später weg bzw render
 });
 
+//POST Test
 router.post(/.*post$/, function(req, res) {
-    var request = bodyParser.json(req);
 
-    console.log(req);
-    res.send('ok');
-    //res.send("ok"); //später weg bzw render
+    //getterFunctions.getlieferantenBestellung(123, 3, function (data) {
+        //res.render('janatest', {pParam: req.body.profilParam, tParam: req.body.toolParam, dbParam: data.artikel});
+    //});
+
 });
-
-
 
 module.exports = router;
