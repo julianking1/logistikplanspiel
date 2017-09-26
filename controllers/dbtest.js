@@ -1,6 +1,7 @@
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
 var schemaFunctions = require("../helpers/setterFunctions");
 var getterFunctions = require("../helpers/getterFunctions");
+var updateFunctions = require("../helpers/updateFunctions");
 
 module.exports = {
 
@@ -64,5 +65,6 @@ module.exports = {
 
     function updateOrder(req, res) {
 
+        updateFunctions.addErhalteneMengeToLieferantenBestellung(getterFunctions.getlieferantenBestellung(1,1))
 
     }
