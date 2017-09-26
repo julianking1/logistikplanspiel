@@ -158,6 +158,27 @@ function getendmontageLosesumme(spielID, periode, artikel, callback) {
 
 };
 
+function getkundeAuftragsuebersicht(spielID, periode, bestellnr, callback) {
+    kundeAuftragsuebersicht.findOne({'spielID':spielID, 'periode': periode, 'bestellnr': bestellnr}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getkundeKPI(spielID, periode, callback) {
+    kundeKPI.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getkundeUmsatz(spielID, periode, takt, artikel, callback) {
+    kundeUmsatz.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel':artikel}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
 
 
 
@@ -288,6 +309,9 @@ module.exports = {
     getendmontageLagersumme: getendmontageLagersumme,
     getendmontageLagerzugang: getendmontageLagerzugang,
     getendmontageLosesumme: getendmontageLosesumme,
+    getkundeAuftragsuebersicht: getkundeAuftragsuebersicht,
+    getkundeKPI: getkundeKPI,
+    getkundeUmsatz: getkundeUmsatz,
     getalllieferabwicklungLagerzugang:getalllieferabwicklungLagerzugang,
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,

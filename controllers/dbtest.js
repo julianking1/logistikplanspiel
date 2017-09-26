@@ -31,12 +31,15 @@ module.exports = {
         schemaFunctions.createVorfertigungLagersumme(1,1,1,1,1,1);
         schemaFunctions.createVorfertigungLosesumme(1,1,"schwarz", 50);
         schemaFunctions.createVorfertigungsKPI(1, 1, 20, 40, 60);
-        schemaFunctions.createEndmontageFertigungsplan(1,1,1,"weiß",20);
+        schemaFunctions.createEndmontageFertigungsplan(1,1,1,"weiss",20);
         schemaFunctions.createEndmontageKPI(1,1);
-        schemaFunctions.createEndmontageLagerbestand(1,1,1,"weiß",20);
+        schemaFunctions.createEndmontageLagerbestand(1,1,1,"schwarz",20);
         schemaFunctions.createEndmontageLagersumme(1,1,2,2,2,2,2,2);
-        schemaFunctions.createEndmontageLagerzugang(1,1,1,"weiß",30);
-        schemaFunctions.createEndmontageLosesumme(1,1,"weis",30);
+        schemaFunctions.createEndmontageLagerzugang(1,1,1,"schwarz",30);
+        schemaFunctions.createEndmontageLosesumme(1,1,"weiss",30);
+        schemaFunctions.createKundeAuftragsuebersicht(1,1,1,"schwarz",20,3,3,4,4);
+        schemaFunctions.createKundeKPI(1,1,50,30,20,80,80);
+        schemaFunctions.createKundeUmsatz(1,1,1,"schwarz");
         schemaFunctions.createLieferabwicklungBestelluebersicht(1,1,102,5,3,3);
         schemaFunctions.createLieferabwicklungKPI(1,1,30,20,30);
         schemaFunctions.createLieferabwicklungLagerbestand(1,1,2,"weiss",18);
@@ -86,7 +89,7 @@ module.exports = {
             console.log(data.anzahl);
         });
 
-        getterFunctions.getdistributionLagerzugang(1, 1, 1, "schwarz" ,function(data){
+        getterFunctions.getdistributionLagerzugang(1, 1, 1, "weiss" ,function(data){
             console.log(data.zugang);
         });
 
@@ -94,7 +97,7 @@ module.exports = {
             console.log(data.anzauftraege);
         });
 
-        getterFunctions.getendmontageFertigungsplan(1, 1, 1, "schwarz", function(data){
+        getterFunctions.getendmontageFertigungsplan(1, 1, 1, "weiss", function(data){
             console.log(data.sollmenge);
         });
 
@@ -114,9 +117,22 @@ module.exports = {
             console.log(data.zugang);
         });
 
-        getterFunctions.getendmontageLosesumme(1, 1, 1, "schwarz", function(data){
+        getterFunctions.getendmontageLosesumme(1, 1, "weiss", function(data){
             console.log(data.summe);
         });
+
+        getterFunctions.getkundeAuftragsuebersicht(1, 1, 1, function(data){
+            console.log(data.menge);
+        });
+
+        getterFunctions.getkundeKPI(1, 1, function(data){
+            console.log(data.lieferverzugskosten);
+        });
+
+        getterFunctions.getkundeAuftragsuebersicht(1, 1, 1, function(data){
+            console.log(data.anzahl);
+        });
+
 
 
 
@@ -126,7 +142,7 @@ module.exports = {
         var lagerbestandvorEingangspruefung = getterFunctions.getlagerbestandvorEingangspruefung(1, 1, 1, "schwarz", function(data){
             console.log(data.artikel);
         });
-        var lieferabwicklungBestelluebersicht = getterFunctions.getlieferabwicklungBestelluebersicht(1, 1, 1, 102, function(data){
+        var lieferabwicklungBestelluebersicht = getterFunctions.getlieferabwicklungBestelluebersicht(1, 1, 102, function(data){
             console.log(data.menge);
         });
         var lieferabwicklungKPI = getterFunctions.getlieferabwicklungKPI(1, 1, function(data){

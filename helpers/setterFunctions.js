@@ -268,10 +268,9 @@ function createDistributionLagerzugang(spielID,periode,takt,artikel,zugang) {
     });
 }
 
-function createKundeAuftragsuebersicht(spielID,periode,takt,bestellnr,artikel,menge,wunschtermin,
+function createKundeAuftragsuebersicht(spielID,periode,bestellnr,artikel,menge,wunschtermin,
                                        bestaetigertermin,erhalttermin) {
-    var data = new kundeAuftragsuebersicht({spielID:spielID,periode:periode,
-        takt:takt,bestellnr:bestellnr,artikel:artikel,menge:menge,wunschtermin:wunschtermin,
+    var data = new kundeAuftragsuebersicht({spielID:spielID,periode:periode,bestellnr:bestellnr,artikel:artikel,menge:menge,wunschtermin:wunschtermin,
         bestaetigtertermin:bestaetigertermin,erhalttermin:erhalttermin});
     data.save(function (err) {
         if (err) throw err;
@@ -279,8 +278,8 @@ function createKundeAuftragsuebersicht(spielID,periode,takt,bestellnr,artikel,me
     });
 }
 
-function createKundeKPI(spielID,periode) {
-    var data = new kundeKPI({spielID:spielID,periode:periode});
+function createKundeKPI(spielID,periode, umsatz, lieferverzugskosten, transportkosten, lieferfaehigkeit, liefertreue) {
+    var data = new kundeKPI({spielID:spielID,periode:periode, umsatz:umsatz, transportkosten:transportkosten, lieferfaehigkeit:lieferfaehigkeit, liefertreue:liefertreue});
     data.save(function (err) {
         if (err) throw err;
         console.log("Saved: Kunde KPI");
