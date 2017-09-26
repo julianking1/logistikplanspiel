@@ -2,111 +2,186 @@ var getterFunctions = require("../helpers/getterFunctions");
 
 //alle Schemas importieren
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
-// KEINE OPTIONALEN PARAMETER  var beschaffungsBestandswert = require("../models/beschaffungBestandswert");
-// KEINE OPTIONALEN PARAMETER  var beschaffungBestelluebersicht = require("../models/beschaffungBestelluebersicht");
 var beschaffungKPI = require("../models/beschaffungKPI");
-// KEINE OPTIONALEN PARAMETER  var beschaffungsUebersicht = require("../models/beschaffungsUebersicht");
 var endmontageFertigungsplan = require("../models/endmontageFertigungsplan");
 var endmontageKPI = require("../models/endmontageKPI");
-// KEINE OPTIONALEN PARAMETER  var endmontageLagerbestand = require("../models/endmontageLagerbestand");
-// KEINE OPTIONALEN PARAMETER  var endmontageLagersumme = require("../models/endmontageLagersumme");
-// KEINE OPTIONALEN PARAMETER  var endmontageLagerzugang = require("../models/endmontageLagerzugang");
-// KEINE OPTIONALEN PARAMETER  var endmontageLosesumme = require("../models/endmontageLosesumme");
-// KEINE OPTIONALEN PARAMETER  var lagerbestandEingangspruefung = require("../models/lagerbestandEingangspruefung");
-// KEINE OPTIONALEN PARAMETER  var lagerbestandvorEingangspruefung = require("../models/lagerbestandvorEingangspruefung");
 var vorfertigungFertigungsplan = require("../models/vorfertigungFertigungsplan");
 var vorfertigungKPI = require("../models/vorfertigungKPI");
-// KEINE OPTIONALEN PARAMETER  var vorfertigungLagerbestand = require("../models/vorfertigungLagerbestand");
-// KEINE OPTIONALEN PARAMETER  var vorfertigungLagersumme = require("../models/vorfertigungLagersumme");
-// KEINE OPTIONALEN PARAMETER  var vorfertigungLagerzugang = require("../models/vorfertigungLagerzugang");
-// KEINE OPTIONALEN PARAMETER  var vorfertigungLosesumme = require("../models/vorfertigungLosesumme");
-// KEINE OPTIONALEN PARAMETER  var distributionAuftragsbearbeitung= require("../models/distributionAuftragsbearbeitung");
 var distributionKPI = require("../models/distributionKPI");
-// KEINE OPTIONALEN PARAMETER  var distributionLagerbestand= require("../models/distributionLagerbestand");
 var distributionSummen= require("../models/distributionSummen");
-// KEINE OPTIONALEN PARAMETER  var distributionLagerzugang =require("../models/distributionLagerzugang");
 var kundeAuftragsuebersicht= require("../models/kundeAuftragsuebersicht");
 var kundeKPI= require("../models/kundeKPI");
 var kundeUmsatz= require("../models/kundeUmsatz");
 var lieferabwicklungBestelluebersicht= require("../models/lieferabwicklungBestelluebersicht");
 var lieferabwicklungKPI= require("../models/lieferabwicklungKPI");
-// KEINE OPTIONALEN PARAMETER  var lieferabwicklungLagerbestand= require("../models/lieferabwicklungLagerbestand");
-// KEINE OPTIONALEN PARAMETER  var lieferabwicklungLagerzugang= require("../models/lieferabwicklungLagerzugang");
-// KEINE OPTIONALEN PARAMETER  var lieferabwicklungSummen= require("../models/lieferabwicklungSummen");
 var orderManagement= require("../models/orderManagement");
 
 
-function addErhalteneMengeToLieferantenBestellung(spielid, nr, erhalteneMenge) {
+function updateLieferantenBestellung(objectID, attribut, neuerWert) {
+        lieferantenBestellung.findById(objectID, function (err, data) {
+            if(err) throw err;
+            data.set(attribut,neuerWert);
+            data.save(function (err,updatedData) {
+                if (err) throw err;
+            })
+        })
+}
 
-    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {erhalteneMenge: erhalteneMenge}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
+function updateBeschaffungKPI(objectID, attribut, neuerWert) {
+    beschaffungKPI.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
         })
     })
 }
 
-function addErhaltenerTaktToLieferantenBestellung(spielid, nr, erhaltenerTakt) {
-
-    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {erhaltenerTakt: erhaltenerTakt}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
+function updateEndmontageFertigungsplan(objectID, attribut, neuerWert) {
+    endmontageFertigungsplan.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
         })
     })
 }
 
-function addBestaetigteMengeToLieferantenBestellung(spielid, nr, bestaetigteMenge) {
-
-    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {bestaetigteMenge: bestaetigteMenge}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
+function updateEndmontageKPI(objectID, attribut, neuerWert) {
+    endmontageKPI.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
         })
     })
 }
 
-function addBestaetigterTaktToLieferantenBestellung(spielid, nr, bestaetigterTakt) {
-
-    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {bestaetigterTakt: bestaetigterTakt}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
+function updateVorfertigungKPI(objectID, attribut, neuerWert) {
+    vorfertigungKPI.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
         })
     })
 }
 
-function addWunschterminToLieferabwicklungBestelluebersicht(spielid, periode,takt,bestellnr, wunschtermin) {
-
-    getterFunctions.getlieferabwicklungBestelluebersicht(spielid,periode,takt,bestellnr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {wunschtermin: wunschtermin}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
+function updateVorfertigungFertigungsplan(objectID, attribut, neuerWert) {
+    vorfertigungFertigungsplan.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
         })
     })
 }
 
-function addBestaetigterterminToLieferabwicklungBestelluebersicht(spielid, periode,takt,bestellnr, bestaetigtertermin) {
-
-    getterFunctions.getlieferabwicklungBestelluebersicht(spielid,periode,takt,bestellnr,function (data) {
-        var objectID =  data._id;
-        lieferantenBestellung.update({_id:objectID},{$set: {bestaetigtertermin: bestaetigtertermin}} , function (err) {
-            if (err) return handleError()
-            console.log("Objekt " + objectID + " aktualisiert")
+function updateDistributionSummen(objectID, attribut, neuerWert) {
+    distributionSummen.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
         })
     })
 }
 
+function updateDistributionKPI(objectID, attribut, neuerWert) {
+    distributionKPI.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
+        })
+    })
+}
 
+function updateKundeUmsatz(objectID, attribut, neuerWert) {
+    kundeUmsatz.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
+        })
+    })
+}
 
+function updateKundeKPI(objectID, attribut, neuerWert) {
+    kundeKPI.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
+        })
+    })
+}
 
+function updateKundeAuftragsuebersicht(objectID, attribut, neuerWert) {
+    kundeAuftragsuebersicht.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
+        })
+    })
+}
+
+function vorfertigungKPI(objectID, attribut, neuerWert) {
+    vorfertigungKPI.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
+        })
+    })
+}
+
+function lieferabwicklungKPI(objectID, attribut, neuerWert) {
+    lieferabwicklungKPI.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
+        })
+    })
+}
+
+function updateLieferabwicklungBestelluebersicht(objectID, attribut, neuerWert) {
+    lieferabwicklungBestelluebersicht.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
+        })
+    })
+}
+
+function updateOrderManagement(objectID, attribut, neuerWert) {
+    orderManagement.findById(objectID, function (err, data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err,updatedData) {
+            if (err) throw err;
+        })
+    })
+}
 
 
 module.exports = {
-    addErhalteneMengeToLieferantenBestellung:addErhalteneMengeToLieferantenBestellung
+    updateLieferantenBestellung:updateLieferantenBestellung,
+    updateBeschaffungKPI:updateBeschaffungKPI,
+    updateDistributionKPI:updateDistributionKPI,
+    updateDistributionSummen:updateDistributionSummen,
+    updateEndmontageFertigungsplan:updateEndmontageFertigungsplan,
+    updateEndmontageKPI:updateEndmontageKPI,
+    updateKundeAuftragsuebersicht:updateKundeAuftragsuebersicht,
+    updateKundeKPI:updateKundeKPI,
+    updateKundeUmsatz:updateKundeUmsatz,
+    updateLieferabwicklungBestelluebersicht:updateLieferabwicklungBestelluebersicht,
+    updateOrderManagement:updateOrderManagement,
+    updateVorfertigungFertigungsplan:updateVorfertigungFertigungsplan,
+    updateVorfertigungKPI:updateVorfertigungKPI
 }
+
+
