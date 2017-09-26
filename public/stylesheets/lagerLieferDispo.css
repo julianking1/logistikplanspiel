@@ -41,4 +41,10 @@ caption{
 
 input{
     width:70px;
+
+}
+
+#Leerzeile{
+    height:30px;
+    border: none;
 }
