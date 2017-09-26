@@ -36,10 +36,14 @@ var lieferabwicklungKPI= require("../models/lieferabwicklungKPI");
 var orderManagement= require("../models/orderManagement");
 
 
-function addErhalteneMengeToLieferantenBestellung(ObjectID,menge) {
-    lieferantenBestellung.update({_id:ObjectID},{$set: {erhalteneMenge: menge}} , function (err) {
-        if (err) return handleError()
-        console.log("Objekt " + ObjectID + " aktualisiert")
+function addErhalteneMengeToLieferantenBestellung(spielid, nr, erhalteneMenge) {
+
+    getterFunctions.getlieferantenBestellung(spielid,nr,function (data) {
+        var objectID =  data._id;
+        lieferantenBestellung.update({_id:objectID},{$set: {erhalteneMenge: erhalteneMenge}} , function (err) {
+            if (err) return handleError()
+            console.log("Objekt " + objectID + " aktualisiert")
+        })
     })
 }
 
