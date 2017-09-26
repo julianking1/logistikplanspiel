@@ -67,23 +67,11 @@ function createBeschaffungsBestandswert(spielID,periode,inSummeschwarz,inSummewe
 //Methoden zum Ergänzen der optionalen Attribute
 
 
-
 function createBeschaffungsBestelluebersicht(spielID,periode,takt,artikel,bestellnr,
-                                        menge,plantakt,isttakt) {
+                                             menge,plantakt) {
     var data = new beschaffungBestelluebersicht({spielID:spielID,periode:periode,
         takt:takt,artikel:artikel,bestellnr:bestellnr,
-        menge:menge,plantakt:plantakt,isttakt:isttakt});
-    data.save(function (err) {
-        if (err) throw err;
-        console.log("Saved: beschaffungsBestelluebersicht");
-    });
-}
-
-function createBeschaffungsBestelluebersicht(spielID,periode,takt,artikel,bestellnr,
-                                             menge,plantakt,isttakt) {
-    var data = new beschaffungBestelluebersicht({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,bestellnr:bestellnr,
-        menge:menge,plantakt:plantakt,isttakt:isttakt});
+        menge:menge,plantakt:plantakt});
     data.save(function (err) {
         if (err) throw err;
         console.log("Saved: beschaffungsBestelluebersicht");
