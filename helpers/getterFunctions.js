@@ -64,9 +64,17 @@ function getlieferabwicklungKPI(spielID, periode, callback){
     });
 };
 
+function getlieferantenBestellung(spielID, nr) {
+    lieferantenBestellung.findOne({'spielID': spielID, 'nr': nr},function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+});
+};
+
 module.exports = {
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,
     getlieferabwicklungBestelluebersicht: getlieferabwicklungBestelluebersicht,
-    getlieferabwicklungKPI: getlieferabwicklungKPI
+    getlieferabwicklungKPI: getlieferabwicklungKPI,
+    getlieferantenBestellung:getlieferantenBestellung
 }
