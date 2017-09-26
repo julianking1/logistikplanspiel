@@ -14,6 +14,11 @@ block profilecontent
 
 
 
+                extends profile
+                block profilecontent
+
+                #{currentTable}
+
                 if (currentTable == "lieferant.jade")
                     include lieferant.jade
 

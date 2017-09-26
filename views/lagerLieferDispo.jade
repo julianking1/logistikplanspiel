@@ -1,10 +1,8 @@
-extends profile
-
 block profilecontent
 
-    link(rel='stylesheet', href='/stylesheets/lagerLieferDispo.css')
+    link(rel='stylesheet', href='/stylesheets/table.css')
 
-    table(id="Lagerzugang")
+    table(class="tabelle")
         caption Lagerzugang
             thead
                 tr
@@ -21,9 +19,29 @@ block profilecontent
                         td= item.black
                         td= item.red
 
+                        td(class="button")
+                            button bearbeiten
+                tr
+                    td(class="Leerzeile")
+
+                tr
+                    td(class="input")
+                        input(id="takt" placeholder="Takt")
+                    td(class="input")
+                        input(id="schwarz" placeholder="schwarz")
+                    td(class="input")
+                        input(id="weiß" placeholder="weiß")
+                    td(class="input")
+                        input(id="rot" placeholder="rot")
+
+                    td(class="button")
+                        button speichern
 
 
-    table(id="Lagerzuganglululululu")
+
+
+
+    table(class="tabelle")
         caption Lagerzugang
         thead
             tr
@@ -114,7 +132,7 @@ block profilecontent
                     input(name="weiß10")
 
 
-    table(id="LagerUndUnterwegsbestand")
+    table(class="tabelle")
         caption LagerUndUnterwegsbestand
         thead
             tr
@@ -205,7 +223,7 @@ block profilecontent
                     input(name="weiß10")
 
 
-    table(id="BestellübersichtArtikel")
+    table(class="tabelle")
         caption BestellübersichtArtikel
         thead
             tr

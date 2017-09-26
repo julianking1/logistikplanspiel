@@ -1,332 +1,73 @@
 block profilecontent
 
+    link(rel='stylesheet', href='/stylesheets/table.css')
 
-    link(rel='stylesheet', href='/stylesheets/endmontage.css')
-
-    table(id="Lagerbestand")
+    table(class="tabelle")
         caption Lagerbestand
-        thead
-            tr
-                th Takt
-                th schwarz
-                th weiß
-                th rot
-        tbody
+            thead
+                tr
+                    th Takt
+                    th schwarz
+                    th weiß
+                    th rot
+            tbody
+                - var versuch = [{takt: '1', white: 'w1', black: 'b1', red: 'r1'},{takt: '2', white: 'w2', black: 'b2', red: 'r2'}, {takt: '3', white: 'w3', black: 'b3', red: 'r3'}, {takt: '4', white: 'w4', black: 'b4', red: 'r4'}];
+                each item in versuch
+                    tr
+                        td= item.takt
+                        td= item.white
+                        td= item.black
+                        td= item.red
 
+                        td(class="button")
+                            button bearbeiten
+                tr
+                    td(class="Leerzeile")
 
-            tr
-                th
-                    label(class="takt1b") 1
-                td
-                    input(class="takt1b" name="schwarz1b")
-                td
-                    input(class="takt1b" name="weiß1b")
-                td
-                    input(class="takt1b" name="rot1b")
-            tr
-                th
-                    label(class="takt2b") 2
-                td
-                    input(class="takt2b" name="schwarz2b")
-                td
-                    input(class="takt2b" name="weiß2b")
-                td
-                    input(class="takt2b" name="rot2b")
-            tr
-                th
-                    label(class="takt3b") 3
-                td
-                    input(class="takt3b" name="schwarz3b")
-                td
-                    input(class="takt3b" name="weiß3b")
-                td
-                    input(class="takt3b" name="rot3b")
-            tr
-                th
-                    label(class="takt4b") 4
-                td
-                    input(class="takt4b" name="schwarz4b")
-                td
-                    input(class="takt4b" name="weiß4b")
-                td
-                    input(class="takt4b" name="rot4b")
-            tr
-                th
-                    label(class="takt5b") 5
-                td
-                    input(class="takt5b" name="schwarz5b")
-                td
-                    input(class="takt5b" name="weiß5b")
-                td
-                    input(class="takt5b" name="rot5b")
-            tr
-                th
-                    label(class="takt6b") 6
-                td
-                    input(class="takt6b" name="schwarz6b")
-                td
-                    input(class="takt6b" name="weiß6b")
-                td
-                    input(class="takt6b" name="rot6b")
-            tr
-                th
-                    label(class="takt7b") 7
-                td
-                    input(class="takt7b" name="schwarz7b")
-                td
-                    input(class="takt7b" name="weiß7b")
-                td
-                    input(class="takt7b" name="rot7b")
-            tr
-                th
-                    label(class="takt8b") 8
-                td
-                    input(class="takt8b" name="schwarz8b")
-                td
-                    input(class="takt8b" name="weiß8b")
-                td
-                    input(class="takt8b" name="rot8b")
-            tr
-                th
-                    label(class="takt9b") 9
-                td
-                    input(class="takt9b" name="schwarz9b")
-                td
-                    input(class="takt9b" name="weiß9b")
-                td
-                    input(class="takt9b" name="rot9b")
-            tr
-                th
-                    label(class="takt10b") 10
-                td
-                    input(class="takt10b" name="schwarz10b")
-                td
-                    input(class="takt10b" name="weiß10b")
-                td
-                    input(class="takt10b" name="rot10b")
+                tr
+                    td(class="input")
+                        input(id="takt1" placeholder="Takt")
+                    td(class="input")
+                        input(id="schwarz1" placeholder="Menge")
+                    td(class="input")
+                        input(id="weiß1" placeholder="Menge")
+                    td(class="input")
+                        input(id="rot1" placeholder="Menge")
 
+                    td(class="button")
+                        button speichern
 
-    table(id="Lagerzugang")
+    table(class="tabelle")
         caption Lagerzugang
-        thead
-            tr
-                th Takt
-                th schwarz
-                th weiß
-                th rot
-        tbody
-            tr
-                th
-                    label(class="takt1z") 1
-                td
-                    input(class="takt1z" name="schwarz1z")
-                td
-                    input(class="takt1z" name="weiß1z")
-                td
-                    input(class="takt1z" name="rot1z")
-            tr
-                th
-                    label(class="takt2z") 2
-                td
-                    input(class="takt2z" name="schwarz2z")
-                td
-                    input(class="takt2z" name="weiß2z")
-                td
-                    input(class="takt2z" name="rot2z")
-            tr
-                th
-                    label(class="takt3z") 3
-                td
-                    input(class="takt3z" name="schwarz3z")
-                td
-                    input(class="takt3z" name="weiß3z")
-                td
-                    input(class="takt3z" name="rot3z")
-            tr
-                th
-                    label(class="takt4z") 4
-                td
-                    input(class="takt4z" name="schwarz4z")
-                td
-                    input(class="takt4z" name="weiß4z")
-                td
-                    input(class="takt4z" name="rot4z")
-            tr
-                th
-                    label(class="takt5z") 5
-                td
-                    input(class="takt5z" name="schwarz5z")
-                td
-                    input(class="takt5z" name="weiß5z")
-                td
-                    input(class="takt5z" name="rot5z")
-            tr
-                th
-                    label(class="takt6z") 6
-                td
-                    input(class="takt6z" name="schwarz6z")
-                td
-                    input(class="takt6z" name="weiß6z")
-                td
-                    input(class="takt6z" name="rot6z")
-            tr
-                th
-                    label(class="takt7z") 7
-                td
-                    input(class="takt7z" name="schwarz7z")
-                td
-                    input(class="takt7z" name="weiß7z")
-                td
-                    input(class="takt7z" name="rot7z")
-            tr
-                th
-                    label(class="takt8z") 8
-                td
-                    input(class="takt8z" name="schwarz8z")
-                td
-                    input(class="takt8z" name="weiß8z")
-                td
-                    input(class="takt8z" name="rot8z")
-            tr
-                th
-                    label(class="takt9z") 9
-                td
-                    input(class="takt9z" name="schwarz9z")
-                td
-                    input(class="takt9z" name="weiß9z")
-                td
-                    input(class="takt9z" name="rot9z")
-            tr
-                th
-                    label(class="takt10z") 10
-                td
-                    input(class="takt10z" name="schwarz10z")
-                td
-                    input(class="takt10z" name="weiß10z")
-                td
-                    input(class="takt10z" name="rot10z")
+            thead
+                tr
+                    th Takt
+                    th schwarz
+                    th weiß
+                    th rot
+            tbody
+                - var versuch = [{takt: '1', white: 'w1', black: 'b1', red: 'r1'},{takt: '2', white: 'w2', black: 'b2', red: 'r2'}, {takt: '3', white: 'w3', black: 'b3', red: 'r3'}, {takt: '4', white: 'w4', black: 'b4', red: 'r4'}];
+                each item in versuch
+                    tr
+                        td= item.takt
+                        td= item.white
+                        td= item.black
+                        td= item.red
 
-    table(id="Fertigungsplan")
-        caption Fertigungsplan
-        thead
-            tr
-                th(scope="col" rowspan="2") Takt
-                th(scope="colgroup" colspan="2") schwarz
-                th(scope="colgroup" colspan="2") weiß
-            tr
-                th soll
-                th ist
-                th soll
-                th ist
+                        td(class="button")
+                            button bearbeiten
+                tr
+                    td(class="Leerzeile")
 
-        tbody
-            tr
-                th
-                    label(class="takt1f") 1
-                td
-                    label(class="takt1f") 0
-                td
-                    input(class="takt1f" name="schwarz1f")
-                td
-                    label(class="takt1f") 8
-                td
-                    input(class="takt1f" name="rot1f")
-            tr
-                th
-                    label(class="takt2f") 2
-                td
-                    label(class="takt2f") 6
-                td
-                    input(class="takt2f" name="schwarz2f")
-                td
-                    label(class="takt2f") 0
-                td
-                    input(class="takt2f" name="rot2f")
-            tr
-                th
-                    label(class="takt3f") 3
-                td
-                    label(class="takt3f") 0
-                td
-                    input(class="takt3f" name="schwarz3f")
-                td
-                    label(class="takt3f") 8
-                td
-                    input(class="takt3f" name="rot3f")
-            tr
-                th
-                    label(class="takt4f") 4
-                td
-                    label(class="takt4f") 6
-                td
-                    input(class="takt4f" name="schwarz4f")
-                td
-                    label(class="takt4f") 0
-                td
-                    input(class="takt4f" name="rot4f")
-            tr
-                th
-                    label(class="takt5f") 5
-                td
-                    label(class="takt5f") 0
-                td
-                    input(class="takt5f" name="schwarz5f")
-                td
-                    label(class="takt5f") 8
-                td
-                    input(class="takt5f" name="rot5f")
-            tr
-                th
-                    label(class="takt6f") 6
-                td
-                    label(class="takt6f") 6
-                td
-                    input(class="takt6f" name="schwarz6f")
-                td
-                    label(class="takt6f") 0
-                td
-                    input(class="takt6f" name="rot6f")
-            tr
-                th
-                    label(class="takt7f") 7
-                td
-                    label(class="takt7f") 0
-                td
-                    input(class="takt7f" name="schwarz7f")
-                td
-                    label(class="takt7f") 8
-                td
-                    input(class="takt7f" name="rot7f")
-            tr
-                th
-                    label(class="takt8f") 8
-                td
-                    label(class="takt8f") 6
-                td
-                    input(class="takt8f" name="schwarz8f")
-                td
-                    label(class="takt8f") 0
-                td
-                    input(class="takt8f" name="rot8f")
-            tr
-                th
-                    label(class="takt9f") 9
-                td
-                    label(class="takt9f") 0
-                td
-                    input(class="takt9f" name="schwarz9f")
-                td
-                    label(class="takt9f") 8
-                td
-                    input(class="takt9f" name="rot9f")
-            tr
-                th
-                    label(class="takt10f") 10
-                td
-                    label(class="takt10f") 6
-                td
-                    input(class="takt10f" name="schwarz10f")
-                td
-                    label(class="takt10f") 0
-                td
-                    input(class="takt10f" name="rot10f")
+                tr
+                    td(class="input")
+                        input(id="takt2" placeholder="Takt")
+                    td(class="input")
+                        input(id="schwarz2" placeholder="Menge")
+                    td(class="input")
+                        input(id="weiß2" placeholder="Menge")
+                    td(class="input")
+                        input(id="rot2" placeholder="Menge")
+
+                    td(class="button")
+                        button speichern
