@@ -113,8 +113,8 @@ function getvorfertigungKPI(spielID, periode, callback) {
     });
 };
 
-function getvorfertigungLagerbestand(spielID, periode, callback) {
-    vorfertigungKPI.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
+function getvorfertigungLagerbestand(spielID, periode, takt, artikel, callback) {
+    vorfertigungLagerbestand.findOne({'spielID': spielID, 'periode': periode, 'takt': takt, 'artikel':artikel}, function(err, data){
         if (err) return handleError (err);
         return callback(data);
     });
@@ -131,5 +131,6 @@ module.exports = {
     getlieferabwicklungSummen: getlieferabwicklungSummen,
     getorderManagement: getorderManagement,
     getvorfertigungFertigungsplan: getvorfertigungFertigungsplan,
-    getvorfertigungKPI: getvorfertigungKPI
+    getvorfertigungKPI: getvorfertigungKPI,
+    getvorfertigungLagerbestand: getvorfertigungLagerbestand
 }
