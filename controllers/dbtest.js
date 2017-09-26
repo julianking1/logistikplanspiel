@@ -96,6 +96,10 @@ module.exports = {
             console.log(data.anzahl);
         });
 
+        getterFunctions.getvorfertigungLosesumme(1, 1, "schwarz", function(data){
+            console.log(data.anzahl);
+        });
+
 
 
         /*lieferantenBestellung.findOne({'nr': '200'}, function (err, data) {
