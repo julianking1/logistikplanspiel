@@ -1,0 +1,39 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: separate;
+}
+
+
+.tabelle{
+
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+
+caption{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+input{
+    width:70px;
+}
+
+.Leerzeile{
+    height:30px;
+    border: none;
+}
+
+.button{
+    border:none;
+}
+
+.input{
+    border: none;
+}

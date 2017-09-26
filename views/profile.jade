@@ -4,23 +4,22 @@ block content
 
     link(rel='stylesheet', href='/stylesheets/profile.css')
     script(src='/javascripts/jstest.js')
+    script(src='/javascripts/loadContent.js' )
 
-    h2 Arbeitsplatz: Beschaffung
+    h2 Arbeitsplatz: #{paramProfil}
     h3 Periode: 1  Takt: 2  Phase: B
 
     div(class="first")
 
-        form(action= '/#{paramProfil}/mailbox')
-            button(class="buttonTools") Mailbox
 
-        form(action= '/#{paramProfil}/info')
-            button(class="buttonTools") Info
+        button(class="buttonTools" onclick= "loadContent(''+ '#{paramProfil}', 'mailbox')") Mailbox
 
-        form(action= '/#{paramProfil}/tabellen')
-            button(class="buttonTools") Tabellen
+        button(class="buttonTools" onclick= "loadContent(''+ '#{paramProfil}', 'info')") Info
 
-        form(action= '/#{paramProfil}/checklist')
-            button(class="buttonTools") Checkliste
+        button(class="buttonTools" onclick= "loadContent(''+ '#{paramProfil}', 'tabellen')") Tabellen
+
+        button(class="buttonTools" onclick= "loadContent(''+ '#{paramProfil}', 'checklist')") Checkliste
+
         button(class= "buttonTools" onclick= "jsTest(''+ '#{paramProfil}', ''+ '#{paramTool}')") JavaScript Test
 
 

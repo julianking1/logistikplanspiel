@@ -6,28 +6,29 @@ module.exports = {
 
     rendering: function (req, res, next) {
 
-        var urlparts = urlSplitter.splitUrl(req);
+        var profile = req.body.profilParam;
+        var type = req.body.typeParam;
 
-        //render according to parameter of tools
-        switch(String(urlparts[2])){
+
+        switch(type) {
             case 'mailbox':
-                helperMailbox.getContent(res, urlparts[1],  urlparts[2]);
+                helperMailbox.getContent(res, profile, type);
                 break;
 
             case 'checklist'  :
-                var data = checklisten.getDataArray(urlparts[1]);
-                res.render('checklist', {paramProfil: urlparts[1], paramTool: urlparts[2], rows:data});
+                var data = checklisten.getDataArray(profile);
+                res.render('checklist', {paramProfil: profile, paramTool: type, rows: data});
                 break;
 
             case 'tabellen':
-                if(urlparts[1]= 'kunde')
-                  var tabellenart = 'kunde.jade';
-                res.render('tables', {paramProfil: urlparts[1], paramTool: urlparts[2], currentTable: tabellenart});
+
+                if (profile= 'kunde')
+                    var tabellenart = 'kunde.jade';
+                res.render('tables', {paramProfil: profile, paramTool: type, currentTable: tabellenart});
                 break;
 
             case 'info':
-                res.render('info', {paramProfil: urlparts[1], paramTool: urlparts[2]});
-                break;
+                res.render('info', {paramProfil: profile, paramTool: type});
         }
 
     },
@@ -37,7 +38,7 @@ module.exports = {
 
         var urlparts =  urlSplitter.splitUrl(req);
         var data = checklisten.getDataArray(urlparts[1]);
-        res.render('checklist', {paramProfil: urlparts[1], paramTool: 'checklist', rows: data});
+        res.render('default', {paramProfil: urlparts[1], paramTool: 'checklist', rows: data});
     }
 };
 
