@@ -36,6 +36,6 @@ var lieferabwicklungKPI= require("../models/lieferabwicklungKPI");
 var orderManagement= require("../models/orderManagement");
 
 
-function update() {
+function updateLieferantenBestellung() {
 
 }

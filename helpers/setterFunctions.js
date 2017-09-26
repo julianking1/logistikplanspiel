@@ -34,9 +34,10 @@ var lieferabwicklungSummen= require("../models/lieferabwicklungSummen");
 var orderManagement= require("../models/orderManagement");
 
 //schreibt Datensatz mit allen obligatorischen Attributen in DB
-function createLieferantenBestellung(spielID, von, nr, ausstellungstakt, artikel) {
+function createLieferantenBestellung(spielID, von, nr, ausstellungstakt, artikel, wunschtakt, wunschmenge) {
     var data = new lieferantenBestellung({spielID:spielID,von:von,
-        nr:nr, austellungstakt:ausstellungstakt, artikel:artikel});
+        nr:nr, austellungstakt:ausstellungstakt, artikel:artikel, wunschtakt:wunschtakt,
+        wunschmenge:wunschmenge});
     data.save(function (err) {
         if (err) throw err;
         console.log("Saved: LieferantenBestellung");
