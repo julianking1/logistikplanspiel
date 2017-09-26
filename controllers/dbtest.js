@@ -15,7 +15,7 @@ module.exports = {
         //normalerweise Werte aus req laden (Body-Parser)
         schemaFunctions.createLieferantenBestellung(1,2000,1,"schwarz",1,1);
         schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);
-        schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiß",23,22,10,10);
+        schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiss",23,22,10,10);
         schemaFunctions.createBeschaffungsKPI(1,1);
         schemaFunctions.createBeschaffungsUebersicht(1,1,1,1,1);
         schemaFunctions.createLagerbestandEingangspruefung(1,1,1,"schwarz",20);
@@ -53,10 +53,20 @@ module.exports = {
         //normalerweise ID aus req
 
         getterFunctions.getbeschaffungBestandswert(1, 1, function(data){
-            console.log(data.anzahl);
+            console.log(data.inSummeschwarz);
         });
 
+        getterFunctions.getbeschaffungBestelluebersicht(1, 1, 1, "weiss", function(data){
+            console.log(data.bestellnr);
+        });
 
+        getterFunctions.getbeschaffungKPI(1, 1, function(data){
+            console.log(data.lagerwert);
+        });
+
+        getterFunctions.getbeschaffungsUebersicht(1, 1, function(data){
+            console.log(data.summebestSchwarz);
+        });
 
         var lagerbestandEingangspruefung = getterFunctions.getlagerbestandEingangspruefung(1, 1, 1, "schwarz", function(data){
           console.log(data.artikel);
@@ -111,7 +121,7 @@ module.exports = {
         });
 
         getterFunctions.getvorfertigungLosesumme(1, 1, "schwarz", function(data){
-            console.log(data.anzahl);
+            console.log(data.summe);
         });
 
 

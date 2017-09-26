@@ -51,11 +51,30 @@ function getbeschaffungBestandswert(spielID, periode, callback) {
 
 };
 
+function getbeschaffungBestelluebersicht(spielID, periode, takt, artikel, callback) {
+    beschaffungBestelluebersicht.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+
+};
 
 
+function getbeschaffungKPI(spielID, periode, callback) {
+    beschaffungKPI.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
 
+};
 
+function getbeschaffungsUebersicht(spielID, periode, callback) {
+    beschaffungsUebersicht.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
 
+};
 
 
 
@@ -185,5 +204,8 @@ module.exports = {
     getvorfertigungLagersumme: getvorfertigungLagersumme,
     getvorfertigungLagerzugang: getvorfertigungLagerzugang,
     getvorfertigungLosesumme: getvorfertigungLosesumme,
-    getbeschaffungBestandswert: getbeschaffungBestandswert
+    getbeschaffungBestandswert: getbeschaffungBestandswert,
+    getbeschaffungBestelluebersicht: getbeschaffungBestelluebersicht,
+    getbeschaffungKPI: getbeschaffungKPI,
+    getbeschaffungsUebersicht: getbeschaffungsUebersicht
 }
