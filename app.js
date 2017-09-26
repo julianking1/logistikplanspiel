@@ -14,6 +14,8 @@ app.set('view engine', 'jade');
 
 //db connection setup
 mongoose.connect('mongodb://localhost/logistikplanspiel', { useMongoClient: true, promiseLibrary: global.Promise });
+app.set('spielID', null);
+
 
 //uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
