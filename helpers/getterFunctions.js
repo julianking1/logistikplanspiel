@@ -78,13 +78,12 @@ function getlieferabwicklungLagerzugang(spielID, periode, takt, artikel, callbac
     });
 };
 
-function getlieferabwicklungSummen(spielID, periode, takt, artikel, callback){
-    lieferabwicklungLagerzugang.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
+function getlieferabwicklungSummen(spielID, periode, callback){
+    lieferabwicklungSummen.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
 };
-
 
 function getlieferantenBestellung(spielID, nr, callback) {
     lieferantenBestellung.findOne({'spielID': spielID, 'nr': nr}, function(err, data){
@@ -93,6 +92,21 @@ function getlieferantenBestellung(spielID, nr, callback) {
     });
 };
 
+function getorderManagement(spielID, periode, takt, artikel, callback) {
+    orderManagement.findOne({'spielID': spielID, 'periode': periode, 'takt': takt, 'artikel': artikel}, function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getvorfertigungFertigungsplan(spielID, periode, takt, artikel, callback) {
+    vorfertigungFertigungsplan.findOne({'spielID': spielID, 'periode': periode, 'takt': takt, 'artikel': artikel}, function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+    });
+};
+
+
 module.exports = {
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,
@@ -100,5 +114,8 @@ module.exports = {
     getlieferabwicklungKPI: getlieferabwicklungKPI,
     getlieferantenBestellung:getlieferantenBestellung,
     getlieferabwicklungLagerbestand: getlieferabwicklungLagerbestand,
-    getlieferabwicklungLagerzugang: getlieferabwicklungLagerzugang
+    getlieferabwicklungLagerzugang: getlieferabwicklungLagerzugang,
+    getlieferabwicklungSummen: getlieferabwicklungSummen,
+    getorderManagement: getorderManagement,
+    getvorfertigungFertigungsplan: getvorfertigungFertigungsplan
 }

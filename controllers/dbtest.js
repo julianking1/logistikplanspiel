@@ -60,7 +60,17 @@ module.exports = {
             console.log(data.zugang);
         });
 
+        getterFunctions.getlieferabwicklungSummen(1, 1, function(data){
+            console.log(data.bestellungen);
+        });
 
+        getterFunctions.getorderManagement(1, 1, 1, "schwarz", function(data){
+            console.log(data.anfangsbestand);
+        });
+
+        getterFunctions.getvorfertigungFertigungsplan(1, 1, 1, "schwarz", function(data){
+            console.log(data.anfangsbestand);
+        });
 
 
 
