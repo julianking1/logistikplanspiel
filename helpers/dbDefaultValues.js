@@ -82,7 +82,70 @@ function generateDefaultValuesInDB (){
         updateFunctions.updateLieferantenBestellung(data._id,"bestaetigteMenge",9);
     });
 
-    //
+    //Beschaffung Bestellübersicht
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-5,"schwarz",1,9,1);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-4,"schwarz",4,9,2);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-3,"schwarz",7,9,3);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-2,"schwarz",10,9,4);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-1,"schwarz",13,9,5);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,0,"schwarz",15,9,6);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-4,"weiß",2,8,1);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-3,"weiß",5,8,2);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-2,"weiß",8,8,3);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-1,"weiß",11,8,4);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,0,"weiß",14,8,5);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-3,"rot",3,7,1);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-2,"rot",6,7,2);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,-1,"rot",9,7,3);
+    setterFunctions.createBeschaffungsBestelluebersicht(app.spielID,1,0,"rot",12,7,4);
+
+    //Vorfertigung Fertigungsplan
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,1,"schwarz",4);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,2,"schwarz",3);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,3,"schwarz",4);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,4,"schwarz",3);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,5,"schwarz",4);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,6,"schwarz",3);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,7,"schwarz",4);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,8,"schwarz",3);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,9,"schwarz",4);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,10,"schwarz",3);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,1,"weiß",4);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,2,"weiß",5);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,3,"weiß",4);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,4,"weiß",5);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,5,"weiß",4);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,6,"weiß",5);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,7,"weiß",4);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,8,"weiß",5);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,9,"weiß",4);
+    setterFunctions.createVorfertigungFertigungsplan(app.spielID,1,10,"weiß",5);
+
+    //Endmontage Fertigungsplan
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,1,"schwarz",0);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,2,"schwarz",6);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,3,"schwarz",0);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,4,"schwarz",6);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,5,"schwarz",0);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,6,"schwarz",6);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,7,"schwarz",0);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,8,"schwarz",6);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,9,"schwarz",0);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,10,"schwarz",6);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,1,"weiß",8);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,2,"weiß",0);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,3,"weiß",8);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,4,"weiß",0);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,5,"weiß",8);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,6,"weiß",0);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,7,"weiß",8);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,8,"weiß",0);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,9,"weiß",8);
+    setterFunctions.createEndmontageFertigungsplan(app.spielID,1,10,"weiß",0);
+
+    //Lieferabwicklung Bestellübersicht
+    setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,1);
+
 
 }
 
