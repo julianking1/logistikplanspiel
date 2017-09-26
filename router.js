@@ -9,7 +9,8 @@ var profile = require('./controllers/profile.js');
 var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
 var formularSpeichern = require('./controllers/formularSpeichern');
-var bodyParser = require('body-parser');
+var getterFunctions = require('./helpers/getterFunctions');
+var setterFunctions = require('./helpers/setterFunctions');
 
 //Startseite
 router.get('/', profilechoice.rendering); // localhost:3000/
@@ -44,10 +45,6 @@ router.get('/dbtestUpdate', dbtest.updateOrder); // /localhost:3000/dbtestGet
 router.get('/createlagerBestand',lagerbestandRechner.createLagerbestandEingangspruefung); // /localhost:3000/createlagerBestand
 router.get('/sumBestand', lagerbestandRechner.sumbestandschwarz); // /localhost:3000/sumBestand
 
-//Router Tests
-router.get('/janatests', function(req, res, next) {
-    res.render('janatests');
-}); // /localhost:3000/janatests
 
 //Formular Tests
 router.post(/.*mailbox$/, function(req, res) {
@@ -55,14 +52,31 @@ router.post(/.*mailbox$/, function(req, res) {
         //res.send("ok"); //später weg bzw render
 });
 
+//POST Test
 router.post(/.*post$/, function(req, res) {
-    var request = bodyParser.json(req);
 
-    console.log(req);
-    res.send('ok');
-    //res.send("ok"); //später weg bzw render
+    //setterFunctions.createLieferantenBestellung(124,3,1,'schwarz',3,12);
+    getterFunctions.getlieferantenBestellung(1, 1, function (data) {
+
+        var versuch = [
+
+            {takt: '1', white: 'w1', black: 'b1', red: 'r1'},
+            {takt: '2', white: 'w2', black: 'b2', red: 'r2'},
+            {takt: '3', white: 'w3', black: 'b3', red: 'r3'},
+            {takt: '4', white: 'w4', black: 'b4', red: 'r4'},
+            {takt: '5', white: 'w5', black: 'b5', red: 'r5'},
+            {takt: '6', white: 'w6', black: 'b6', red: 'r6'}
+
+        ];
+
+        res.render('janatest', {pParam: req.body.profilParam, tParam: req.body.toolParam, dbParam: data.artikel, testDaten: versuch});
+    });
+
 });
 
-
+//Startseite Test
+router.get('/startseite', function(req, res, next) {
+    res.render('startseite');
+});
 
 module.exports = router;

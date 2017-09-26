@@ -19,11 +19,11 @@ module.exports = {
         schemaFunctions.createBeschaffungsUebersicht(1,1,1,1,1);
         schemaFunctions.createLagerbestandEingangspruefung(1,1,1,"schwarz",20);
         schemaFunctions.createLagerbestandVorEingangspruefung(1,1,1,"schwarz",1);
-        schemaFunctions.createVorfertigungFertigungsplan(1,1,1,"weiß",1);
+        schemaFunctions.createVorfertigungFertigungsplan(1,1,1,"weiss",1);
         schemaFunctions.createVorfertigungLagerbestand(1,1,1,"schwarz",1);
         schemaFunctions.createVorfertigungLagersumme(1,1,1,1,1,1);
         schemaFunctions.createVorfertigungLosesumme(1,1,"schwarz", 50);
-        schemaFunctions.createVorfertigungsKPI(1,4);
+        schemaFunctions.createVorfertigungsKPI(1, 1, 20, 40, 60);
         schemaFunctions.createEndmontageFertigungsplan(1,1,1,"weiß",20);
         schemaFunctions.createEndmontageKPI(1,1);
         schemaFunctions.createEndmontageLagerbestand(1,1,1,"weiß",20);
@@ -31,6 +31,14 @@ module.exports = {
         schemaFunctions.createEndmontageLagerzugang(1,1,1,"weiß",30);
         schemaFunctions.createEndmontageLosesumme(1,1,"weis",30);
         schemaFunctions.createLieferabwicklungBestelluebersicht(1,1,1,102,5,3,3);
+        schemaFunctions.createLieferabwicklungKPI(1,1,30,20,30);
+        schemaFunctions.createLieferabwicklungLagerbestand(1,1,2,"weiss",18);
+        schemaFunctions.createLieferabwicklungLagerzugang(1,1,2,"weiss",18);
+        schemaFunctions.createLieferabwicklungSummen(1, 1, 5, 4, 4, 3, 3);
+        schemaFunctions.createOrderManagement(1,1,1,"schwarz",18, 5, 4, 3, 2, 20);
+        schemaFunctions.createVorfertigungLagersumme(1, 1, 4,3,4,3);
+        schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);
+
     }
 
 
@@ -65,15 +73,27 @@ module.exports = {
         });
 
         getterFunctions.getorderManagement(1, 1, 1, "schwarz", function(data){
-            console.log(data.anfangsbestand);
+            console.log(data);
         });
 
-        getterFunctions.getvorfertigungFertigungsplan(1, 1, 1, "schwarz", function(data){
+        getterFunctions.getvorfertigungFertigungsplan(1, 1, 1, "weiss", function(data){
             console.log(data.sollmenge);
         });
 
         getterFunctions.getvorfertigungKPI(1, 1, function(data){
             console.log(data.ruestkosten);
+        });
+
+        getterFunctions.getvorfertigungLagerbestand(1, 1, 1, "schwarz", function(data){
+            console.log(data.anzahl);
+        });
+
+        getterFunctions.getvorfertigungLagersumme(1, 1, function(data){
+            console.log(data.bestandschwarz);
+        });
+
+        getterFunctions.getvorfertigungLagerzugang(1, 1, 1, "schwarz", function(data){
+            console.log(data.anzahl);
         });
 
 

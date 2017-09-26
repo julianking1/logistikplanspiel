@@ -343,9 +343,9 @@ function createLieferabwicklungLagerzugang(spielID,periode,takt,artikel,zugang) 
     });
 }
 
-function createLieferabwicklungSummen(spielID,periode,artikel,bestandschwarz, bestandweiss,
+function createLieferabwicklungSummen(spielID,periode,bestellungen,bestandschwarz, bestandweiss,
                                   zugangschwarz, zugangweiss) {
-    var data = new lieferabwicklungSummen({spielID:spielID,periode:periode,artikel:artikel,
+    var data = new lieferabwicklungSummen({spielID:spielID,periode:periode,bestellungen:bestellungen,
         bestandschwarz:bestandschwarz,bestandweiss:bestandweiss, zugangschwarz:zugangschwarz,
         zugangweiss:zugangweiss});
     data.save(function (err) {
@@ -381,6 +381,7 @@ module.exports = {
     createVorfertigungLagerbestand:createVorfertigungLagerbestand,
     createVorfertigungLagersumme:createVorfertigungLagersumme,
     createVorfertigungLosesumme:createVorfertigungLosesumme,
+    createVorfertigungLagerzugang:createVorfertigungLagerzugang,
     createVorfertigungsKPI:createVorfertigungsKPI,
     createEndmontageFertigungsplan:createEndmontageFertigungsplan,
     createEndmontageKPI:createEndmontageKPI,

@@ -113,12 +113,27 @@ function getvorfertigungKPI(spielID, periode, callback) {
     });
 };
 
-function getvorfertigungLagerbestand(spielID, periode, callback) {
-    vorfertigungKPI.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
+function getvorfertigungLagerbestand(spielID, periode, takt, artikel, callback) {
+    vorfertigungLagerbestand.findOne({'spielID': spielID, 'periode': periode, 'takt': takt, 'artikel':artikel}, function(err, data){
         if (err) return handleError (err);
         return callback(data);
     });
 };
+
+function getvorfertigungLagersumme(spielID, periode, callback) {
+    vorfertigungLagersumme.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getvorfertigungLagerzugang(spielID, periode, takt, artikel, callback) {
+    vorfertigungLagerzugang.findOne({'spielID': spielID, 'periode': periode, 'takt': takt, 'artikel': artikel}, function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+    });
+};
+
 
 module.exports = {
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
@@ -131,5 +146,8 @@ module.exports = {
     getlieferabwicklungSummen: getlieferabwicklungSummen,
     getorderManagement: getorderManagement,
     getvorfertigungFertigungsplan: getvorfertigungFertigungsplan,
-    getvorfertigungKPI: getvorfertigungKPI
+    getvorfertigungKPI: getvorfertigungKPI,
+    getvorfertigungLagerbestand: getvorfertigungLagerbestand,
+    getvorfertigungLagersumme: getvorfertigungLagersumme,
+    getvorfertigungLagerzugang: getvorfertigungLagerzugang,
 }
