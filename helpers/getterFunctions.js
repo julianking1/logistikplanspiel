@@ -230,6 +230,7 @@ module.exports = {
     getdistributionKPI:getdistributionKPI,
     getdistributionLagerbestand:getdistributionLagerbestand,
     getdistributionLagerzugang:getdistributionLagerzugang,
+    getdistributionSummen: getdistributionSummen,
     getalllieferabwicklungLagerzugang:getalllieferabwicklungLagerzugang,
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,
