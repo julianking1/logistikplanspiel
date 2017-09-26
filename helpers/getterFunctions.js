@@ -76,6 +76,46 @@ function getbeschaffungsUebersicht(spielID, periode, callback) {
 
 };
 
+function getdistributionAuftragsbearbeitung(spielID, periode, takt, callback) {
+    distributionAuftragsbearbeitung.findOne({'spielID':spielID, 'periode': periode, 'takt':takt}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+
+};
+
+function getdistributionKPI(spielID, periode, callback){
+    distributionKPI.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getdistributionLagerbestand(spielID, periode, takt, artikel, callback){
+    distributionLagerbestand.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getdistributionLagerzugang(spielID, periode, takt, artikel, callback){
+    distributionLagerzugang.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getdistributionSummen(spielID, periode, callback){
+    distributionSummen.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
+
+
+
+
 
 
 // liefert den letzten Bestand aus der Eingangsprüfung zurück
@@ -94,8 +134,8 @@ function getlagerbestandvorEingangspruefung(spielID, periode, takt, artikel, cal
     });
 };
 
-function getlieferabwicklungBestelluebersicht(spielID, periode, takt, bestellnr, callback){
-    lieferabwicklungBestelluebersicht.findOne({'spielID': spielID, 'periode': periode, 'takt':takt, 'bestellnr': bestellnr}, function(err, data){
+function getlieferabwicklungBestelluebersicht(spielID, periode, bestellnr, callback){
+    lieferabwicklungBestelluebersicht.findOne({'spielID': spielID, 'periode': periode, 'bestellnr': bestellnr}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
@@ -188,6 +228,11 @@ function getvorfertigungLosesumme(spielID, periode, artikel, callback) {
 
 
 module.exports = {
+    getdistributionAuftragsbearbeitung:getdistributionAuftragsbearbeitung,
+    getdistributionKPI:getdistributionKPI,
+    getdistributionLagerbestand:getdistributionLagerbestand,
+    getdistributionLagerzugang:getdistributionLagerzugang,
+    getdistributionSummen: getdistributionSummen,
     getalllieferabwicklungLagerzugang:getalllieferabwicklungLagerzugang,
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,

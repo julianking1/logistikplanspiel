@@ -7,12 +7,12 @@ var omSchema = new Schema({
         periode: {type: Number, required: true},
         takt:    {type: Number, required: true},
         artikel: {type: String, required: true},
-        anfangsbestand: {type: Number, required: true},
+        anfangsbestand: {type: Number, required: false},
         zugangsnr: {type: Number, required: false},
         zugang: {type: Number, required: false},
         abgangsnr: {type: Number, required: false},
         abgang: {type: Number, required: false},
-        endbestand: {type: Number, required: true}
+        endbestand: {type: Number, required: false}
     }
 );
 

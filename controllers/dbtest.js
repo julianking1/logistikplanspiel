@@ -2,6 +2,7 @@ var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
 var schemaFunctions = require("../helpers/setterFunctions");
 var getterFunctions = require("../helpers/getterFunctions");
 var updateFunctions = require("../helpers/updateFunctions");
+var app = require("../app");
 
 module.exports = {
 
@@ -18,6 +19,11 @@ module.exports = {
         schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiss",23,22,10,10);
         schemaFunctions.createBeschaffungsKPI(1,1);
         schemaFunctions.createBeschaffungsUebersicht(1,1,1,1,1);
+        schemaFunctions.createDistributionAuftragsbearbeitung(1,1,1,5);
+        schemaFunctions.createDistributionKPI(1,1);
+        schemaFunctions.createDistributionLagerbestand(1,1,1,"schwarz",20);
+        schemaFunctions.createDistributionLagerzugang(1,1,1,"weiss",18);
+        schemaFunctions.createDistributionSummen()
         schemaFunctions.createLagerbestandEingangspruefung(1,1,1,"schwarz",20);
         schemaFunctions.createLagerbestandVorEingangspruefung(1,1,1,"schwarz",1);
         schemaFunctions.createVorfertigungFertigungsplan(1,1,1,"weiss",1);
@@ -67,6 +73,27 @@ module.exports = {
         getterFunctions.getbeschaffungsUebersicht(1, 1, function(data){
             console.log(data.summebestSchwarz);
         });
+
+        getterFunctions.getdistributionAuftragsbearbeitung(1, 1, 1, function(data){
+            console.log(data.anzauftraege);
+        });
+
+        getterFunctions.getdistributionKPI(1, 1, function(data){
+            console.log(data.transportkosten);
+        });
+
+        getterFunctions.getdistributionLagerbestand(1, 1, 1, "schwarz" ,function(data){
+            console.log(data.anzahl);
+        });
+
+        getterFunctions.getdistributionLagerzugang(1, 1, 1, "schwarz" ,function(data){
+            console.log(data.zugang);
+        });
+
+        getterFunctions.getdistributionLagerzugang(1, 1, function(data){
+            console.log(data.bestandschwarz);
+        });
+
 
         var lagerbestandEingangspruefung = getterFunctions.getlagerbestandEingangspruefung(1, 1, 1, "schwarz", function(data){
           console.log(data.artikel);
@@ -135,8 +162,6 @@ module.exports = {
     }
 
     function updateOrder(req, res) {
-        app.set('spielID', 1);
-        res.send(app.get('spielID'));
         getterFunctions.getlieferantenBestellung(1,2000,function (data) {
             updateFunctions.updateLieferantenBestellung(data._id,"bestaetigterTakt", 1);
         })
