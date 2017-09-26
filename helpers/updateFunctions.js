@@ -127,17 +127,8 @@ function updateKundeAuftragsuebersicht(objectID, attribut, neuerWert) {
     })
 }
 
-function vorfertigungKPI(objectID, attribut, neuerWert) {
-    vorfertigungKPI.findById(objectID, function (err, data) {
-        if(err) throw err;
-        data.set(attribut,neuerWert);
-        data.save(function (err,updatedData) {
-            if (err) throw err;
-        })
-    })
-}
 
-function lieferabwicklungKPI(objectID, attribut, neuerWert) {
+function updateLieferabwicklungKPI(objectID, attribut, neuerWert) {
     lieferabwicklungKPI.findById(objectID, function (err, data) {
         if(err) throw err;
         data.set(attribut,neuerWert);
