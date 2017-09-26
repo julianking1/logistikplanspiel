@@ -5,7 +5,6 @@ mongoose.Promise = global.Promise;
 var elagersummeSchema = new Schema({
         spielID: {type: Number, required: true},
         periode: {type: Number, required: true},
-        artikel: {type: String, required: true},
     bestandschwarz: {type: Number, required: true},
     bestandweiss: {type: Number, required: true},
     bestandrot: {type: Number, required: true},

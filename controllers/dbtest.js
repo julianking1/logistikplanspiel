@@ -23,7 +23,7 @@ module.exports = {
         schemaFunctions.createDistributionKPI(1,1);
         schemaFunctions.createDistributionLagerbestand(1,1,1,"schwarz",20);
         schemaFunctions.createDistributionLagerzugang(1,1,1,"weiss",18);
-        schemaFunctions.createDistributionSummen()
+        schemaFunctions.createDistributionSummen(1,1,5,4,3,2,10);
         schemaFunctions.createLagerbestandEingangspruefung(1,1,1,"schwarz",20);
         schemaFunctions.createLagerbestandVorEingangspruefung(1,1,1,"schwarz",1);
         schemaFunctions.createVorfertigungFertigungsplan(1,1,1,"weiss",1);
@@ -34,15 +34,15 @@ module.exports = {
         schemaFunctions.createEndmontageFertigungsplan(1,1,1,"weiß",20);
         schemaFunctions.createEndmontageKPI(1,1);
         schemaFunctions.createEndmontageLagerbestand(1,1,1,"weiß",20);
-        schemaFunctions.createEndmontageLagersumme(1,1,"weiß",2,2,2,2,2,2);
+        schemaFunctions.createEndmontageLagersumme(1,1,2,2,2,2,2,2);
         schemaFunctions.createEndmontageLagerzugang(1,1,1,"weiß",30);
         schemaFunctions.createEndmontageLosesumme(1,1,"weis",30);
-        schemaFunctions.createLieferabwicklungBestelluebersicht(1,1,1,102,5,3,3);
+        schemaFunctions.createLieferabwicklungBestelluebersicht(1,1,102,5,3,3);
         schemaFunctions.createLieferabwicklungKPI(1,1,30,20,30);
         schemaFunctions.createLieferabwicklungLagerbestand(1,1,2,"weiss",18);
         schemaFunctions.createLieferabwicklungLagerzugang(1,1,2,"weiss",18);
         schemaFunctions.createLieferabwicklungSummen(1, 1, 5, 4, 4, 3, 3);
-        schemaFunctions.createOrderManagement(1,1,1,"schwarz",18, 5, 4, 3, 2, 20);
+        schemaFunctions.createOrderManagement(1,1,1,"schwarz", 5, 4, 3, 2);
         schemaFunctions.createVorfertigungLagersumme(1, 1, 4,3,4,3);
         schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);
 
@@ -90,9 +90,34 @@ module.exports = {
             console.log(data.zugang);
         });
 
-        getterFunctions.getdistributionLagerzugang(1, 1, function(data){
-            console.log(data.bestandschwarz);
+        getterFunctions.getdistributionSummen(1, 1, function(data){
+            console.log(data.anzauftraege);
         });
+
+        getterFunctions.getendmontageFertigungsplan(1, 1, 1, "schwarz", function(data){
+            console.log(data.sollmenge);
+        });
+
+        getterFunctions.getendmontageKPI(1, 1, function(data){
+            console.log(data.lagerwert);
+        });
+
+        getterFunctions.getendmontageLagerbestand(1, 1, 1, "schwarz", function(data){
+            console.log(data.anzahl);
+        });
+
+        getterFunctions.getendmontageLagersumme(1, 1, function(data){
+            console.log(data.bestandweiss);
+        });
+
+        getterFunctions.getendmontageLagerzugang(1, 1, 1, "schwarz", function(data){
+            console.log(data.zugang);
+        });
+
+        getterFunctions.getendmontageLosesumme(1, 1, 1, "schwarz", function(data){
+            console.log(data.summe);
+        });
+
 
 
         var lagerbestandEingangspruefung = getterFunctions.getlagerbestandEingangspruefung(1, 1, 1, "schwarz", function(data){

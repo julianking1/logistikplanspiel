@@ -112,6 +112,55 @@ function getdistributionSummen(spielID, periode, callback){
     });
 };
 
+function getendmontageFertigungsplan(spielID, periode, takt, artikel, callback){
+    endmontageFertigungsplan.findOne({'spielID': spielID, 'periode': periode, 'takt':takt, 'artikel':artikel}, function(err, data){
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getendmontageKPI(spielID, periode, callback){
+    endmontageKPI.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
+        if(err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getendmontageLagerbestand(spielID, periode, takt, artikel, callback) {
+    endmontageLagerbestand.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+
+};
+
+function getendmontageLagersumme(spielID, periode, callback) {
+    endmontageLagersumme.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+
+};
+
+function getendmontageLagerzugang(spielID, periode, takt, artikel, callback) {
+    endmontageLagerzugang.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+
+};
+
+function getendmontageLosesumme(spielID, periode, artikel, callback) {
+    endmontageLosesumme.findOne({'spielID':spielID, 'periode': periode, 'artikel': artikel}, function (err, data) {
+        if(err) return handleError (err);
+        return callback(data);
+    });
+
+};
+
+
+
+
 
 
 
@@ -233,6 +282,12 @@ module.exports = {
     getdistributionLagerbestand:getdistributionLagerbestand,
     getdistributionLagerzugang:getdistributionLagerzugang,
     getdistributionSummen: getdistributionSummen,
+    getendmontageFertigungsplan: getendmontageFertigungsplan,
+    getendmontageKPI: getendmontageKPI,
+    getendmontageLagerbestand: getendmontageLagerbestand,
+    getendmontageLagersumme: getendmontageLagersumme,
+    getendmontageLagerzugang: getendmontageLagerzugang,
+    getendmontageLosesumme: getendmontageLosesumme,
     getalllieferabwicklungLagerzugang:getalllieferabwicklungLagerzugang,
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,

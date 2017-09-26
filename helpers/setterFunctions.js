@@ -193,9 +193,9 @@ function createEndmontageLagerbestand(spielID,periode,takt,artikel,anzahl) {
     });
 }
 
-function createEndmontageLagersumme(spielID,periode,artikel,bestandschwarz, bestandweiss,bestandrot,
+function createEndmontageLagersumme(spielID,periode,bestandschwarz, bestandweiss,bestandrot,
                                     zugangschwarz, zugangweiss, zugangrot) {
-    var data = new endmontageLagersumme({spielID:spielID,periode:periode,artikel:artikel,
+    var data = new endmontageLagersumme({spielID:spielID,periode:periode,
         bestandschwarz:bestandschwarz,bestandweiss:bestandweiss, bestandrot:bestandrot,
         zugangschwarz:zugangschwarz,zugangweiss:zugangweiss,zugangrot:zugangrot});
     data.save(function (err) {
