@@ -147,7 +147,7 @@ function generateDefaultValuesInDB (){
     //setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,1);
 
     //Order Management
-    setterFunctions.createOrderManagement();
+    //setterFunctions.createOrderManagement(app.spielID,1,1,);
 
 
 
