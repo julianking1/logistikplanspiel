@@ -9,6 +9,7 @@ var profile = require('./controllers/profile.js');
 var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
 var formularSpeichern = require('./controllers/formularSpeichern');
+var getterFunctions = require('./helpers/getterFunctions');
 
 //Startseite
 router.get('/', profilechoice.rendering); // localhost:3000/
@@ -50,12 +51,12 @@ router.post(/.*mailbox$/, function(req, res) {
         //res.send("ok"); //später weg bzw render
 });
 
-//POSt Test
+//POST Test
 router.post(/.*post$/, function(req, res) {
 
-
-    res.render('janatest', {pParam: req.body.profilParam, tParam: req.body.toolParam});
-
+    //getterFunctions.getlieferantenBestellung(123, 3, function (data) {
+        //res.render('janatest', {pParam: req.body.profilParam, tParam: req.body.toolParam, dbParam: data.artikel});
+    //});
 
 });
 
