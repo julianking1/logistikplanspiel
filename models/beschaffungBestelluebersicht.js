@@ -10,7 +10,7 @@ var bebestSchema = new Schema ({
     bestellnr: {type: Number, required: true},
     menge: {type: Number, required: true},
     plantakt: {type: Number, required: true},
-    isttakt: {type: Number, required: true}
+    isttakt: {type: Number, required: false}
 
 });
 

@@ -2,6 +2,7 @@ var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
 var schemaFunctions = require("../helpers/setterFunctions");
 var getterFunctions = require("../helpers/getterFunctions");
 var updateFunctions = require("../helpers/updateFunctions");
+var app = require("../app");
 
 module.exports = {
 
@@ -135,8 +136,6 @@ module.exports = {
     }
 
     function updateOrder(req, res) {
-        app.set('spielID', 1);
-        res.send(app.get('spielID'));
         getterFunctions.getlieferantenBestellung(1,2000,function (data) {
             updateFunctions.updateLieferantenBestellung(data._id,"bestaetigterTakt", 1);
         })
