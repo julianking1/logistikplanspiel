@@ -381,6 +381,7 @@ module.exports = {
     createVorfertigungLagerbestand:createVorfertigungLagerbestand,
     createVorfertigungLagersumme:createVorfertigungLagersumme,
     createVorfertigungLosesumme:createVorfertigungLosesumme,
+    createVorfertigungLagerzugang:createVorfertigungLagerzugang,
     createVorfertigungsKPI:createVorfertigungsKPI,
     createEndmontageFertigungsplan:createEndmontageFertigungsplan,
     createEndmontageKPI:createEndmontageKPI,

@@ -120,6 +120,21 @@ function getvorfertigungLagerbestand(spielID, periode, takt, artikel, callback) 
     });
 };
 
+function getvorfertigungLagersumme(spielID, periode, callback) {
+    vorfertigungLagersumme.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getvorfertigungLagerzugang(spielID, periode, takt, artikel, callback) {
+    vorfertigungLagerzugang.findOne({'spielID': spielID, 'periode': periode, 'takt': takt, 'artikel': artikel}, function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+    });
+};
+
+
 module.exports = {
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,
@@ -132,5 +147,7 @@ module.exports = {
     getorderManagement: getorderManagement,
     getvorfertigungFertigungsplan: getvorfertigungFertigungsplan,
     getvorfertigungKPI: getvorfertigungKPI,
-    getvorfertigungLagerbestand: getvorfertigungLagerbestand
+    getvorfertigungLagerbestand: getvorfertigungLagerbestand,
+    getvorfertigungLagersumme: getvorfertigungLagersumme,
+    getvorfertigungLagerzugang: getvorfertigungLagerzugang,
 }

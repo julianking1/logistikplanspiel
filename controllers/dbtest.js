@@ -36,6 +36,8 @@ module.exports = {
         schemaFunctions.createLieferabwicklungLagerzugang(1,1,2,"weiss",18);
         schemaFunctions.createLieferabwicklungSummen(1, 1, 5, 4, 4, 3, 3);
         schemaFunctions.createOrderManagement(1,1,1,"schwarz",18, 5, 4, 3, 2, 20);
+        schemaFunctions.createVorfertigungLagersumme(1, 1, 4,3,4,3);
+        schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);
 
     }
 
@@ -83,6 +85,14 @@ module.exports = {
         });
 
         getterFunctions.getvorfertigungLagerbestand(1, 1, 1, "schwarz", function(data){
+            console.log(data.anzahl);
+        });
+
+        getterFunctions.getvorfertigungLagersumme(1, 1, function(data){
+            console.log(data.bestandschwarz);
+        });
+
+        getterFunctions.getvorfertigungLagerzugang(1, 1, 1, "schwarz", function(data){
             console.log(data.anzahl);
         });
 
