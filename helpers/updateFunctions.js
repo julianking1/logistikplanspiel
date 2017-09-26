@@ -42,3 +42,8 @@ function addErhalteneMengeToLieferantenBestellung(ObjectID,menge) {
         console.log("Objekt " + ObjectID + " aktualisiert")
     })
 }
+
+
+module.exports = {
+    addErhalteneMengeToLieferantenBestellung:addErhalteneMengeToLieferantenBestellung
+}
