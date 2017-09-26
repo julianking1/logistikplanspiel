@@ -84,6 +84,6 @@ module.exports = {
 
     function updateOrder(req, res) {
 
-        updateFunctions.addErhalteneMengeToLieferantenBestellung(getterFunctions.getlieferantenBestellung(1,1))
+        updateFunctions.addErhalteneMengeToLieferantenBestellung(1,200,5000);
 
     }
