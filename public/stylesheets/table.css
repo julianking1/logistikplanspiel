@@ -34,6 +34,10 @@ input{
     border:none;
 }
 
+.button2{
+    color: firebrick;
+}
+
 .input{
     border: none;
 }

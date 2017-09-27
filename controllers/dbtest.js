@@ -9,7 +9,7 @@ module.exports = {
     createOrder: createOrder,
     getOrder: getOrder,
     updateOrder: updateOrder,
-    getAll : getAll
+    getAllOrders : getAllOrders
 }
 
     function createOrder(req, res) {
