@@ -8,8 +8,17 @@ module.exports = {
 
         var names = tableInfo.getNames(profile);
 
-        //var tables = getallFunctions.getAll(profile, tableNum, callback);
+        console.log('test');
 
-        res.render('tables', {numTable: tableNum, paramType: type, paramProfil: profile, nameTables: names, currentTable: ""});
+
+        var data = getallFunctions.getAll('kunde', '0', function (data) {
+            var daten = data.sort(function(a, b){
+                return a.bestellnr - b.bestellnr;
+            });
+
+            res.render('tables', {numTable: tableNum, paramType: type, paramProfil: profile, nameTables: names, currentTable: daten});
+        });
+
+
     }
 };

@@ -2,27 +2,25 @@ block profilecontent
 
     link(rel='stylesheet', href='/stylesheets/table.css')
 
-
     table(class="tabelle")
         caption Auftragsübersicht
             thead
                 tr
-                    th Takt
-                    th schwarz
-                    th weiß
+                    th Nr.
+                    th Artikel
+                    th Menge
                     th Terminwunsch
                     th Bestätigt
                     th Erhalten
             tbody
-                - var versuch = [{nr: '1', artikel: 'w1', menge: 'b1', terminwunsch: 't2', bestätigt:'b8', erhalten: 'e3'},{nr: '1', artikel: 'w1', menge: 'b1', terminwunsch: 't2', bestätigt:'b8', erhalten: 'e3'}, {nr: '1', artikel: 'w1', menge: 'b1', terminwunsch: 't2', bestätigt:'b8', erhalten: 'e3'}];
-                each item in versuch
+                each item in currentTable
                     tr
-                        td= item.nr
+                        td= item.bestellnr
                         td= item.artikel
                         td= item.menge
-                        td= item.terminwunsch
-                        td= item.bestätigt
-                        td= item.erhalten
+                        td= item.wunschtermin
+                        td= item.bestaetigtertermin
+                        td= item.erhalttermin
 
 
                         td(class="button")
@@ -40,9 +38,9 @@ block profilecontent
                     td(class="input")
                         input(id="terminwunsch" placeholder="Takt")
                     td(class="input")
-                        input(id="bestätigt" placeholder="Takt")
+                        input(id="bestätigtertermin" placeholder="Takt")
                     td(class="input")
-                        input(id="erhalten" placeholder="Takt")
+                        input(id="erhalttermin" placeholder="Takt")
 
                     td(class="button")
-                        button(class="button2") speichern
+                        button(class="button2" onclick= "save('#{paramProfil}', '#{paramType}', ' #{numTable}')") speichern

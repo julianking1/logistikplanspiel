@@ -217,10 +217,11 @@ function generateDefaultValuesInDB (){
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,7,"weiß",6,1,function(data){
         updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",1);
     });
-    setterFunctions.createKundeAuftragsuebersicht(spielID,1,1,"schwarz",2,1,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",1);
-    });
+
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,8,"schwarz",3,7,function(data){
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",2);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(spielID,1,9,"weiß",6,2,function(data){
         updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",2);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,10,"schwarz",2,5,function(data){

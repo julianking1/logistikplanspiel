@@ -28,6 +28,7 @@ function loadContent(profil, type, contentNum) {
 
 }
 
+
 function save(profil, type, contentNum){
 
     var data = {};
@@ -49,7 +50,9 @@ function save(profil, type, contentNum){
     xhr.open('POST', '/save', true);
     xhr.setRequestHeader('Content-type', 'application/json');
     xhr.onload = function () {
+
         console.log("HUHU");
+
         var div = document.createElement('div');
         div.className = 'currentContent';
         div.innerHTML = this.responseText;

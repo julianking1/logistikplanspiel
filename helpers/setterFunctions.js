@@ -242,10 +242,10 @@ function createDistributionLagerbestand(spielID,periode,takt,artikel,anzahl,call
 }
 
 function createDistributionSummen(spielID,periode,bestandschwarz, bestandweiss,
-                                    zugangschwarz, zugangweiss, anzauftraege,callback) {
+                                    zugangschwarz, zugangweiss, callback) {
     var data = new distributionSummen({spielID:spielID,periode:periode,
         bestandschwarz:bestandschwarz,bestandweiss:bestandweiss, zugangschwarz:zugangschwarz,
-        zugangweiss:zugangweiss, anzauftraege:anzauftraege});
+        zugangweiss:zugangweiss});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);
