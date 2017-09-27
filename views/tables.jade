@@ -1,6 +1,13 @@
+link(rel='stylesheet', href='/stylesheets/tables.css')
+
 each item in nameTables
     span= ""
-        button #{item}
+        button(id="button") #{item}
+
+span
+    p
+        include endmontage_lagerbestand
 
 
-include endmontage_lagerbestand
+
+
