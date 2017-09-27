@@ -1,0 +1,31 @@
+block profilecontent
+
+    link(rel='stylesheet', href='/stylesheets/table.css')
+
+
+    table(class="tabelle")
+        caption Auftragsbearbeitung
+            thead
+                tr
+                    th Takt
+                    th Anzahl
+            tbody
+                - var versuch = [{takt: '1', anzahl: 'w1'},{takt: '2', anzahl: 'w2'}, {takt: '3', anzahl: 'w3'}];
+                each item in versuch
+                    tr
+                        td= item.takt
+                        td= item.anzahl
+
+                        td(class="button")
+                            button(class="button2") bearbeiten
+                tr
+                    td(class="Leerzeile")
+
+                tr
+                    td(class="input")
+                        input(id="takt" placeholder="Takt")
+                    td(class="input")
+                        input(id="anzahl" placeholder="Menge")
+
+                    td(class="button")
+                        button(class="button2") speichern
