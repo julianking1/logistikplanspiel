@@ -144,10 +144,50 @@ function generateDefaultValuesInDB (){
     setterFunctions.createEndmontageFertigungsplan(app.spielID,1,10,"weiß",0);
 
     //Lieferabwicklung Bestellübersicht
-    //setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,1);
+    setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,101,6);
+    getterFunctions.getlieferabwicklungBestelluebersicht(app.spielID,1,102,function (data) {
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",1);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",1);
+    });
+    setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,102,6);
+    getterFunctions.getlieferabwicklungBestelluebersicht(app.spielID,1,102,function (data) {
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",2);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",2);
+    });
+    setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,103,8);
+    getterFunctions.getlieferabwicklungBestelluebersicht(app.spielID,1,102,function (data) {
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",3);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",3);
+    });
+    setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,104,4);
+    getterFunctions.getlieferabwicklungBestelluebersicht(app.spielID,1,102,function (data) {
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",4);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",4);
+    });
+    setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,105,7);
+    getterFunctions.getlieferabwicklungBestelluebersicht(app.spielID,1,105,function (data) {
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",5);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",5);
+    });
+    setterFunctions.createLieferabwicklungBestelluebersicht(app.spielID,1,106,4);
+    getterFunctions.getlieferabwicklungBestelluebersicht(app.spielID,1,106,function (data) {
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",6);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",6);
+    });
 
-    //Order Management
-    //setterFunctions.createOrderManagement(app.spielID,1,1,);
+    //Order Managementse
+    setterFunctions.createOrderManagement(app.spielID,1,1,"schwarz");
+    getterFunctions.getorderManagement(app.spielID,1,1,"schwarz", function (data) {
+        updateFunctions.updateOrderManagement(data._id,"anfangsbestand",6);
+        updateFunctions.updateOrderManagement(data._id,"abgangsnr",3);
+        updateFunctions.updateOrderManagement(data._id,"abgang",5);
+    });
+    setterFunctions.createOrderManagement(app.spielID,1,2,"schwarz");
+    getterFunctions.getorderManagement(app.spielID,1,2,"schwarz", function (data) {
+        updateFunctions.updateOrderManagement(data._id,"zugangsnr",102);
+        updateFunctions.updateOrderManagement(data._id,"zugang",6);
+    });
+    
 
 
 
