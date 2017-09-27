@@ -50,12 +50,8 @@ module.exports = {
         schemaFunctions.createVorfertigungLagersumme(1, 1, 4,3,4,3);
         schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);*/
 
-        //dbDefaultValues.generateDefaultValuesInDB();
-        //res.send("created");
-
-        schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1,function (data) {
-            console.log(data._id);
-        })
+        dbDefaultValues.generateDefaultValuesInDB();
+        res.send("created");
 
     }
 
