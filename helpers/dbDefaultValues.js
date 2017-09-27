@@ -5,6 +5,8 @@ var getterFunctions = require("../helpers/getterFunctions");
 var app = require("../app");
 
 function generateDefaultValuesInDB (){
+
+    app.spielID = 1;
     //Lieferant
     setterFunctions.createLieferantenBestellung(app.spielID,1,-5,"schwarz",1,9);
     getterFunctions.getlieferantenBestellung(app.spielID,4,function (data) {
@@ -230,7 +232,7 @@ function generateDefaultValuesInDB (){
         updateFunctions.updateOrderManagement(data._id,"zugangsnr",107);
         updateFunctions.updateOrderManagement(data._id,"zugang",6);
     });
-    
+
     //Kunde
     setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,1,"schwarz",3,1);
     getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,1,function (data) {

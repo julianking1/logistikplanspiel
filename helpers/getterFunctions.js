@@ -1,6 +1,6 @@
 //alle Schemas importieren
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
-var beschaffungsBestandswert = require("../models/beschaffungBestandswert");
+var beschaffungBestandswert = require("../models/beschaffungBestandswert");
 var beschaffungBestelluebersicht = require("../models/beschaffungBestelluebersicht");
 var beschaffungKPI = require("../models/beschaffungKPI");
 var beschaffungsUebersicht = require("../models/beschaffungsUebersicht");
@@ -37,7 +37,7 @@ var orderManagement= require("../models/orderManagement");
 //Methoden, die alle Datensätze zurückgeben
 
 function getallbeschaffungBestandswert(callback) {
-    lieferabwicklungLagerzugang.find({}, function (err, data) {
+    beschaffungBestandswert.find({}, function (err, data) {
         if (err) return handleError(err);
         return callback(data);
     });
@@ -64,16 +64,208 @@ function getallbeschaffungsUebersicht(callback){
         });
 }
 
+function getalldistributionAuftragsbearbeitung(callback){
+    distributionAuftragsbearbeitung.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
 
+function getalldistributionKPI(callback){
+    distributionKPI.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
 
+function getalldistributionLagerbestand(callback){
+    distributionLagerbestand.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getalldistributionLagerzugang(callback){
+    distributionLagerzugang.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getalldistributionSummen(callback){
+    distributionSummen.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallendmontageFertigungsplan(callback){
+    endmontageFertigungsplan.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallendmontageKPI(callback){
+    endmontageKPI.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallendmontageLagerbestand(callback){
+    endmontageLagerbestand.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallendmontageLagersumme(callback){
+    endmontageLagersumme.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallendmontageLagerzugang(callback){
+    endmontageLagerzugang.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallendmontageLosesumme(callback){
+    endmontageLosesumme.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallkundeAuftragsuebersicht(callback){
+    kundeAuftragsuebersicht.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallkundeKPI(callback){
+    kundeKPI.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallkundeUmsatz(callback){
+    kundeUmsatz.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getalllagerbestandEingangspruefung(callback){
+    lagerbestandEingangspruefung.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getalllagerbestandvorEingangspruefung(callback){
+    lagerbestandvorEingangspruefung.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getalllieferabwicklungBestelluebersicht(callback){
+    lieferabwicklungBestelluebersicht.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getalllieferabwicklungKPI(callback){
+    lieferabwicklungKPI.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getalllieferabwicklungLagerbestand(callback){
+    lieferabwicklungLagerbestand.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
 
 function getalllieferabwicklungLagerzugang(callback){
     lieferabwicklungLagerzugang.find({}, function (err, data) {
         if (err) return handleError(err);
         return callback(data);
-});
+    });
 }
 
+function getalllieferabwicklungSummen(callback){
+    lieferabwicklungSummen.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getalllieferantenBestellung(callback){
+    lieferantenBestellung.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallorderManagement(callback){
+    orderManagement.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallvorfertigungFertigungsplan(callback){
+    vorfertigungFertigungsplan.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallvorfertigungKPI(callback){
+    vorfertigungKPI.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallvorfertigungLagerbestand(callback){
+    vorfertigungLagerbestand.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallvorfertigungLagersumme(callback){
+    vorfertigungLagersumme.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallvorfertigungLagerzugang(callback){
+    vorfertigungLagerzugang.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallvorfertigungLosesumme(callback){
+    vorfertigungLosesumme.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
 
 
 
@@ -87,7 +279,7 @@ function getalllieferabwicklungLagerzugang(callback){
 //Methoden, die einzelne Datensätze rückgeben
 
 function getbeschaffungBestandswert(spielID, periode, callback) {
-    beschaffungsBestandswert.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
+    beschaffungBestandswert.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
         if(err) return handleError (err);
         return callback(data);
     });
@@ -345,6 +537,35 @@ module.exports = {
     getallbeschaffungBestelluebersicht: getallbeschaffungBestelluebersicht,
     getallbeschaffungKPI: getallbeschaffungKPI,
     getallbeschaffungsUebersicht: getallbeschaffungsUebersicht,
+    getalldistributionAuftragsbearbeitung:getalldistributionAuftragsbearbeitung,
+    getalldistributionKPI:getalldistributionKPI,
+    getalldistributionLagerbestand:getalldistributionLagerbestand,
+    getalldistributionLagerzugang:getalldistributionLagerzugang,
+    getalldistributionSummen:getalldistributionSummen,
+    getallendmontageFertigungsplan:getallendmontageFertigungsplan,
+    getallendmontageKPI:getallendmontageKPI,
+    getallendmontageLagerbestand:getallendmontageLagerbestand,
+    getallendmontageLagersumme:getallendmontageLagersumme,
+    getallendmontageLagerzugang:getallendmontageLagerzugang,
+    getallendmontageLosesumme:getallendmontageLosesumme,
+    getallkundeAuftragsuebersicht:getallkundeAuftragsuebersicht,
+    getallkundeKPI: getallkundeKPI,
+    getallkundeUmsatz: getallkundeUmsatz,
+    getalllagerbestandEingangspruefung: getalllagerbestandEingangspruefung,
+    getalllagerbestandvorEingangspruefung: getalllagerbestandvorEingangspruefung,
+    getalllieferabwicklungBestelluebersicht:getalllieferabwicklungBestelluebersicht,
+    getalllieferabwicklungKPI:getalllieferabwicklungKPI,
+    getalllieferabwicklungLagerbestand:getalllieferabwicklungLagerbestand,
+    getalllieferabwicklungLagerzugang:getalllieferabwicklungLagerzugang,
+    getalllieferabwicklungSummen:getalllieferabwicklungSummen,
+    getalllieferantenBestellung:getalllieferantenBestellung,
+    getallorderManagement:getallorderManagement,
+    getallvorfertigungFertigungsplan:getallvorfertigungFertigungsplan,
+    getallvorfertigungKPI:getallvorfertigungKPI,
+    getallvorfertigungLagerbestand:getallvorfertigungLagerbestand,
+    getallvorfertigungLagersumme:getallvorfertigungLagersumme,
+    getallvorfertigungLagerzugang:getallvorfertigungLagerzugang,
+    getallvorfertigungLosesumme:getallvorfertigungLosesumme,
 
     getdistributionAuftragsbearbeitung:getdistributionAuftragsbearbeitung,
     getdistributionKPI:getdistributionKPI,
@@ -360,7 +581,6 @@ module.exports = {
     getkundeAuftragsuebersicht: getkundeAuftragsuebersicht,
     getkundeKPI: getkundeKPI,
     getkundeUmsatz: getkundeUmsatz,
-    getalllieferabwicklungLagerzugang:getalllieferabwicklungLagerzugang,
     getlagerbestandEingangspruefung: getlagerbestandEingangspruefung,
     getlagerbestandvorEingangspruefung: getlagerbestandvorEingangspruefung,
     getlieferabwicklungBestelluebersicht: getlieferabwicklungBestelluebersicht,
