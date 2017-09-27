@@ -341,6 +341,11 @@ function getvorfertigungLosesumme(spielID, periode, artikel, callback) {
 
 
 module.exports = {
+    getallbeschaffungBestandswert:getallbeschaffungBestandswert,
+    getallbeschaffungBestelluebersicht: getallbeschaffungBestelluebersicht,
+    getallbeschaffungKPI: getallbeschaffungKPI,
+    getallbeschaffungsUebersicht: getallbeschaffungsUebersicht,
+
     getdistributionAuftragsbearbeitung:getdistributionAuftragsbearbeitung,
     getdistributionKPI:getdistributionKPI,
     getdistributionLagerbestand:getdistributionLagerbestand,
