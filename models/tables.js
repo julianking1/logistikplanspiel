@@ -5,7 +5,8 @@ var kundeTabellen = [
 ];
 
 var beschaffungTabellen = [
-    "Lagerbestand",
+    "Lagerbestand (vor Eingangsprüfung)",
+    "Lagerbestand (in Eingangsprüfung)",
     "Bestellübersicht"
 ];
 
@@ -40,7 +41,7 @@ var lieferabwicklungTabellen = [
 
 module.exports = {
 
-    getInfo: function(profil) {
+    getNames: function(profil) {
 
         switch (String(profil)) {
             case 'kunde':

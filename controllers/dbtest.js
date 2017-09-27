@@ -51,7 +51,7 @@ module.exports = {
 
     }
 
-    function  getAll(req, res){
+    function  getAllOrders(req, res){
     getterFunctions.getalllieferabwicklungLagerzugang(function(data){
         console.log(data);
     });
