@@ -124,11 +124,13 @@ function getAll(rolle, tabelle, callback) {
                     getterFunctions.getalllieferabwicklungBestelluebersicht(function(data){
                         return(data);
                     });
+                    break;
             }
             break;
         case 'lieferant':
             getterFunctions.getalllieferantenBestellung(function(data){
                 return(data);
             });
+            break;
     }
 }

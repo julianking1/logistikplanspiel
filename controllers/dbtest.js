@@ -4,6 +4,7 @@ var getterFunctions = require("../helpers/getterFunctions");
 var updateFunctions = require("../helpers/updateFunctions");
 var app = require("../app");
 var dbDefaultValues = require("../helpers/dbDefaultValues");
+var getallFunctions = require("../controllers/getallFunctions");
 
 module.exports = {
 
@@ -63,6 +64,11 @@ module.exports = {
     getterFunctions.getalllieferabwicklungLagerzugang(function(data){
         console.log(data);
     });
+
+    getallFunctions.getAll("kunde",0,function(data){
+        console.log(data);
+    })
+    ;
     }
 
 
