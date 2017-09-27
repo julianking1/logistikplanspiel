@@ -187,7 +187,10 @@ function generateDefaultValuesInDB (){
         updateFunctions.updateOrderManagement(data._id,"zugangsnr",102);
         updateFunctions.updateOrderManagement(data._id,"zugang",6);
     });
+    //mehrere Abgänge!!!
 
+    //Kunde
+    //setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,)
 
 
 
