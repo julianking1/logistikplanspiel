@@ -1,0 +1,38 @@
+block profilecontent
+
+    link(rel='stylesheet', href='/stylesheets/table.css')
+
+    table(class="tabelle")
+        caption Bestellübersicht Artikel
+            thead
+                tr
+                    th Takt
+                    th schwarz
+                    th weiß
+                    th rot
+            tbody
+                - var versuch = [{nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'},{nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'}, {nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'}, {nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'}];
+                each item in versuch
+                    tr
+                        td= item.nr
+                        td= item.menge
+                        td= item.wunschtermin
+                        td= item.bestätigt
+
+                        td(class="button")
+                            button(class="button2") bearbeiten
+                tr
+                    td(class="Leerzeile")
+
+                tr
+                    td(class="input")
+                        input(id="nr" placeholder="Nr.")
+                    td(class="input")
+                        input(id="menge" placeholder="Menge")
+                    td(class="input")
+                        input(id="wunschtermin" placeholder="Takt")
+                    td(class="input")
+                        input(id="bestätigt" placeholder="Takt")
+
+                    td(class="button")
+                        button(class="button2") speichern
