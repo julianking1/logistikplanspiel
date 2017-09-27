@@ -190,9 +190,49 @@ function generateDefaultValuesInDB (){
     //mehrere Abgänge!!!
 
     //Kunde
-    //setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,)
-
-
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,1,"schwarz",3,1);
+    getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,1,function (data) {
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",1);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,2,"schwarz",4,1);
+    getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,2,function (data) {
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",1);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,3,"schwarz",5,3);
+    getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,3,function (data) {
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",3);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,4,"schwarz",2,5);
+    getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,4,function (data) {
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",5);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,5,"weiß",2,3);
+    getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,5,function (data) {
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",3);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,6,"schwarz",3,5);
+    getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,6,function (data) {
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",5);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,7,"weiß",6,1);
+    getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,7,function (data) {
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",1);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,1,"schwarz",2,1);
+    getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,1,function (data) {
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",1);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,8,"schwarz",3,7);
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,9,"weiß",6,2);
+    getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,9,function (data) {
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",2);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,10,"schwarz",2,5);
+    getterFunctions.getkundeAuftragsuebersicht(app.spielID,1,10,function (data) {
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",5);
+    });
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,11,"schwarz",2,7);
+    setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,12,"weiß",5,3);
 
 }
 

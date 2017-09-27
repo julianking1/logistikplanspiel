@@ -33,15 +33,58 @@ var lieferabwicklungLagerzugang= require("../models/lieferabwicklungLagerzugang"
 var lieferabwicklungSummen= require("../models/lieferabwicklungSummen");
 var orderManagement= require("../models/orderManagement");
 
-function getalllieferabwicklungLagerzugang(callback) {
-        lieferabwicklungLagerzugang.find({}, function (err, data) {
-            if (err) return handleError(err);
-            return callback(data);
+
+//Methoden, die alle Datensätze zurückgeben
+
+function getallbeschaffungBestandswert(callback) {
+    lieferabwicklungLagerzugang.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
     });
+}
+
+function getallbeschaffungBestelluebersicht(callback){
+    beschaffungBestelluebersicht.find({}, function (err, data){
+       if (err) return handleError(err);
+       return callback(data);
+    });
+}
+
+function getallbeschaffungKPI(callback){
+    beschaffungKPI.find({}, function (err, data){
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallbeschaffungsUebersicht(callback){
+    beschaffungsUebersicht.find({}, function (err, data){
+        if(err) return handleError(err);
+        return callback(data);
+        });
 }
 
 
 
+
+function getalllieferabwicklungLagerzugang(callback){
+    lieferabwicklungLagerzugang.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+});
+}
+
+
+
+
+
+
+
+
+
+
+
+//Methoden, die einzelne Datensätze rückgeben
 
 function getbeschaffungBestandswert(spielID, periode, callback) {
     beschaffungsBestandswert.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
@@ -298,6 +341,11 @@ function getvorfertigungLosesumme(spielID, periode, artikel, callback) {
 
 
 module.exports = {
+    getallbeschaffungBestandswert:getallbeschaffungBestandswert,
+    getallbeschaffungBestelluebersicht: getallbeschaffungBestelluebersicht,
+    getallbeschaffungKPI: getallbeschaffungKPI,
+    getallbeschaffungsUebersicht: getallbeschaffungsUebersicht,
+
     getdistributionAuftragsbearbeitung:getdistributionAuftragsbearbeitung,
     getdistributionKPI:getdistributionKPI,
     getdistributionLagerbestand:getdistributionLagerbestand,

@@ -1,7 +1,8 @@
 var helperMailbox = require('../controllers/mailbox.js');
 var checklisten = require('../models/checklisten');
 var urlSplitter = require('../helpers/urlSplitter');
-var tabellen = require('../controllers/tabellen.js');
+var renderTables = require('./renderTables.js');
+var renderInfo = require('./renderInfo.js');
 
 module.exports = {
 
@@ -23,11 +24,11 @@ module.exports = {
                 break;
 
             case 'tabellen':
-                tabellen.getContent(res, profile, contentNum);
+                renderTables.getContent(res, profile, contentNum);
                 break;
 
             case 'info':
-                res.render('info', {paramProfil: profile, paramTool: type});
+                renderInfo.getContent(res, profile);
         }
 
     },
