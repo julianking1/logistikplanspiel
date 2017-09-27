@@ -15,12 +15,12 @@ function getAll(rolle, tabelle, callback) {
             switch (tabelle){
                 case '0':
                     getterFunctions.getallkundeAuftragsuebersicht(function(data){
-                        return(data);
+                        return callback(data);
                     })
                     break;
                 case '1':
                     getterFunctions.getallkundeUmsatz(function(data){
-                        return(data);
+                        return callback(data);
                     })
                     break;
                 case '2':
@@ -32,17 +32,17 @@ function getAll(rolle, tabelle, callback) {
             switch (tabelle) {
                 case '0':
                     getterFunctions.getalllagerbestandvorEingangspruefung(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
                 case '1':
                     getterFunctions.getalllagerbestandEingangspruefung(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
                 case '2':
                     getterFunctions.getallbeschaffungBestelluebersicht(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
             }
@@ -51,17 +51,17 @@ function getAll(rolle, tabelle, callback) {
             switch (tabelle) {
                 case '0':
                     getterFunctions.getalldistributionLagerzugang(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
                 case '1':
                     getterFunctions.getalldistributionLagerbestand(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
                 case '2':
                     getterFunctions.getalldistributionAuftragsbearbeitung(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
             }
@@ -70,17 +70,17 @@ function getAll(rolle, tabelle, callback) {
             switch (tabelle){
                 case '0':
                     getterFunctions.getallendmontageFertigungsplan(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
                 case '1':
                     getterFunctions.getallendmontageLagerbestand(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
                 case '2':
                     getterFunctions.getallendmontageLagerzugang(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
             }
@@ -89,47 +89,47 @@ function getAll(rolle, tabelle, callback) {
             switch (tabelle){
                 case '0':
                     getterFunctions.getallvorfertigungFertigungsplan(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
                 case '1':
                     getterFunctions.getallvorfertigungLagerbestand(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
                 case '2':
                     getterFunctions.getallvorfertigungLagerzugang(function(data){
-                        return(data);
+                        return callback(data);
                     });
             }
             break;
         case 'ordermanagement':
             getterFunctions.getallorderManagement(function(data){
-                return(data);
+                return callback(data);
             });
             break;
         case 'lieferabwicklung':
             switch (tabelle){
                 case '0':
                     getterFunctions.getalllieferabwicklungLagerzugang(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
                 case '1':
                     getterFunctions.getalllieferabwicklungLagerbestand(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
                 case '2':
                     getterFunctions.getalllieferabwicklungBestelluebersicht(function(data){
-                        return(data);
+                        return callback(data);
                     });
                     break;
             }
             break;
         case 'lieferant':
             getterFunctions.getalllieferantenBestellung(function(data){
-                return(data);
+                return callback(data);
             });
             break;
     }
