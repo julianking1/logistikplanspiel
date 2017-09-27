@@ -24,5 +24,4 @@ function loadContent(profil, type, contentNum) {
         contentNum: contentNum
     }));
 
-
 }
