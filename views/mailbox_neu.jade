@@ -1,0 +1,53 @@
+block profilecontent
+
+
+    link(rel='stylesheet', href='/stylesheets/table.css')
+
+
+    table(class="tabelle")
+        caption Neuer Bestellschein
+
+        thead
+            tr
+                th(scope="col" rowspan="2") Interner/Externer Bestellschein
+                th(scope="col" rowspan="2") Von
+                th(scope="col" rowspan="2") Nr.
+                th(scope="col" rowspan="2") Ausstellungstakt
+                th(scope="col" rowspan="2") Artikelfarbe
+                th(scope="colgroup" colspan="3") Menge
+                th(scope="colgroup" colspan="3") Takt
+            tr
+                th Wunsch
+                th Bestätigt
+                th Erhalten
+                th Wunsch
+                th Bestätigt
+                th Erhalten
+
+        tbody
+            tr
+                td(class="Leerzeile")
+
+            tr
+                td(class="input")
+                    input(id="Bestellscheinart" placeholder="I/E")
+                td(class="input")
+                    input(id="von" placeholder="Von")
+                td(class="input")
+                    input(id="Nr" placeholder="Nr.")
+                td(class="input")
+                    input(id="ausstellungstakt" placeholder="Takt")
+                td(class="input")
+                    input(id="artikelfarbe" placeholder="Farbe")
+                td(class="input")
+                    input(id="wunschm" placeholder="Wunsch")
+                td(class="input")
+                    input(id="bestätigtm" placeholder="Bestätigt")
+                td(class="input")
+                    input(id="erhaltenm" placeholder="Erhalten")
+                td(class="input")
+                    input(id="wunscht" placeholder="Wunsch")
+                td(class="input")
+                    input(id="bestätigtt" placeholder="Bestätigt")
+                td(class="input")
+                    input(id="erhaltent" placeholder="Erhalten")
