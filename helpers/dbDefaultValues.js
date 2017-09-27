@@ -1,6 +1,5 @@
 var setterFunctions = require("../helpers/setterFunctions");
 var updateFunctions = require("../helpers/updateFunctions");
-var getterFunctions = require("../helpers/getterFunctions");
 
 var app = require("../app");
 spielID = app.spielID;
