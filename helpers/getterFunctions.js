@@ -267,15 +267,6 @@ function getallvorfertigungLosesumme(callback){
     });
 }
 
-
-
-
-
-
-
-
-
-
 //Methoden, die einzelne Datensätze rückgeben
 
 function getbeschaffungBestandswert(spielID, periode, callback) {
