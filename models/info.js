@@ -26,8 +26,15 @@ var kundeBeschreibung = [
 ];
 
 var beschaffungBeschreibung = [
-    "Beschaffung",
-    "Dies ist der Arbeitsplatz der Beschaffung."
+    "Die Beschaffung übt eine stark logistisch geprägte Tätigkeit aus, die erhebliche Auswirkungen auf die Logistikleistung hat " +
+    "Zunächst werden die bestellten Materialien entladen, ausgepackt und in die Eingangsprüfung gebracht. " +
+    "Dabei findet ein Abgleich zwischen Bestelldaten und tatsächlicher Lieferleistung statt (Menge, Typ und Lieferdaten). " +
+    "Die Eingangsprüfung kontrolliert die Lieferqualität. Defekte Teile gehen zurück zum Lieferanten, einwandfreie Teile übernimmt die Vorfertigung in das Teilelager. " +
+    "Im nächsten Schritt überlegt sich der Einkäufer, wie viele Teile er bestellen soll. Dabei müssen die Lieferzeit, der vorhandene sowie zukünftige Bestand beachtet werden. " +
+    "Am Anfang ist es ratsam, die Mengen zu bestellen, die auch in der Vergangenheit nachgefragt wurden. " +
+    "Im weiteren Verlauf der Simulation kann die Beschaffung Bevorratungsstrategien entwickeln. " +
+    "Für Teile mit schwankendem Bedarf legt er sich möglicherweise eine größere Menge auf das Lager als für Teile, die ein regelmäiges Bedrfsmuster haben. " +
+    "In Periode 2 hilft eine Mengenplanung den zukünftigen Bedarf genauer zu ermitteln. "
 
 ];
 
@@ -44,13 +51,25 @@ var distributioncenterBeschreibung = [
 ];
 
 var endmontageBeschreibung = [
-    "Endmontage",
-    "Dies ist der Arbeitsplatz der Endmontage."
+    "In der Endmontage steht eine Fertigungslinie mit 9 Kapazitätseinheiten zur Verfügung. " +
+    "Der produktionsmanager ist dabei für die zweite Stufe der Produktion - der Hochzeit zwischen roten und schwarzen bzw. weißen Teilen verantwortlich. " +
+    "Dazu entnimmt er die halbfertigen Produkte aus der Vorfertigung sowie die roten Teile aus dem Briefkasten und lagert sie ein, " +
+    "Grundlage seiner Fertigungsentscheidung ist der Fertigungsplan. " +
+    "Gleichzeitig steht er in engem Kontakt mit dem Werksdisponenten, der sein interner Kunde ist. " +
+    "Falls er keine Informationen von seinem Kunden bekommt, gilt der Fertigungsplan als Richtschnur, " +
+    "Im Spannungsfeld zwischen Plan und Lieferwunsch seines Kunden trifft der Produktionsmanager die Entscheidung über die Fertigungsmengen. " +
+    "Die Mindestfertigungsmenge liegt am Anfang bei 5 Stück, sodass pro Takt in der Regel nur schwarze oder weiße Artikel im Wechsel gefertigt werden können. "
 ];
 
 var vorfertigungBeschreibung = [
-    "Vorfertigung",
-    "Dies ist der Arbeitsplatz der Vorfertigung."
+    "Die schwarzen und weißen Baugruppen werden an zwei fertigungslinien in der Vorfertigung gefertigt. " +
+    "Der Produktionsmanager ist dabei für die ausreichende Produktion und Bestände an Rohmaterial verantwortlich. " +
+    "Er entnimmt die geprüften Teile aus der Eingangsprüfung und lagert sie ein. " +
+    "Er steht in engem Kontakt zur Endmontage." +
+    "Sein Interesse besteht darin, die Fertigungskapazitäten gut auzulasten und Bedarfsschwankungen zu glätten. " +
+    "Dafür erstellt er einen Fertigungsplan, die als Richtschnur für die Auslastung seiner Fertigung dient. " +
+    "Bei Bedarfsänderungen kann er im Ausnahmefall kurzfristig Abweichungen vom Fertigungsplan vornehmen.",
+
 ];
 
 var ordermanagementBeschreibung = [
@@ -79,8 +98,14 @@ var lieferabwicklungBeschreibung = [
     "er die Lieferungen durch Beladen des LKW für den Vertrieb zum Absenden im nächsten Takt vor."
 ]
 var lieferantBeschreibung = [
-    "Lieferant",
-    "Dies ist der Arbeitsplatz der Lieferanten."
+    "Der Lieferant versorgt als externer Partner die Logistikkette mit notwendigen Materialien. " +
+    "Es handelt sich um einen Lieferbetrieb mit einer guten Qualität und akzeptabler Lieferleistung. " +
+    "Gelegentlich sind Früh- und Spätlieferungen möglich. Auch kann es passieren, dass die gelieferten Teile fehlerhaft sind. " +
+    "Der Lieferant bearbeitet die eingehenden Bestelungen und ordnet die Aufträge in seine Prozesskette ein. " +
+    "Die schwarzen Materialien benötigen mehr Zeit wie die roten Materialien. " +
+    "Er versendet die Lieferungen mit dem LKW in Transportboxen zu den bestellenden Unternehmen."
+    ,
+
 ];
 
 
