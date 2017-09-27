@@ -4,7 +4,7 @@ var getterFunctions = require("../helpers/getterFunctions");
 var updateFunctions = require("../helpers/updateFunctions");
 var app = require("../app");
 
-model.exports = {
+module.exports = {
 getAll: getAll
 }
 
