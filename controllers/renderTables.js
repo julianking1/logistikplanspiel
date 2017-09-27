@@ -6,7 +6,7 @@ module.exports = {
     getContent: function (res, profile, tableNum) {
         console.log(tableNum);
 
-        var names = tableInfo.getInfo(profile);
+        var names = tableInfo.getNames(profile);
 
         //var tables = getterFunctions.getAll(profile, tableNum);
 
