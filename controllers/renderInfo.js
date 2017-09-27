@@ -3,16 +3,16 @@ var infoInfo = require("../models/info.js");
 
 module.exports = {
 
-    getContent: function (res, profile, def) {
+    getContent: function (res, profile, type, def) {
 
-        var info = infoInfo.getBeschreibung(profile);
+        var info = infoInfo.getBeschreibung(profile); //DB Abfrage
         var name = info[0];
         var beschreibung = info[1];
 
         if(def){
-            res.render('default', {paramProfil: profile, nameParam: name, beschreibungParam: beschreibung});
+            res.render('default', {paramType: type, paramProfil: profile, nameParam: name, beschreibungParam: beschreibung});
         }else{
-            res.render('info', {paramProfil: profile, nameParam: name, beschreibungParam: beschreibung});
+            res.render('info', {paramType: type, paramProfil: profile, nameParam: name, beschreibungParam: beschreibung});
         }
 
     }

@@ -79,7 +79,7 @@ module.exports = {
                 return distributioncenterChecklist;
             case 'endmontage':
                 return endmontageChecklist;
-            case 'vormontage':
+            case 'vorfertigung':
                 return vorfertigungChecklist;
             case 'ordermanagement':
                 return ordermanagementChecklist;

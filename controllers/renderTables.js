@@ -1,15 +1,15 @@
 var tableInfo = require("../models/tables.js");
-var getterFunctions = require("../helpers/getterFunctions.js");
+var getallFunctions = require("./getallFunctions.js");
 
 module.exports = {
 
-    getContent: function (res, profile, tableNum) {
-        console.log(tableNum);
+    getContent: function (res, profile, type, tableNum) {
+        //console.log(tableNum);
 
         var names = tableInfo.getNames(profile);
 
-        //var tables = getterFunctions.getAll(profile, tableNum);
+        //var tables = getallFunctions.getAll(profile, tableNum, callback);
 
-        res.render('tables', {paramProfil: profile, nameTables: names, currentTables: ""});
+        res.render('tables', {numTable: tableNum, paramType: type, paramProfil: profile, nameTables: names, currentTable: ""});
     }
 };
