@@ -1,4 +1,5 @@
 var tableInfo = require("../models/tables.js");
+var getterFunctions = require("../helpers/getterFunctions.js");
 
 module.exports = {
 
@@ -6,8 +7,9 @@ module.exports = {
         console.log(tableNum);
 
         var names = tableInfo.getInfo(profile);
-        var num = names.length;
 
-        res.render('tables', {paramProfil: profile, numTables: num, nameTables: names});
+        //var tables = getterFunctions.getAll(profile, tableNum);
+
+        res.render('tables', {paramProfil: profile, nameTables: names, currentTables: ""});
     }
 };

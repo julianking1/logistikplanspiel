@@ -268,10 +268,9 @@ function createDistributionLagerzugang(spielID,periode,takt,artikel,zugang) {
     });
 }
 
-function createKundeAuftragsuebersicht(spielID,periode,bestellnr,artikel,menge,wunschtermin,
-                                       bestaetigertermin,erhalttermin) {
-    var data = new kundeAuftragsuebersicht({spielID:spielID,periode:periode,bestellnr:bestellnr,artikel:artikel,menge:menge,wunschtermin:wunschtermin,
-        bestaetigtertermin:bestaetigertermin,erhalttermin:erhalttermin});
+function createKundeAuftragsuebersicht(spielID,periode,bestellnr,artikel,menge,wunschtermin) {
+    var data = new kundeAuftragsuebersicht({spielID:spielID,periode:periode,
+        bestellnr:bestellnr,artikel:artikel,menge:menge,wunschtermin:wunschtermin});
     data.save(function (err) {
         if (err) throw err;
         console.log("Saved: Kunde Auftragsuebersicht");

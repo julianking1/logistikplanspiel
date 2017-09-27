@@ -37,7 +37,7 @@ module.exports = {
         schemaFunctions.createEndmontageLagersumme(1,1,2,2,2,2,2,2);
         schemaFunctions.createEndmontageLagerzugang(1,1,1,"schwarz",30);
         schemaFunctions.createEndmontageLosesumme(1,1,"weiss",30);
-        schemaFunctions.createKundeAuftragsuebersicht(1,1,1,"schwarz",20,3,3,4,4);
+        schemaFunctions.createKundeAuftragsuebersicht(1,1,1,"schwarz",20,3);
         schemaFunctions.createKundeKPI(1,1,50,30,20,80,80);
         schemaFunctions.createKundeUmsatz(1,1,1,"schwarz");
         schemaFunctions.createLieferabwicklungBestelluebersicht(1,1,102,5,3,3);
