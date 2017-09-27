@@ -1,5 +1,7 @@
 var kundeBeschreibung = [
 
+    "Kunde",
+
     "Der Kunde ist der Erfolgstreiber im Spiel und die wichtigste Person. Er bringt die " +
     "Aufträge herein und vereinnahmt die Lieferungen. Er hängt nicht von uns ab, sondern wir " +
     "von ihm. Seine Aufgabe ist es, die empfangene Menge, die Artikelart und die Terminwünsche " +
@@ -26,7 +28,7 @@ var kundeBeschreibung = [
 ];
 
 var beschaffungBeschreibung = [
-    "Die Beschaffung übt eine stark logistisch geprägte Tätigkeit aus, die erhebliche Auswirkungen auf die Logistikleistung hat " +
+    "Beschaffung","Die Beschaffung übt eine stark logistisch geprägte Tätigkeit aus, die erhebliche Auswirkungen auf die Logistikleistung hat " +
     "Zunächst werden die bestellten Materialien entladen, ausgepackt und in die Eingangsprüfung gebracht. " +
     "Dabei findet ein Abgleich zwischen Bestelldaten und tatsächlicher Lieferleistung statt (Menge, Typ und Lieferdaten). " +
     "Die Eingangsprüfung kontrolliert die Lieferqualität. Defekte Teile gehen zurück zum Lieferanten, einwandfreie Teile übernimmt die Vorfertigung in das Teilelager. " +
@@ -39,7 +41,7 @@ var beschaffungBeschreibung = [
 ];
 
 var distributioncenterBeschreibung = [
-    "Der Lagerarbeiter im Vertrieb - Distribution Center beinhaltet eine Abwicklungsaufgabe, deren Bedeutung " +
+    "Distribution Center", "Der Lagerarbeiter im Vertrieb - Distribution Center beinhaltet eine Abwicklungsaufgabe, deren Bedeutung " +
     "für die Logistik oft unterschätzt wird. Der Lagerarbeiter sitzt in einem Vertriebslager im Ausland " +
     "und stellt sicher, dass die Produkte pünktlich beim Kunden ankommen. Er vereinnahmt die ankommenden " +
     "internen Lieferungen aus dem Werk (überprüfen, einlagern und buchen). Im nächsten Schritt bereitet " +
@@ -51,8 +53,8 @@ var distributioncenterBeschreibung = [
 ];
 
 var endmontageBeschreibung = [
-    "In der Endmontage steht eine Fertigungslinie mit 9 Kapazitätseinheiten zur Verfügung. " +
-    "Der produktionsmanager ist dabei für die zweite Stufe der Produktion - der Hochzeit zwischen roten und schwarzen bzw. weißen Teilen verantwortlich. " +
+    "Endmontage", "In der Endmontage steht eine Fertigungslinie mit 9 Kapazitätseinheiten zur Verfügung. " +
+    "Der Produktionsmanager ist dabei für die zweite Stufe der Produktion - der Hochzeit zwischen roten und schwarzen bzw. weißen Teilen verantwortlich. " +
     "Dazu entnimmt er die halbfertigen Produkte aus der Vorfertigung sowie die roten Teile aus dem Briefkasten und lagert sie ein, " +
     "Grundlage seiner Fertigungsentscheidung ist der Fertigungsplan. " +
     "Gleichzeitig steht er in engem Kontakt mit dem Werksdisponenten, der sein interner Kunde ist. " +
@@ -62,18 +64,18 @@ var endmontageBeschreibung = [
 ];
 
 var vorfertigungBeschreibung = [
-    "Die schwarzen und weißen Baugruppen werden an zwei fertigungslinien in der Vorfertigung gefertigt. " +
+    "Vorfertigung", "Die schwarzen und weißen Baugruppen werden an zwei fertigungslinien in der Vorfertigung gefertigt. " +
     "Der Produktionsmanager ist dabei für die ausreichende Produktion und Bestände an Rohmaterial verantwortlich. " +
     "Er entnimmt die geprüften Teile aus der Eingangsprüfung und lagert sie ein. " +
     "Er steht in engem Kontakt zur Endmontage." +
     "Sein Interesse besteht darin, die Fertigungskapazitäten gut auzulasten und Bedarfsschwankungen zu glätten. " +
     "Dafür erstellt er einen Fertigungsplan, die als Richtschnur für die Auslastung seiner Fertigung dient. " +
-    "Bei Bedarfsänderungen kann er im Ausnahmefall kurzfristig Abweichungen vom Fertigungsplan vornehmen.",
+    "Bei Bedarfsänderungen kann er im Ausnahmefall kurzfristig Abweichungen vom Fertigungsplan vornehmen."
 
 ];
 
 var ordermanagementBeschreibung = [
-    "Der Disponent im Vertrieb (Order Manager) hat die schwierige Aufgabe, die Verfügbarkeit der " +
+    "Oder Management", "Der Disponent im Vertrieb (Order Manager) hat die schwierige Aufgabe, die Verfügbarkeit der " +
     "Produkte im Vertriebslager sicherzustellen. Er sorgt dafür, dass im Lager so viele Produkte stehen, " +
     "dass der Kunde pünktlich die gewünschten Mengen ausgeliefert bekommt. Er plant die Bestände " +
     "im Vertriebslager und bestätigt dem Kunden gegenüber mögliche Liefertermine. Die Aufgabe ist " +
@@ -85,7 +87,7 @@ var ordermanagementBeschreibung = [
 ];
 
 var lieferabwicklungBeschreibung = [
-    "Als Disponent und Lieferabwickler im Werk geht es darum, Vertriebswünsche aus den " +
+    "Lieferabwickler und Disposition", "Als Disponent und Lieferabwickler im Werk geht es darum, Vertriebswünsche aus den " +
     "Auslandsniederlassungen mit den eigenen Fertigungskapazitäten abzugleichen. Dabei bestätigt " +
     "der Disponent Liefertermine und liefert pünktlich die Bestellungen aus. Er entnimmt " +
     "zunächst die fertigen Produkte aus der Endmontage und vereinnahmt sie in seinem Lager. " +
@@ -96,15 +98,15 @@ var lieferabwicklungBeschreibung = [
     "Er steht in engem Kontakt mit dem Vertrieb und kann auch kurzfristig abweichende " +
     "Termine und Mengen ändern, falls dies notwendig erscheint. Letztlich bereitet " +
     "er die Lieferungen durch Beladen des LKW für den Vertrieb zum Absenden im nächsten Takt vor."
-]
+];
 var lieferantBeschreibung = [
-    "Der Lieferant versorgt als externer Partner die Logistikkette mit notwendigen Materialien. " +
+    "Lieferant", "Der Lieferant versorgt als externer Partner die Logistikkette mit notwendigen Materialien. " +
     "Es handelt sich um einen Lieferbetrieb mit einer guten Qualität und akzeptabler Lieferleistung. " +
     "Gelegentlich sind Früh- und Spätlieferungen möglich. Auch kann es passieren, dass die gelieferten Teile fehlerhaft sind. " +
     "Der Lieferant bearbeitet die eingehenden Bestelungen und ordnet die Aufträge in seine Prozesskette ein. " +
     "Die schwarzen Materialien benötigen mehr Zeit wie die roten Materialien. " +
     "Er versendet die Lieferungen mit dem LKW in Transportboxen zu den bestellenden Unternehmen."
-    ,
+
 
 ];
 
