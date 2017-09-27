@@ -1,6 +1,5 @@
 var setterFunctions = require("../helpers/setterFunctions");
 var updateFunctions = require("../helpers/updateFunctions");
-var getterFunctions = require("../helpers/getterFunctions");
 
 var app = require("../app");
 spielID = app.spielID;
@@ -126,27 +125,27 @@ function generateDefaultValuesInDB (){
     //Lieferabwicklung Bestellübersicht
     setterFunctions.createLieferabwicklungBestelluebersicht(spielID,1,101,6,function(data){
         updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",1);
-        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",1);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigtertermin",1);
     });
     setterFunctions.createLieferabwicklungBestelluebersicht(spielID,1,102,6,function(data){
         updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",2);
-        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",2);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigtertermin",2);
     });
     setterFunctions.createLieferabwicklungBestelluebersicht(spielID,1,103,8,function(data){
         updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",3);
-        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",3);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigtertermin",3);
     });
     setterFunctions.createLieferabwicklungBestelluebersicht(spielID,1,104,4,function(data){
         updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",4);
-        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",4);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigtertermin",4);
     });
     setterFunctions.createLieferabwicklungBestelluebersicht(spielID,1,105,7,function(data){
         updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",5);
-        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",5);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigtertermin",5);
     });
     setterFunctions.createLieferabwicklungBestelluebersicht(spielID,1,106,4,function(data){
         updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"wunschtermin",6);
-        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigterTermin",6);
+        updateFunctions.updateLieferabwicklungBestelluebersicht(data._id,"bestaetigtertermin",6);
     });
 
     //Order Management
@@ -198,34 +197,34 @@ function generateDefaultValuesInDB (){
 
     //Kunde
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,1,"schwarz",3,1,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",1);
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",1);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,2,"schwarz",4,1,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",1);
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",1);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,3,"schwarz",5,3,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",3);
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",3);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,4,"schwarz",2,5,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",5);
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",5);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,5,"weiß",2,3,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",3);
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",3);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,6,"schwarz",3,5,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",5);
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",5);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,7,"weiß",6,1,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",1);
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",1);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,1,"schwarz",2,1,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",1);
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",1);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,8,"schwarz",3,7,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",2);
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",2);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,10,"schwarz",2,5,function(data){
-        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigterTermin",5);
+        updateFunctions.updateKundeAuftragsuebersicht(data._id,"bestaetigtertermin",5);
     });
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,11,"schwarz",2,7,function (data) {});
     setterFunctions.createKundeAuftragsuebersicht(spielID,1,12,"weiß",5,3,function (data) {});
