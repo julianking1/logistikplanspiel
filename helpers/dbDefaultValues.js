@@ -5,6 +5,8 @@ var getterFunctions = require("../helpers/getterFunctions");
 var app = require("../app");
 
 function generateDefaultValuesInDB (){
+
+    app.spielID = 1;
     //Lieferant
     setterFunctions.createLieferantenBestellung(app.spielID,1,-5,"schwarz",1,9);
     getterFunctions.getlieferantenBestellung(app.spielID,4,function (data) {
@@ -179,15 +181,57 @@ function generateDefaultValuesInDB (){
     setterFunctions.createOrderManagement(app.spielID,1,1,"schwarz");
     getterFunctions.getorderManagement(app.spielID,1,1,"schwarz", function (data) {
         updateFunctions.updateOrderManagement(data._id,"anfangsbestand",6);
-        updateFunctions.updateOrderManagement(data._id,"abgangsnr",3);
-        updateFunctions.updateOrderManagement(data._id,"abgang",5);
+        updateFunctions.updateOrderManagement(data._id,"abgangsnr1",3);
+        updateFunctions.updateOrderManagement(data._id,"abgang1",5);
     });
     setterFunctions.createOrderManagement(app.spielID,1,2,"schwarz");
     getterFunctions.getorderManagement(app.spielID,1,2,"schwarz", function (data) {
         updateFunctions.updateOrderManagement(data._id,"zugangsnr",102);
         updateFunctions.updateOrderManagement(data._id,"zugang",6);
     });
-    //mehrere Abgänge!!!
+    setterFunctions.createOrderManagement(app.spielID,1,3,"schwarz");
+    getterFunctions.getorderManagement(app.spielID,1,3,"schwarz", function (data) {
+        updateFunctions.updateOrderManagement(data._id,"abgangsnr1",6);
+        updateFunctions.updateOrderManagement(data._id,"abgang1",3);
+        updateFunctions.updateOrderManagement(data._id,"abgangsnr2",4);
+        updateFunctions.updateOrderManagement(data._id,"abgang2",2);
+        updateFunctions.updateOrderManagement(data._id,"abgangsnr3",10);
+        updateFunctions.updateOrderManagement(data._id,"abgang3",2);
+    });
+    setterFunctions.createOrderManagement(app.spielID,1,4,"schwarz");
+    getterFunctions.getorderManagement(app.spielID,1,4,"schwarz", function (data) {
+        updateFunctions.updateOrderManagement(data._id,"zugangsnr",104);
+        updateFunctions.updateOrderManagement(data._id,"zugang",4);
+    });
+    setterFunctions.createOrderManagement(app.spielID,1,6,"schwarz");
+    getterFunctions.getorderManagement(app.spielID,1,6,"schwarz", function (data) {
+        updateFunctions.updateOrderManagement(data._id,"zugangsnr",106);
+        updateFunctions.updateOrderManagement(data._id,"zugang",4);
+    });
+
+    setterFunctions.createOrderManagement(app.spielID,1,1,"weiß");
+    getterFunctions.getorderManagement(app.spielID,1,1,"weiß", function (data) {
+        updateFunctions.updateOrderManagement(data._id,"anfangsbestand",3);
+        updateFunctions.updateOrderManagement(data._id,"zugangsnr",101);
+        updateFunctions.updateOrderManagement(data._id,"zugang",6);
+        updateFunctions.updateOrderManagement(data._id,"abgangsnr1",5);
+        updateFunctions.updateOrderManagement(data._id,"abgang1",2);
+    });
+    setterFunctions.createOrderManagement(app.spielID,1,3,"weiß");
+    getterFunctions.getorderManagement(app.spielID,1,3,"weiß", function (data) {
+        updateFunctions.updateOrderManagement(data._id,"zugangsnr",103);
+        updateFunctions.updateOrderManagement(data._id,"zugang",8);
+    });
+    setterFunctions.createOrderManagement(app.spielID,1,5,"weiß");
+    getterFunctions.getorderManagement(app.spielID,1,5,"weiß", function (data) {
+        updateFunctions.updateOrderManagement(data._id,"zugangsnr",105);
+        updateFunctions.updateOrderManagement(data._id,"zugang",7);
+    });
+    setterFunctions.createOrderManagement(app.spielID,1,7,"weiß");
+    getterFunctions.getorderManagement(app.spielID,1,7,"weiß", function (data) {
+        updateFunctions.updateOrderManagement(data._id,"zugangsnr",107);
+        updateFunctions.updateOrderManagement(data._id,"zugang",6);
+    });
 
     //Kunde
     setterFunctions.createKundeAuftragsuebersicht(app.spielID,1,1,"schwarz",3,1);

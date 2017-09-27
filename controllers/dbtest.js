@@ -3,6 +3,7 @@ var schemaFunctions = require("../helpers/setterFunctions");
 var getterFunctions = require("../helpers/getterFunctions");
 var updateFunctions = require("../helpers/updateFunctions");
 var app = require("../app");
+var dbDefaultValues = require("../helpers/dbDefaultValues");
 
 module.exports = {
 
@@ -14,7 +15,7 @@ module.exports = {
 
     function createOrder(req, res) {
         //normalerweise Werte aus req laden (Body-Parser)
-        schemaFunctions.createLieferantenBestellung(1,2000,1,"schwarz",1,1);
+        /*schemaFunctions.createLieferantenBestellung(1,2000,1,"schwarz",1,1);
         schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);
         schemaFunctions.createBeschaffungsBestelluebersicht(1,1,1,"weiss",23,22,10,10);
         schemaFunctions.createBeschaffungsKPI(1,1);
@@ -47,7 +48,14 @@ module.exports = {
         schemaFunctions.createLieferabwicklungSummen(1, 1, 5, 4, 4, 3, 3);
         schemaFunctions.createOrderManagement(1,1,1,"schwarz", 5, 4, 3, 2);
         schemaFunctions.createVorfertigungLagersumme(1, 1, 4,3,4,3);
-        schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);
+        schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);*/
+
+        //dbDefaultValues.generateDefaultValuesInDB();
+        //res.send("created");
+
+        schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1,function (data) {
+            console.log(data._id);
+        })
 
     }
 

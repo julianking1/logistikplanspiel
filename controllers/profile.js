@@ -28,17 +28,17 @@ module.exports = {
                 break;
 
             case 'info':
-                renderInfo.getContent(res, profile);
+                renderInfo.getContent(res, profile, false);
         }
 
     },
 
     //default
     renderingDefault: function (req, res, next) {
-
         var urlparts =  urlSplitter.splitUrl(req);
-        var data = checklisten.getDataArray(urlparts[1]);
-        res.render('default', {paramProfil: urlparts[1], paramTool: 'checklist', rows: data});
+        console.log(urlparts);
+        var profile = urlparts[1];
+        renderInfo.getContent(res, profile, true);
     }
 };
 
