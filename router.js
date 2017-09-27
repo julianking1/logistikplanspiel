@@ -30,6 +30,8 @@ router.post(/.*loadContent$/, function(req, res) {
 });
 //Inhalt laden (nach profil und type)
 router.post(/.*save$/, function(req, res) {
+    //in db schreiben
+    console.log(req.body.data);
     profile.rendering(req, res);
 });
 
