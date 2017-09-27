@@ -1,4 +1,4 @@
-var helperMailbox = require('../controllers/mailbox.js');
+var renderMailbox = require('./renderMailbox.js');
 var checklisten = require('../models/checklisten');
 var urlSplitter = require('../helpers/urlSplitter');
 var renderTables = require('./renderTables.js');
@@ -15,7 +15,7 @@ module.exports = {
 
         switch(type) {
             case 'mailbox':
-                helperMailbox.getContent(res, profile, type);
+                renderMailbox.getContent(res, profile, type);
                 break;
 
             case 'checklist'  :
@@ -24,11 +24,11 @@ module.exports = {
                 break;
 
             case 'tabellen':
-                renderTables.getContent(res, profile, contentNum);
+                renderTables.getContent(res, profile, type, contentNum);
                 break;
 
             case 'info':
-                renderInfo.getContent(res, profile, false);
+                renderInfo.getContent(res, profile, type, false);
         }
 
     },
@@ -36,9 +36,8 @@ module.exports = {
     //default
     renderingDefault: function (req, res, next) {
         var urlparts =  urlSplitter.splitUrl(req);
-        console.log(urlparts);
         var profile = urlparts[1];
-        renderInfo.getContent(res, profile, true);
+        renderInfo.getContent(res, profile, "info",  true);
     }
 };
 

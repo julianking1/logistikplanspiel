@@ -18,7 +18,7 @@ router.get('/', profilechoice.rendering);                       // localhost:300
 router.get('/kunde', profile.renderingDefault);                 // localhost:3000/kunde
 router.get('/lieferant', profile.renderingDefault);             // localhost:3000/lieferant
 router.get('/beschaffung', profile.renderingDefault);           // /localhost:3000/beschaffung
-router.get('/teilelager', profile.renderingDefault);            // /localhost:3000/teilelager
+router.get('/vorfertigung', profile.renderingDefault);            // /localhost:3000/teilelager
 router.get('/endmontage', profile.renderingDefault);            // /localhost:3000/endmontage
 router.get('/lieferabwicklung', profile.renderingDefault);      // /localhost:3000/lieferabwicklung
 router.get('/distributioncenter', profile.renderingDefault);    // /localhost:3000/distributioncenter
@@ -28,13 +28,17 @@ router.get('/ordermanagement', profile.renderingDefault);       // /localhost:30
 router.post(/.*loadContent$/, function(req, res) {
     profile.rendering(req, res);
 });
+//Inhalt laden (nach profil und type)
+router.post(/.*save$/, function(req, res) {
+    profile.rendering(req, res);
+});
 
 //Startseite
 router.get('/startseite', function(req, res, next) {
     res.render('startseite');
 });
 
-//cSpielleiter
+//Spielleiter
 router.get('/spielleiter', function(req, res, next) {
     res.render('gameadmin');
 });
@@ -46,10 +50,6 @@ router.get('/dbtestUpdate', dbtest.updateOrder); // /localhost:3000/dbtestGet
 router.get('/createlagerBestand',lagerbestandRechner.createLagerbestandEingangspruefung); // /localhost:3000/createlagerBestand
 router.get('/sumBestand', lagerbestandRechner.sumbestandschwarz); // /localhost:3000/sumBestand
 router.get('/dbtestgetAll', dbtest.getAllOrders); // /localhost:3000/sumBestand
-
-
-
-
 
 
 //Formular Tests

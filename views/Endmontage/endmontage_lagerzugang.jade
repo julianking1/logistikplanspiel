@@ -1,8 +1,7 @@
 block profilecontent
-
     link(rel='stylesheet', href='/stylesheets/table.css')
-
     table(class="tabelle")
+
         caption Lagerzugang
             thead
                 tr
@@ -35,4 +34,4 @@ block profilecontent
                         input(id="rot" placeholder="Menge")
 
                     td(class="button")
-                        button(class="button2") speichern
+                        button(class="button2" onclick= "save('#{paramProfil}', '#{paramType}', ' #{numTable}')") speichern

@@ -52,7 +52,7 @@ module.exports = {
                 return distributioncenterBeschreibung;
             case 'endmontage':
                 return endmontageBeschreibung;
-            case 'vormontage':
+            case 'vorfertigung':
                 return vorfertigungBeschreibung;
             case 'ordermanagement':
                 return ordermanagementBeschreibung;

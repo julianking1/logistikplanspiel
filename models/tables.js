@@ -52,7 +52,7 @@ module.exports = {
                 return distributioncenterTabellen;
             case 'endmontage':
                 return endmontageTabellen;
-            case 'vormontage':
+            case 'vorfertigung':
                 return vorfertigungTabellen;
             case 'ordermanagement':
                 return ordermanagementTabellen;
