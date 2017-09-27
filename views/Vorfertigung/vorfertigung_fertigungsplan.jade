@@ -1,0 +1,47 @@
+block profilecontent
+
+    link(rel='stylesheet', href='/stylesheets/table.css')
+
+    table(class="tabelle")
+        caption Fertigungsplan
+            thead
+                tr
+                    th(scope="col" rowspan="2") Takt
+                    th(scope="colgroup" colspan="2") schwarz
+                    th(scope="colgroup" colspan="2") weiß
+                tr
+                    th Soll
+                    th Ist
+                    th Soll
+                    th Ist
+
+            tbody
+                - var versuch = [{takt: '1', Solls: '0', Ists: '1', Sollw: '8', Istw: '3'},{takt: '1', Solls: '0', Ists: '1', Sollw: '8', Istw: '3'}];
+                each item in versuch
+                    tr
+                        td= item.takt
+                        td= item.Solls
+                        td= item.Ists
+                        td= item.Sollw
+                        td= item.Istw
+
+
+                        td(class="button")
+                            button(class="button2") bearbeiten
+                tr
+                    td(class="Leerzeile")
+
+                tr
+                    td(class="input")
+                        input(id="takt" placeholder="Takt")
+                    td(class="input")
+                        input(id="schwarzs" placeholder="Menge")
+                    td(class="input")
+                        input(id="schwarzi" placeholder="Menge")
+                    td(class="input")
+                        input(id="weißs" placeholder="Menge")
+                    td(class="input")
+                        input(id="weißi" placeholder="Menge")
+
+                    td(class="button")
+                        button(class="button2") speichern
