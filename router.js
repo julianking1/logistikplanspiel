@@ -45,7 +45,7 @@ router.get('/dbtestGet', dbtest.getOrder); // /localhost:3000/dbtestGet
 router.get('/dbtestUpdate', dbtest.updateOrder); // /localhost:3000/dbtestGet
 router.get('/createlagerBestand',lagerbestandRechner.createLagerbestandEingangspruefung); // /localhost:3000/createlagerBestand
 router.get('/sumBestand', lagerbestandRechner.sumbestandschwarz); // /localhost:3000/sumBestand
-router.get('/dbtestgetAll', dbtest.getAll); // /localhost:3000/sumBestand
+router.get('/dbtestgetAll', dbtest.getAllOrders); // /localhost:3000/sumBestand
 
 
 

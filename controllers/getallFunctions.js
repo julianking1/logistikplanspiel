@@ -10,5 +10,6 @@ getAll: getAll
 
 
 function getAll(rolle, tabelle, callback) {
+    
 
 }
