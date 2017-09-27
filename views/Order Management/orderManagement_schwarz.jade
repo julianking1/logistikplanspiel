@@ -1,0 +1,72 @@
+block profilecontent
+
+    link(rel='stylesheet', href='/stylesheets/table.css')
+
+    table(class="tabelle")
+        caption Dispoübersicht
+            thead
+                tr
+                    th(scope="colgroup" colspan="10") schwarz
+
+                tr
+                    th(scope="col" rowspan="2") Takt
+                    th(scope="col" rowspan="2") Anfangsbestand
+                    th(scope="colgroup" colspan="2") Zugang
+                    th(scope="colgroup" colspan="6") Abgang
+
+                tr
+                    th Z1
+                    th Nr.
+                    th A1
+                    th Nr.
+                    th A2
+                    th Nr.
+                    th A3
+                    th Nr.
+
+
+            tbody
+                - var versuch = [{takt: '1', Anfangsbestand: '0', Z1: '1', Nrz: '8', A1: '3',Nr1a: '0', A2: '1', Nr2a: '8', A3: '3',Nr3a:'0'}]
+                    tr
+                        td= item.takt
+                        td= item.Anfangsbestand
+                        td= item.Z1
+                        td= item.Nrz
+                        td= item.A1
+                        td= item.Nr1a
+                        td= item.A2
+                        td= item.Nr2a
+                        td= item.A3
+                        td= item.Nr3a
+
+
+
+                        td(class="button")
+                            button(class="button2") bearbeiten
+                tr
+                    td(class="Leerzeile")
+
+                tr
+                    td(class="input")
+                        input(id="takt" placeholder="Takt")
+                    td(class="input")
+                        input(id="anfangsbestand" placeholder="Anfangsbestand")
+                    td(class="input")
+                        input(id="z1" placeholder="Menge")
+                    td(class="input")
+                        input(id="nrz" placeholder="Nr.")
+                    td(class="input")
+                        input(id="a1" placeholder="A1")
+                    td(class="input")
+                        input(id="nr1a" placeholder="Nr.")
+                    td(class="input")
+                        input(id="a2" placeholder="A2")
+                    td(class="input")
+                        input(id="nr2a" placeholder="Nr.")
+                    td(class="input")
+                        input(id="A3" placeholder="Nr.")
+
+
+
+                    td(class="button")
+                        button(class="button2") speichern
