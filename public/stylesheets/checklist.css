@@ -1,17 +1,9 @@
-
-ol{
-
-    position: relative;
-    float: left;
-    left: 10px;
-    list-style-position: inside;
-    text-indent: 5px;
-    padding-left: 0px;
-
-}
-
 li{
     margin-top: 10px;
     text-align: left;
-
 }
+
+input{
+    margin-right: 1em;
+}
+
