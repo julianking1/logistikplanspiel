@@ -33,8 +33,9 @@ var lieferabwicklungLagerzugang= require("../models/lieferabwicklungLagerzugang"
 var lieferabwicklungSummen= require("../models/lieferabwicklungSummen");
 var orderManagement= require("../models/orderManagement");
 var spielstand = require("../models/spielstand");
-
-
+var interneBestellung = require("../models/interneBestellung");
+var kundeBestellung= require("../models/kundeBestellung");
+var kundeLieferverzugskosten = require("../models/kundeLieferverzugskosten");
 var dateformat = require('dateformat');
 
 //schreibt Datensatz mit allen obligatorischen Attributen in DB
@@ -47,6 +48,27 @@ function createLieferantenBestellung(spielID, nr, ausstellungstakt, artikel, wun
         return callback(data);
     });
 }
+
+function createKundeBestellung(spielID, nr, ausstellungstakt, artikel, wunschtakt, wunschmenge,callback) {
+    var data = new kundeBestellung({spielID:spielID,
+        nr:nr, austellungstakt:ausstellungstakt, artikel:artikel, wunschtakt:wunschtakt,
+        wunschmenge:wunschmenge});
+    data.save(function (err,data) {
+        if (err) throw err;
+        return callback(data);
+    });
+}
+
+function createInterneBestellung(spielID, nr, ausstellungstakt, artikel, wunschtakt, wunschmenge,callback) {
+    var data = new interneBestellung({spielID:spielID,
+        nr:nr, austellungstakt:ausstellungstakt, artikel:artikel, wunschtakt:wunschtakt,
+        wunschmenge:wunschmenge});
+    data.save(function (err,data) {
+        if (err) throw err;
+        return callback(data);
+    });
+}
+
 
 
 function createBeschaffungsBestandswert(spielID,periode,inSummeschwarz,inSummeweiss,
@@ -351,6 +373,15 @@ function createSpielstand(spielID,name,callback) {
     var currentDate = new Date();
     var datum = dateformat(currentDate, "dd.mm.yyyy");
     var data = new spielstand({spielID:spielID, periode:1, takt:1, datum:datum, name:name});
+    data.save(function (err,data) {
+        if (err) throw err;
+        return callback(data);
+    });
+}
+
+function createKundeLieferverzugskosten(spielID,periode,takt,callback) {
+    var data = new kundeLieferverzugskosten({spielID:spielID,periode:periode,
+        takt: takt});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);
