@@ -15,7 +15,7 @@ module.exports = {
 
         switch(type) {
             case 'mailbox':
-                renderMailbox.getContent(res, profile, type);
+                renderMailbox.getContent(res, profile, type, contentNum);
                 break;
 
             case 'checklist'  :

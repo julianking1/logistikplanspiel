@@ -1,22 +1,18 @@
 var lieferantenBestellung = require ("../models/lieferantenBestellung.js");
 var setterFunctions = require("../helpers/setterFunctions.js");
+var getallFunctions = require("../controllers/getallFunctions");
 
 
 
 module.exports ={
 
-    getContent: function(res, p1, p2){
+    getContent: function(res, profile, type, contentNum) {
 
-        lieferantenBestellung.findOne({'nr': '1'}, function (err, data) {
-            if (err) return handleError(err);
-            res.render('mailbox', {paramProfil: p1, paramTool: p2, content: data});
+        getallFunctions.getMailbox(profile, contentNum, function (data) {
+console.log(data);
+            res.render('mailbox', {paramProfil: profile, paramTool: type, mailboxNum: contentNum,  currentMailbox: data});
+
         });
-
-    },
-
-    createContent: function(){
-        setterFunctions.createLieferantenBestellung(2,"Lieferant",109,2,"schwarz");
     }
-
 
 };

@@ -5,10 +5,27 @@ var updateFunctions = require("../helpers/updateFunctions");
 var app = require("../app");
 
 module.exports = {
-getAll: getAll
+getAll: getAll,
+getMailbox: getMailbox
 }
 
 //Commit
+
+function getMailbox(rolle, contentNum, callback){
+    switch(contentNum){
+        case '0':
+            getterFunctions.getalllieferantenBestellung(function(data){
+                return callback(data);
+            });
+            break;
+        case '1':
+            getterFunctions.getalllieferantenBestellung(function(data){
+                return callback(data);
+            });
+            break;
+    }
+}
+
 
 function getAll(rolle, tabelle, callback) {
     switch (rolle) {
