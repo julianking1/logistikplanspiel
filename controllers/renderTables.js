@@ -4,14 +4,12 @@ var getallFunctions = require("./getallFunctions.js");
 module.exports = {
 
     getContent: function (res, profile, type, tableNum) {
-        //console.log(tableNum);
+
 
         var names = tableInfo.getNames(profile);
 
-        console.log('test');
-
-
-        var data = getallFunctions.getAll('kunde', '0', function (data) {
+        getallFunctions.getAll(profile, tableNum, function (data) {
+            //console.log(data);
             var daten = data.sort(function(a, b){
                 return a.bestellnr - b.bestellnr;
             });

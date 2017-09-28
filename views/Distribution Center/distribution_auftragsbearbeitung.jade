@@ -8,16 +8,15 @@ block profilecontent
             thead
                 tr
                     th Takt
-                    th Anzahl
+                    th Anzahl Aufträge
             tbody
-                - var versuch = [{takt: '1', anzahl: 'w1'},{takt: '2', anzahl: 'w2'}, {takt: '3', anzahl: 'w3'}];
-                each item in versuch
+                each item in currentTable
                     tr
                         td= item.takt
-                        td= item.anzahl
+                        td= item.anzauftraege
 
                         td(class="button")
-                            button(class="button2") bearbeiten
+                            button(class="button2" onclick="deadEnd()") bearbeiten
                 tr
                     td(class="Leerzeile")
 
@@ -25,7 +24,7 @@ block profilecontent
                     td(class="input")
                         input(id="takt" placeholder="Takt")
                     td(class="input")
-                        input(id="anzahl" placeholder="Menge")
+                        input(id="anzauftraege" placeholder="Menge")
 
                     td(class="button")
                         button(class="button2") speichern

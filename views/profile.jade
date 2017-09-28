@@ -4,7 +4,7 @@ block content
 
     link(rel='stylesheet', href='/stylesheets/profile.css')
     script(src='/javascripts/jstest.js')
-    script(src='/javascripts/loadContent.js' )
+    script(src='/javascripts/clientJS.js' )
 
     h2 Arbeitsplatz: #{nameParam}
     h3 Periode: 1  Takt: 2  Phase: B
@@ -31,8 +31,8 @@ block content
 
     div(class="second")
 
-        form(action= '/fertig')
-            button(class="done") Fertig
+        form()
+            button(class="done" onclick= "deadEnd()") Fertig
 
 
 

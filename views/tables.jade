@@ -1,13 +1,32 @@
 link(rel='stylesheet', href='/stylesheets/tables.css')
 
+-var i = 0;
+
 each item in nameTables
 
     span= ""
-        button(id="button") #{item}
+        button(id = ''+i onclick="loadContent('#{paramProfil}', '#{paramType}', this.id)") #{item}
+        - i = i+1;
 
 span
     p
-    include ./Kunde/kunde_auftragsübersicht
+
+    case paramProfil
+        when 'kunde'
+            case numTable
+                when '0'
+                    include ./Kunde/kunde_auftragsübersicht
+
+        when 'lieferabwicklung'
+            case numTable
+                when '2'
+                    include ./LagerLieferDispo/lagerLieferDispo_bestellübersicht
+
+        when 'distributioncenter'
+            case numTable
+                when '2'
+                    include ./Distribution Center/distribution_auftragsbearbeitung
+
 
 
 
