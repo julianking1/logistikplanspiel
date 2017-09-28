@@ -5,6 +5,7 @@ var updateFunctions = require("../helpers/updateFunctions");
 var app = require("../app");
 var dbDefaultValues = require("../helpers/dbDefaultValues");
 var getallFunctions = require("../controllers/getallFunctions");
+spielID = app.spielID;
 
 module.exports = {
 
@@ -52,6 +53,24 @@ module.exports = {
         schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);*/
 
         dbDefaultValues.generateDefaultValuesInDB();
+        
+        schemaFunctions.createLagerbestandEingangspruefung(spielID,1,1,10,4,3,function () {});
+        schemaFunctions.createLagerbestandEingangspruefung(spielID,1,2,10,4,3,function () {});
+
+        schemaFunctions.createLagerbestandVorEingangspruefung(spielID,1,1,10,4,3,function () {});
+        schemaFunctions.createLagerbestandVorEingangspruefung(spielID,1,2,10,4,3,function () {});
+
+        schemaFunctions.createDistributionLagerbestand(spielID,1,1,40,12,function () {});
+        schemaFunctions.createDistributionLagerbestand(spielID,1,2,40,12,function () {});
+        
+        schemaFunctions.createLieferabwicklungLagerbestand(spielID,1,1,2,3,function () {
+            
+        })
+        
+        schemaFunctions.createLieferabwicklungLagerzugang(spielID,1,1,2,5,function () {
+            
+        })
+
 
         schemaFunctions.createSpielstand(5,"WI 2015", function () {});
         schemaFunctions.createSpielstand(2,"Test2", function () {});

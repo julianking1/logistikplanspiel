@@ -28,20 +28,21 @@ block profilecontent
 
 
             tbody
-                - var versuch = [{takt: '1', anfangsbestand: '0', nrz: '8',z1: '1', nr1a: '0',a1: '3', nr2a: '8',a2: '1', nr3a:'0',a3: '3',}];
-                each item in versuch
+                - var neu = currentTable[1].sort(function(a, b){return a.takt - b.takt;});
+                //- var versuch = [{takt: '1', anfangsbestand: '0', nrz: '8',z1: '1', nr1a: '0',a1: '3', nr2a: '8',a2: '1', nr3a:'0',a3: '3',}];
+                each item in neu
 
                     tr
                         td= item.takt
                         td= item.anfangsbestand
-                        td= item.nrz
-                        td= item.z1
-                        td= item.nr1a
-                        td= item.a1
-                        td= item.nr2a
-                        td= item.a2
-                        td= item.nr3a
-                        td= item.a3
+                        td= item.zugangsnr
+                        td= item.zugang
+                        td= item.abgangsnr1
+                        td= item.abgang1
+                        td= item.abgangsnr2
+                        td= item.abgang2
+                        td= item.abgangsnr3
+                        td= item.abgang3
 
 
 

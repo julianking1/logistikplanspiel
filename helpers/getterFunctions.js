@@ -38,8 +38,6 @@ var spielstand = require("../models/spielstand");
 var interneBestellung = require("../models/interneBestellung");
 
 
-//Methoden, die alle Datensätze zurückgeben
-
 function getallbeschaffungBestandswert(callback) {
     beschaffungBestandswert.find({}, function (err, data) {
         if (err) return handleError(err);
