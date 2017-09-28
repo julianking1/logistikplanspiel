@@ -44,9 +44,17 @@ function getallbeschaffungBestandswert(callback) {
 }
 
 function getallbeschaffungBestelluebersicht(callback){
-    beschaffungBestelluebersicht.find({}, function (err, data){
+    beschaffungBestelluebersicht.find({'artikel': 'schwarz'}, function (err, data){
        if (err) return handleError(err);
        return callback(data);
+    });
+    beschaffungBestelluebersicht.find({'artikel': 'weiß'}, function (err, data){
+        if (err) return handleError(err);
+        return callback2(data);
+    });
+    beschaffungBestelluebersicht.find({'artikel': 'rot'}, function (err, data){
+        if (err) return handleError(err);
+        return callback3(data);
     });
 }
 
@@ -142,9 +150,25 @@ function getallendmontageLosesumme(callback){
 }
 
 function getallkundeAuftragsuebersicht(callback){
-    kundeAuftragsuebersicht.find({}, function (err, data) {
+    var test = [];
+    kundeAuftragsuebersicht.find({'artikel': 'schwarz'}, function (err, data) {
         if (err) return handleError(err);
-        return callback(data);
+        test.push(data);
+
+        kundeAuftragsuebersicht.find({'artikel': 'weiß'}, function (err, data) {
+            if (err) return handleError(err);
+            test.push(data);
+
+            kundeAuftragsuebersicht.find({'artikel': 'rot'}, function (err, data) {
+                if (err) return handleError(err);
+                test.push(data);
+                return callback(test);
+            })
+
+            return callback(test);
+        }
+        );
+     return callback(test);
     });
 }
 

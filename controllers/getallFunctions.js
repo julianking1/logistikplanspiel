@@ -13,17 +13,21 @@ function getAll(rolle, tabelle, callback) {
     switch (rolle) {
         case 'kunde':
             switch (tabelle){
-                case '0':
+                case 0:
+
                     getterFunctions.getallkundeAuftragsuebersicht(function(data){
+
+
                         return callback(data);
-                    })
+
+                    });
                     break;
-                case '1':
+                case 1:
                     getterFunctions.getallkundeUmsatz(function(data){
                         return callback(data);
                     })
                     break;
-                case '2':
+                case 2:
                    // getterFunctions.getallkunde
             }
         break;

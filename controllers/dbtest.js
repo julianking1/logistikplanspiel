@@ -57,12 +57,9 @@ module.exports = {
     }
 
     function  getAllOrders(req, res){
-    getterFunctions.getalllieferabwicklungLagerzugang(function(data){
-        console.log(data);
-    });
 
     getallFunctions.getAll("kunde",0,function(data){
-        console.log(data);
+        console.log(data[1]);
     })
     ;
     }
