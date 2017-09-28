@@ -177,9 +177,9 @@ function createEndmontageKPI(spielID,periode,callback) {
     });
 }
 
-function createEndmontageLagerbestand(spielID,periode,takt,artikel,anzahl,callback) {
+function createEndmontageLagerbestand(spielID,periode,takt, schwarz, weiss, rot,callback) {
     var data = new endmontageLagerbestand({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,anzahl:anzahl});
+        takt:takt, schwarz:schwarz,weiss:weiss, rot:rot});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);
@@ -197,9 +197,9 @@ function createEndmontageLagersumme(spielID,periode,bestandschwarz, bestandweiss
     });
 }
 
-function createEndmontageLagerzugang(spielID,periode,takt,artikel,zugang,callback) {
+function createEndmontageLagerzugang(spielID,periode,takt,schwarz, weiss, rot,callback) {
     var data = new endmontageLagerzugang({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,zugang:zugang});
+        takt:takt,schwarz:schwarz, weiss:weiss, rot:rot});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);

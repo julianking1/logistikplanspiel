@@ -115,9 +115,17 @@ function getalldistributionSummen(callback){
 }
 
 function getallendmontageFertigungsplan(callback){
-    endmontageFertigungsplan.find({}, function (err, data) {
+    var test = [];
+    endmontageFertigungsplan.find({'artikel': 'schwarz'}, function (err, data) {
         if (err) return handleError(err);
-        return callback(data);
+        test.push(data);
+
+        endmontageFertigungsplan.find({'artikel': 'weiß'}, function (err, data) {
+                if (err) return handleError(err);
+                test.push(data);
+            }
+        );
+        return callback(test);
     });
 }
 
@@ -378,8 +386,8 @@ function getendmontageKPI(spielID, periode, callback){
     });
 }
 
-function getendmontageLagerbestand(spielID, periode, takt, artikel, callback) {
-    endmontageLagerbestand.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {
+function getendmontageLagerbestand(spielID, periode, takt, callback) {
+    endmontageLagerbestand.findOne({'spielID':spielID, 'periode': periode, 'takt':takt}, function (err, data) {
         if(err) return handleError (err);
         return callback(data);
     });
@@ -394,8 +402,8 @@ function getendmontageLagersumme(spielID, periode, callback) {
 
 }
 
-function getendmontageLagerzugang(spielID, periode, takt, artikel, callback) {
-    endmontageLagerzugang.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {
+function getendmontageLagerzugang(spielID, periode, takt, callback) {
+    endmontageLagerzugang.findOne({'spielID':spielID, 'periode': periode, 'takt':takt}, function (err, data) {
         if(err) return handleError (err);
         return callback(data);
     });
