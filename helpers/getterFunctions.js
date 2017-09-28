@@ -26,6 +26,8 @@ var distributionLagerzugang =require("../models/distributionLagerzugang");
 var kundeAuftragsuebersicht= require("../models/kundeAuftragsuebersicht");
 var kundeKPI= require("../models/kundeKPI");
 var kundeUmsatz= require("../models/kundeUmsatz");
+var kundeBestellung= require("../models/kundeBestellung");
+var kundeLieferverzugskosten = require("../models/kundeLieferverzugskosten");
 var lieferabwicklungBestelluebersicht= require("../models/lieferabwicklungBestelluebersicht");
 var lieferabwicklungKPI= require("../models/lieferabwicklungKPI");
 var lieferabwicklungLagerbestand= require("../models/lieferabwicklungLagerbestand");
@@ -33,6 +35,7 @@ var lieferabwicklungLagerzugang= require("../models/lieferabwicklungLagerzugang"
 var lieferabwicklungSummen= require("../models/lieferabwicklungSummen");
 var orderManagement= require("../models/orderManagement");
 var spielstand = require("../models/spielstand");
+var interneBestellung = require("../models/interneBestellung");
 
 
 //Methoden, die alle Datensätze zurückgeben
@@ -240,6 +243,27 @@ function getalllieferabwicklungSummen(callback){
 
 function getalllieferantenBestellung(callback){
     lieferantenBestellung.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallkundeBestellung(callback){
+    kundeBestellung.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallkundeLieferverzugskosten(callback){
+    kundeLieferverzugskosten.find({}, function (err, data) {
+        if (err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getallinterneBestellung(callback){
+    interneBestellung.find({}, function (err, data) {
         if (err) return handleError(err);
         return callback(data);
     });
@@ -604,6 +628,26 @@ function getSpielstand(name, datum, callback) {
     });
 }
 
+function getkundeBestellung(spielID, nr, callback) {
+    kundeBestellung.findOne({'spielID': spielID, 'nr': nr}, function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getinterneBestellung(spielID, nr, callback) {
+    interneBestellung.findOne({'spielID': spielID, 'nr': nr}, function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+    });
+};
+
+function getkundeLieferverzugskosten(spielID, periode, takt, callback) {
+    kundeLieferverzugskosten.findOne({'spielID': spielID, 'periode': periode, 'takt':takt}, function(err, data){
+        if (err) return handleError (err);
+        return callback(data);
+    });
+};
 
 module.exports = {
     getallbeschaffungBestandswert:getallbeschaffungBestandswert,
@@ -640,6 +684,9 @@ module.exports = {
     getallvorfertigungLagerzugang:getallvorfertigungLagerzugang,
     getallvorfertigungLosesumme:getallvorfertigungLosesumme,
     getAllSpielstaende:getAllSpielstaende,
+    getallkundeBestellung:getallkundeBestellung,
+    getallinterneBestellung:getallinterneBestellung,
+    getallkundeLieferverzugskosten: getallkundeLieferverzugskosten,
     getNeueSpielID:getNeueSpielID,
 
     getdistributionAuftragsbearbeitung:getdistributionAuftragsbearbeitung,
@@ -675,5 +722,8 @@ module.exports = {
     getbeschaffungBestelluebersicht: getbeschaffungBestelluebersicht,
     getbeschaffungKPI: getbeschaffungKPI,
     getbeschaffungsUebersicht: getbeschaffungsUebersicht,
-    getSpielstand:getSpielstand
+    getSpielstand:getSpielstand,
+    getkundeBestellung:getkundeBestellung,
+    getinterneBestellung:getinterneBestellung,
+    getkundeLieferverzugskosten:getkundeLieferverzugskosten
 }
