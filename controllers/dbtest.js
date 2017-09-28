@@ -55,20 +55,31 @@ module.exports = {
         schemaFunctions.createVorfertigungLagersumme(1, 1, 4,3,4,3);
         schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);*/
 
-        dbDefaultValues.generateDefaultValuesInDB();
+        //dbDefaultValues.generateDefaultValuesInDB();
+        schemaFunctions.createSpielstand(1,"Test",function () {});
+        schemaFunctions.createSpielstand(2,"Test",function () {});
+        schemaFunctions.createSpielstand(3,"Test",function () {});
+        schemaFunctions.createSpielstand(4,"Test",function () {});
+        schemaFunctions.createSpielstand(5,"Test",function () {});
+
+
         res.send("created");
 
     }
 
     function  getAllOrders(req, res){
-    getterFunctions.getalllieferabwicklungLagerzugang(function(data){
+    /*getterFunctions.getalllieferabwicklungLagerzugang(function(data){
         console.log(data);
     });
 
     getallFunctions.getAll("kunde",0,function(data){
         console.log(data);
     })
-    ;
+    ;*/
+
+    getterFunctions.getNeueSpielID(function (data) {
+        console.log(data)
+    })
     }
 
 
