@@ -45,6 +45,7 @@ router.get('/startseite', function(req, res, next) {
 router.get('/spielleiter', function(req, res, next) {
     res.render('gameadmin', {text: ""});
 });
+
 router.post(/.*loadGame$/, function(req, res, next){
     //hier dann ID speichern
     res.send(req.body.name);
