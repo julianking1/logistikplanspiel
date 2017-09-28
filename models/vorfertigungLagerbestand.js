@@ -7,7 +7,7 @@ var vlagerbestandSchema = new Schema({
     periode: {type: Number, required: true},
     takt:    {type: Number, required: true},
     schwarz: {type: Number, required: true},
-    weiss: {type: Number, required: true},
+    weiss: {type: Number, required: true}
 
 }
 );

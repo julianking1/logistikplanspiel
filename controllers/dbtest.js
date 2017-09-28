@@ -171,10 +171,10 @@ module.exports = {
 
 
 
-        var lagerbestandEingangspruefung = getterFunctions.getlagerbestandEingangspruefung(1, 1, 1, "schwarz", function(data){
+        var lagerbestandEingangspruefung = getterFunctions.getlagerbestandEingangspruefung(1, 1, 1, function(data){
           console.log(data.artikel);
         });
-        var lagerbestandvorEingangspruefung = getterFunctions.getlagerbestandvorEingangspruefung(1, 1, 1, "schwarz", function(data){
+        var lagerbestandvorEingangspruefung = getterFunctions.getlagerbestandvorEingangspruefung(1, 1, 1, function(data){
             console.log(data.artikel);
         });
         var lieferabwicklungBestelluebersicht = getterFunctions.getlieferabwicklungBestelluebersicht(1, 1, 102, function(data){
@@ -211,7 +211,7 @@ module.exports = {
             console.log(data.ruestkosten);
         });
 
-        getterFunctions.getvorfertigungLagerbestand(1, 1, 1, "schwarz", function(data){
+        getterFunctions.getvorfertigungLagerbestand(1, 1, 1, function(data){
             console.log(data.anzahl);
         });
 
@@ -219,7 +219,7 @@ module.exports = {
             console.log(data.bestandschwarz);
         });
 
-        getterFunctions.getvorfertigungLagerzugang(1, 1, 1, "schwarz", function(data){
+        getterFunctions.getvorfertigungLagerzugang(1, 1, 1, function(data){
             console.log(data.anzahl);
         });
 

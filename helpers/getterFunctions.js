@@ -519,8 +519,8 @@ function getvorfertigungKPI(spielID, periode, callback) {
     });
 };
 
-function getvorfertigungLagerbestand(spielID, periode, takt, artikel, callback) {
-    vorfertigungLagerbestand.findOne({'spielID': spielID, 'periode': periode, 'takt': takt, 'artikel':artikel}, function(err, data){
+function getvorfertigungLagerbestand(spielID, periode, takt, callback) {
+    vorfertigungLagerbestand.findOne({'spielID': spielID, 'periode': periode, 'takt': takt}, function(err, data){
         if (err) return handleError (err);
         return callback(data);
     });
@@ -533,8 +533,8 @@ function getvorfertigungLagersumme(spielID, periode, callback) {
     });
 };
 
-function getvorfertigungLagerzugang(spielID, periode, takt, artikel, callback) {
-    vorfertigungLagerzugang.findOne({'spielID': spielID, 'periode': periode, 'takt': takt, 'artikel': artikel}, function(err, data){
+function getvorfertigungLagerzugang(spielID, periode, takt,callback) {
+    vorfertigungLagerzugang.findOne({'spielID': spielID, 'periode': periode, 'takt': takt}, function(err, data){
         if (err) return handleError (err);
         return callback(data);
     });
