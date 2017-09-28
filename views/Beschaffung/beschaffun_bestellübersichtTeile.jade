@@ -6,44 +6,61 @@ block profilecontent
         caption Bestellübersicht Teile
             thead
                 tr
-                    th(scope="col" rowspan="2") Takt
-                    th(scope="colgroup" colspan="4") schwarz
-                    th(scope="colgroup" colspan="4") weiß
-                    th(scope="colgroup" colspan="4") rot
+                    th(scope="colgroup" colspan="6") schwarz
+                    th(scope="colgroup" colspan="6") weiß
+                    th(scope="colgroup" colspan="6") rot
                 tr
+                    th Takt
                     th Nr.
                     th Menge
                     th Plan-Takt
                     th Ist-Takt
+                    th
+                    th Takt
                     th Nr.
                     th Menge
                     th Plan-Takt
                     th Ist-Takt
+                    th Takt
                     th Nr.
                     th Menge
                     th Plan-Takt
                     th Ist-Takt
+                    th
+
+
 
             tbody
-                //- var versuch = [{takt: '1', Nrs: '0', Menges: '1', Plans: '8', Ists: '3',Nrw: '0', Mengew: '1', Planw: '8', Istw: '3',Nrr: '0', Menger: '1', Planr: '8', Istr: '3'},{takt: '1', Nrs: '0', Menges: '1', Plans: '8', Ists: '3',Nrw: '0', Mengew: '1', Planw: '8', Istw: '3',Nrr: '0', Menger: '1', Planr: '8', Istr: '3'} ];
-                - var sData = currentTable[0].sort(function(a, b){return a.takt - b.takt});
-                - var wData = currentTable[1].sort(function(a, b){return a.takt - b.takt});
-                - var rData = currentTable[2].sort(function(a, b){return a.takt - b.takt});
-                - var newData = {}
-                - for (i = 0; i < sData.length; i++){ newData.add()}
-
-
-                each item in sData
+                - var tables = currentTable;
+                - var schwarz = tables[0].sort(function (a,b){return a.takt-b.takt });
+                - var weiss = tables[1].sort(function (a,b){return a.takt-b.takt });
+                - var rot= tables[2].sort(function (a,b){return a.takt-b.takt });
+                - for(i = 0; i < rot.length; i++) {
                     tr
-                        td= item.takt
-                        td= item.bestellnr
-                        td= item.menge
-                        td= item.plantakt
-                        td= item.isttakt
-
-
+                        td= schwarz[i].takt
+                        td= schwarz[i].bestellnr
+                        td= schwarz[i].menge
+                        td= schwarz[i].plantakt
+                        td= schwarz[i].isttakt
                         td(class="button")
-                            button(class="button2") bearbeiten
+                            button(class= "button2" onclick="deadEnd()") bearbeiten
+
+                        td= weiss[i].takt
+                        td= weiss[i].bestellnr
+                        td= weiss[i].menge
+                        td= weiss[i].plantakt
+                        td= weiss[i].isttakt
+                        td(class="button")
+                            button(class= "button2" onclick="deadEnd()") bearbeiten
+
+                        td= rot[i].takt
+                        td= rot[i].bestellnr
+                        td= rot[i].menge
+                        td= rot[i].plantakt
+                        td= rot[i].isttakt
+                        td(class="button")
+                            button(class= "button2" onclick="deadEnd()") bearbeiten
+                -}
                 tr
                     td(class="Leerzeile")
 
@@ -51,30 +68,36 @@ block profilecontent
                     td(class="input")
                         input(id="takt" placeholder="Takt")
                     td(class="input")
-                        input(id="nrs" placeholder="Nr.")
+                        input(id="nr" placeholder="Nr.")
                     td(class="input")
-                        input(id="menges" placeholder="Menge")
+                        input(id="menge" placeholder="Menge")
                     td(class="input")
                         input(id="plantakt" placeholder="Plan-Takt")
                     td(class="input")
                         input(id="isttakt" placeholder="Ist-Takt")
+                    td(class="button")
+                        button(class="button2" onclick="deadEnd()") speichern
+                    td(class="input")
+                        input(id="taktw" placeholder="Takt")
                     td(class="input")
                         input(id="nrw" placeholder="Nr.")
                     td(class="input")
                         input(id="mengew" placeholder="Menge")
                     td(class="input")
-                        input(id="planw" placeholder="Plan-Takt")
+                        input(id="plantaktw" placeholder="Plan-Takt")
                     td(class="input")
-                        input(id="istw" placeholder="Ist-Takt")
+                        input(id="isttaktw" placeholder="Ist-Takt")
+                    td(class="button")
+                        button(class="button2" onclick="deadEnd()") speichern
+                    td(class="input")
+                        input(id="taktr" placeholder="Takt")
                     td(class="input")
                         input(id="nrr" placeholder="Nr.")
                     td(class="input")
                         input(id="menger" placeholder="Menge")
                     td(class="input")
-                        input(id="planr" placeholder="Plan-Takt")
+                        input(id="plantaktr" placeholder="Plan-Takt")
                     td(class="input")
-                        input(id="istr" placeholder="Ist-Takt")
-
-
+                        input(id="isttaktr" placeholder="Ist-Takt")
                     td(class="button")
-                        button(class="button2") speichern
+                        button(class="button2" onclick="deadEnd()") speichern

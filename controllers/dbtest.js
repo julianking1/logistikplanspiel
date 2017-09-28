@@ -5,6 +5,7 @@ var updateFunctions = require("../helpers/updateFunctions");
 var app = require("../app");
 var dbDefaultValues = require("../helpers/dbDefaultValues");
 var getallFunctions = require("../controllers/getallFunctions");
+spielID = app.spielID;
 
 module.exports = {
 
@@ -52,6 +53,43 @@ module.exports = {
         schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);*/
 
         dbDefaultValues.generateDefaultValuesInDB();
+        
+        schemaFunctions.createLagerbestandEingangspruefung(spielID,1,1,10,4,3,function () {});
+        schemaFunctions.createLagerbestandEingangspruefung(spielID,1,2,10,4,3,function () {});
+
+        schemaFunctions.createLagerbestandVorEingangspruefung(spielID,1,1,10,4,3,function () {});
+        schemaFunctions.createLagerbestandVorEingangspruefung(spielID,1,2,10,4,3,function () {});
+
+        schemaFunctions.createDistributionLagerbestand(spielID,1,1,40,12,function () {});
+        schemaFunctions.createDistributionLagerbestand(spielID,1,2,40,12,function () {});
+        
+        schemaFunctions.createLieferabwicklungLagerbestand(spielID,1,1,2,3,function () {})
+        schemaFunctions.createLieferabwicklungLagerzugang(spielID,1,1,2,5,function () {});
+        schemaFunctions.createVorfertigungLagerbestand(spielID,1,1,10,20,function () {})
+        schemaFunctions.createVorfertigungLagerbestand(spielID,1,2,10,20,function () {})
+
+        schemaFunctions.createVorfertigungLagerzugang(spielID,1,1,10,20,function () {})
+        schemaFunctions.createVorfertigungLagerzugang(spielID,1,2,50,20,function () {})
+        schemaFunctions.createVorfertigungLagerzugang(spielID,1,3,70,20,function () {})
+
+        schemaFunctions.createEndmontageLagerbestand(spielID,1,1,10,20,30,function () {})
+        schemaFunctions.createEndmontageLagerbestand(spielID,1,2,10,20,30,function () {})
+        schemaFunctions.createEndmontageLagerbestand(spielID,1,3,10,20,30,function () {})
+
+
+        schemaFunctions.createEndmontageLagerzugang(spielID,1,1,10,20,30,function () {})
+        schemaFunctions.createEndmontageLagerzugang(spielID,1,2,10,20,30,function () {})
+        schemaFunctions.createEndmontageLagerzugang(spielID,1,3,10,20,30,function () {})
+
+        schemaFunctions.createDistributionAuftragsbearbeitung(spielID,1,1,5,function () {})
+        schemaFunctions.createDistributionAuftragsbearbeitung(spielID,1,2,10,function () {})
+
+        schemaFunctions.createDistributionLagerzugang(spielID,1,1,12,13,function () {})
+        schemaFunctions.createDistributionLagerzugang(spielID,1,2,12,13,function () {})
+
+
+
+
 
         schemaFunctions.createSpielstand(5,"WI 2015", function () {});
         schemaFunctions.createSpielstand(2,"Test2", function () {});
@@ -63,8 +101,9 @@ module.exports = {
 
     function  getAllOrders(req, res){
 
-        getallFunctions.getAll("ordermanagement",0,function(data){
+        getallFunctions.getAll("beschaffung",'2',function(data){
             console.log(data[1]);
+            res.send(data);
         })
         ;
     }
