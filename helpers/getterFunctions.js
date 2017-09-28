@@ -118,18 +118,17 @@ function getalldistributionSummen(callback){
 
 function getallendmontageFertigungsplan(callback){
     var test = [];
-    endmontageFertigungsplan.find({'artikel': 'schwarz'}, function (err, data) {
+    return endmontageFertigungsplan.find({'artikel': 'schwarz'}, function (err, data) {
         if (err) return handleError(err);
         test.push(data);
 
-        endmontageFertigungsplan.find({'artikel': 'weiß'}, function (err, data) {
+        return endmontageFertigungsplan.find({'artikel': 'weiß'}, function (err, data) {
                 if (err) return handleError(err);
                 test.push(data);
 
                 return callback(test);
             }
         );
-        return callback(test);
     });
 }
 
@@ -286,18 +285,17 @@ function getallorderManagement(callback){
 
 function getallvorfertigungFertigungsplan(callback){
     var test = [];
-    vorfertigungFertigungsplan.find({'artikel': 'schwarz'}, function (err, data) {
+    return vorfertigungFertigungsplan.find({'artikel': 'schwarz'}, function (err, data) {
         if (err) return handleError(err);
         test.push(data);
 
-        vorfertigungFertigungsplan.find({'artikel': 'weiß'}, function (err, data) {
+        return vorfertigungFertigungsplan.find({'artikel': 'weiß'}, function (err, data) {
                 if (err) return handleError(err);
                 test.push(data);
 
                 return callback(test);
             }
         );
-        return callback(test);
     });
 }
 

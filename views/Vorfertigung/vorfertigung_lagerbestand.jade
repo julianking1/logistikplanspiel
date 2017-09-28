@@ -11,12 +11,13 @@ block profilecontent
                     th schwarz
                     th weiß
             tbody
-                - var versuch = [{takt: '1', white: 'w1', black: 'b1'},{takt: '2', white: 'w2', black: 'b2'}, {takt: '3', white: 'w3', black: 'b3'}, {takt: '4', white: 'w4', black: 'b4'}];
-                each item in versuch
+                //- var versuch = [{takt: '1', white: 'w1', black: 'b1'},{takt: '2', white: 'w2', black: 'b2'}, {takt: '3', white: 'w3', black: 'b3'}, {takt: '4', white: 'w4', black: 'b4'}];
+                - var neu = currentTable.sort(function (a,b){return a.takt-b.takt });
+                each item in neu
                     tr
                         td= item.takt
-                        td= item.white
-                        td= item.black
+                        td= item.schwarz
+                        td= item.weiss
 
                         td(class="button")
                             button(class="button2") bearbeiten
