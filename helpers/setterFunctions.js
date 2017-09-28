@@ -283,9 +283,9 @@ function createKundeKPI(spielID,periode, umsatz, lieferverzugskosten, transportk
     });
 }
 
-function createKundeUmsatz(spielID,periode,takt,artikel,callback) {
+function createKundeUmsatz(spielID,periode,takt, callback) {
     var data = new kundeUmsatz({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel});
+        takt:takt});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);

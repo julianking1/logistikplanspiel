@@ -467,8 +467,8 @@ function getkundeKPI(spielID, periode, callback) {
     });
 }
 
-function getkundeUmsatz(spielID, periode, takt, artikel, callback) {
-    kundeUmsatz.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel':artikel}, function (err, data) {
+function getkundeUmsatz(spielID, periode, takt, callback) {
+    kundeUmsatz.findOne({'spielID':spielID, 'periode': periode, 'takt':takt}, function (err, data) {
         if(err) return handleError (err);
         return callback(data);
     });
