@@ -118,18 +118,17 @@ function getalldistributionSummen(callback){
 
 function getallendmontageFertigungsplan(callback){
     var test = [];
-    endmontageFertigungsplan.find({'artikel': 'schwarz'}, function (err, data) {
+    return endmontageFertigungsplan.find({'artikel': 'schwarz'}, function (err, data) {
         if (err) return handleError(err);
         test.push(data);
 
-        endmontageFertigungsplan.find({'artikel': 'weiß'}, function (err, data) {
+        return endmontageFertigungsplan.find({'artikel': 'weiß'}, function (err, data) {
                 if (err) return handleError(err);
                 test.push(data);
 
                 return callback(test);
             }
         );
-        return callback(test);
     });
 }
 
