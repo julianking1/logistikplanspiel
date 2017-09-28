@@ -69,7 +69,7 @@ module.exports = {
         
         schemaFunctions.createLieferabwicklungLagerzugang(spielID,1,1,2,5,function () {
             
-        })
+        });
 
 
         schemaFunctions.createSpielstand(5,"WI 2015", function () {});
