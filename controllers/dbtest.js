@@ -55,32 +55,43 @@ module.exports = {
         schemaFunctions.createVorfertigungLagersumme(1, 1, 4,3,4,3);
         schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);*/
 
-        //dbDefaultValues.generateDefaultValuesInDB();
-        schemaFunctions.createSpielstand(1,"Test",function () {});
-        schemaFunctions.createSpielstand(2,"Test",function () {});
-        schemaFunctions.createSpielstand(3,"Test",function () {});
-        schemaFunctions.createSpielstand(4,"Test",function () {});
-        schemaFunctions.createSpielstand(5,"Test",function () {});
-
-
+        dbDefaultValues.generateDefaultValuesInDB();
         res.send("created");
 
     }
 
     function  getAllOrders(req, res){
-    /*getterFunctions.getalllieferabwicklungLagerzugang(function(data){
-        console.log(data);
+
+ 
+        getallFunctions.getAll("beschaffung",2,function(data){
+            console.log(data[1]);
+        })
+        ;
+    }
+
+    /*
+    var test = [];
+    kundeAuftragsuebersicht.find({'artikel': 'schwarz'}, function (err, data) {
+        if (err) return handleError(err);
+        test.push(data);
+
+        kundeAuftragsuebersicht.find({'artikel': 'weiß'}, function (err, data) {
+            if (err) return handleError(err);
+            test.push(data);
+
+            kundeAuftragsuebersicht.find({'artikel': 'rot'}, function (err, data) {
+                if (err) return handleError(err);
+                test.push(data);
+                return callback(test);
+            })
+
+            return callback(test);
+        }
+        );
+     return callback(test);
     });
 
-    getallFunctions.getAll("kunde",0,function(data){
-        console.log(data);
-    })
-    ;*/
-
-    getterFunctions.getNeueSpielID(function (data) {
-        console.log(data)
-    })
-    }
+*/
 
 
     function getOrder(req, res) {

@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1 Spielleiter
-    p "Komplizierte Ansicht für den Spielleiter (Statistik, Speichern von Spielständen etc)"
+    p "Kontrollbereich des Spielleiters mit den Optionen neue Spiele anzulegen oder alte Spielstände zu laden, um diese einzusehen oder fortzuführen."
 
     div
         - var spiele = [{name: "Spiel 1", datum: "29.9.2017"},{name: "Spiel 2", datum: "30.9.2017"}]
@@ -19,4 +19,4 @@ block content
             input(id="neu")
             button(onclick= 'newGame()') speichern
 
-    div(id="fertig")
+    div(id="fertig") #{text}

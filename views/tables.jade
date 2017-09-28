@@ -17,17 +17,64 @@ span
                 when '0'
                     include ./Kunde/kunde_auftragsübersicht
                 when '1'
-                    include
-
-        when 'lieferabwicklung'
-            case numTable
+                    include ./Kunde/kunde_umsatz
                 when '2'
-                    include ./LagerLieferDispo/lagerLieferDispo_bestellübersicht
+                    include ./Kunde/kunde_lieferverzugskosten
+
+        when 'beschaffung'
+            case numTable
+                when '0'
+                    include ./Beschaffung/beschaffun_lagerbestand_vor
+                when '1'
+                    include ./Beschaffung/beschaffun_lagerbestand_in
+                when '2'
+                    include ./Beschaffung/beschaffun_bestellübersichtTeile
 
         when 'distributioncenter'
             case numTable
+                when '0'
+                    include ./Distribution Center/distribution_lagerzugang
+                when '1'
+                    include ./Distribution Center/distribution_lagerUndUnterwegs
                 when '2'
                     include ./Distribution Center/distribution_auftragsbearbeitung
+
+        when 'endmontage'
+            case numTable
+                when '0'
+                    include ./Endmontage/endmontage_fertigungplan
+                when '1'
+                    include ./Endmontage/endmontage_lagerbestand
+                when '2'
+                    include ./Endmontage/endmontage_lagerzugang
+
+        when 'vorfertigung'
+            case numTable
+                when '0'
+                    include ./Vorfertigung/vorfertigung_fertigungsplan
+                when '1'
+                    include ./Vorfertigung/vorfertigung_lagerbestand
+                when '2'
+                    include ./Vorfertigung/vorfertigung_lagerzugang
+
+        when 'ordermanagement'
+            case numTable
+                when '0'
+                    include ./Order Management/orderManagement_schwarz
+                when '1'
+                    include ./Order Management/orderManagement_weiß
+
+
+        when 'lieferabwicklung'
+            case numTable
+                when '0'
+                    include ./LagerLieferDispo/lagerLieferDispo_lagerzugang
+                when '1'
+                    include ./LagerLieferDispo/lagerLieferDispo_lagerUndUnterwegs
+                when '2'
+                    include ./LagerLieferDispo/lagerLieferDispo_bestellübersicht
+
+
 
 
 

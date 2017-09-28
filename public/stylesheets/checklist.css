@@ -1,9 +1,13 @@
+
+
 li{
     margin-top: 10px;
     text-align: left;
+
 }
 
 input{
+    float: left;
     margin-right: 1em;
 }
 

@@ -45,9 +45,24 @@ function getallbeschaffungBestandswert(callback) {
 }
 
 function getallbeschaffungBestelluebersicht(callback){
-    beschaffungBestelluebersicht.find({}, function (err, data){
-       if (err) return handleError(err);
-       return callback(data);
+    var test = [];
+    beschaffungBestelluebersicht.find({'artikel': 'schwarz'}, function (err, data) {
+        if (err) return handleError(err);
+        test.push(data);
+
+        beschaffungBestelluebersicht.find({'artikel': 'weiß'}, function (err, data) {
+                if (err) return handleError(err);
+                test.push(data);
+
+                beschaffungBestelluebersicht.find({'artikel': 'rot'}, function (err, data) {
+                    if (err) return handleError(err);
+                    test.push(data);
+                    return callback(test);
+                })
+                return callback(test);
+            }
+        );
+        return callback(test);
     });
 }
 
@@ -147,6 +162,7 @@ function getallkundeAuftragsuebersicht(callback){
         if (err) return handleError(err);
         return callback(data);
     });
+
 }
 
 function getallkundeKPI(callback){

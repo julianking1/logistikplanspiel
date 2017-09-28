@@ -10,8 +10,6 @@ var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
 var formularSpeichern = require('./controllers/formularSpeichern');
 var getterFunctions = require('./helpers/getterFunctions');
-var app = require('./app');
-spielID = app.spielID;
 
 //Einstieg
 router.get('/', profilechoice.rendering);                       // localhost:3000/
@@ -48,13 +46,6 @@ router.get('/spielleiter', function(req, res, next) {
 });
 router.post(/.*loadGame$/, function(req, res, next){
     //hier dann speichern einfügen
-    console.log('Global:'+spielID);
-
-    getterFunctions.getSpielstand(req.body.name,req.body.datum,function (data) {
-        res.send(data.name);
-        console.log('Global:'+spielID);
-        console.log()
-    })
     res.send(req.body.name);
 });
 
