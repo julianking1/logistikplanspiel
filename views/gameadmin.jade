@@ -1,22 +1,58 @@
 extends layout
 
 block content
+
+    link(rel='stylesheet', href='/stylesheets/table.css')
+    link(rel='stylesheet', href='/stylesheets/gameadmin.css')
+
     h1 Spielleiter
-    p "Kontrollbereich des Spielleiters mit den Optionen neue Spiele anzulegen oder alte Spielstände zu laden, um diese einzusehen oder fortzuführen."
+    p Kontrollbereich des Spielleiters mit den Optionen neue Spiele anzulegen oder alte Spielstände zu laden, um diese einzusehen oder fortzuführen.
 
-    div
-        - var spiele = [{name: "Spiel 1", datum: "29.9.2017"},{name: "Spiel 2", datum: "30.9.2017"}]
-        ol
-            each item in spiele
-                li= ""
-                    p   #{item.name},&nbsp;#{item.datum} &nbsp;&nbsp;
-                        button(onclick='loadGame("#{item.name}", "#{item.datum}")') laden
+    div(class="alteSpiele")
+
+        table(class="tabelle")
+            caption Gespeicherte Spiele
+                thead
+                    tr
+                        th(scope="col" rowspan="2") Spiel Nr.
+                        th(scope="col" rowspan="2") Spielname
+                        th(scope="col" rowspan="2") Startdatum
+                        th(scope="colgroup" colspan="2") Aktueller Spielstand
+
+                    tr
+                        th Periode
+                        th Takt
+
+
+                tbody
+                    - var spiele = [{name: "Spiel 1", datum: "29.9.2017", periode:"1", takt:"2"}]
+                        - var i = 0;
+                        each item in spiele
+
+                            tr
+                                td=i
+                                td=item.name
+                                td=item.datum
+                                td=item.periode
+                                td=item.takt
+
+                                td(class="button")
+                                    button(class="button2" onclick='loadGame("#{item.name}", "#{item.datum}")') laden
 
 
 
-    div
-        p Neues Spiel&nbsp;
-            input(id="neu")
-            button(onclick= 'newGame()') speichern
 
-    div(id="fertig")
+    div(class="neuesSpiel")
+
+              p Neues Spiel erstellen
+              p
+                  input(id="neu" placeholder="Spielname")
+                  button(class="button2" onclick= 'newGame()') speichern
+
+
+
+
+
+
+
+
