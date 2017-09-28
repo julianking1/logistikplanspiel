@@ -387,14 +387,14 @@ function getdistributionKPI(spielID, periode, callback){
 }
 
 function getdistributionLagerbestand(spielID, periode, takt, callback){
-    distributionLagerbestand.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
+    distributionLagerbestand.findOne({'spielID': spielID, 'periode': periode,'takt':takt}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
 }
 
 function getdistributionLagerzugang(spielID, periode, takt, callback){
-    distributionLagerzugang.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
+    distributionLagerzugang.findOne({'spielID': spielID, 'periode': periode,'takt':takt}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
