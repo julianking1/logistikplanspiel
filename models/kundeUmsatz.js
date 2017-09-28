@@ -6,8 +6,8 @@ var kumSchema = new Schema({
         spielID: {type: Number, required: true},
         periode: {type: Number, required: true},
         takt:    {type: Number, required: true},
-        artikel: {type: String, required: true},
-        anzahl: {type: Number, required: false}
+        schwarz: {type: Number, required: false},
+        weiss:   {type: Number, required: false}
     }
 );
 
