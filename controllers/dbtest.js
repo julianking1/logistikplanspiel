@@ -62,9 +62,8 @@ module.exports = {
 
     function  getAllOrders(req, res){
 
- 
-        getallFunctions.getAll("beschaffung",2,function(data){
-            console.log(data[1]);
+        getallFunctions.getAll("vorfertigung",0,function(data){
+            console.log(data[0]);
         })
         ;
     }
