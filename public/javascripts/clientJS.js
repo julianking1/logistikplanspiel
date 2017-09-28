@@ -96,6 +96,22 @@ function loadGame(name, datum){
 
 }
 
+
 function newGame(){
-    console.log('ok');
+
+    var neu = document.getElementById('neu');
+    var value = neu.value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'saveGame', true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.onload = function () {
+
+        document.getElementsByTagName('html')[0].innerHTML = this.responseText;
+
+    };
+    xhr.send(JSON.stringify({
+        name: value
+    }));
+
 }
