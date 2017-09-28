@@ -16,18 +16,25 @@ block profilecontent
                     th Ist
 
             tbody
-                - var versuch = [{takt: '1', Solls: '0', Ists: '1', Sollw: '8', Istw: '3'},{takt: '1', Solls: '0', Ists: '1', Sollw: '8', Istw: '3'}];
-                each item in versuch
-                    tr
-                        td= item.takt
-                        td= item.Solls
-                        td= item.Ists
-                        td= item.Sollw
-                        td= item.Istw
 
+                - var tables = currentTable;
+                    - var schwarz = tables[0].sort(function (a,b){return a.takt-b.takt });
+                    - var weiss = tables[1].sort(function (a,b){return a.takt-b.takt });
+                    - for(i = 0; i < weiss.length; i++) {
+                        tr
+                            td= schwarz[i].takt
+                            td= schwarz[i].sollmenge
+                            td= schwarz[i].istmenge
+                            td(class="button")
+                                button(class= "button2" onclick="deadEnd()") bearbeiten
 
-                        td(class="button")
-                            button(class="button2") bearbeiten
+                            td= weiss[i].takt
+                            td= weiss[i].sollmenge
+                            td= weiss[i].ist
+                            td(class="button")
+                                button(class= "button2" onclick="deadEnd()") bearbeiten
+                    - };
+
                 tr
                     td(class="Leerzeile")
 

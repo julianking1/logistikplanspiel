@@ -29,7 +29,8 @@ var vorfertigungTabellen = [
 ];
 
 var ordermanagementTabellen = [
-    "test"
+    "Schwarz",
+    "Weiß"
 ];
 
 var lieferabwicklungTabellen = [
