@@ -124,6 +124,8 @@ function getallendmontageFertigungsplan(callback){
         endmontageFertigungsplan.find({'artikel': 'weiß'}, function (err, data) {
                 if (err) return handleError(err);
                 test.push(data);
+
+                return callback(test);
             }
         );
         return callback(test);
