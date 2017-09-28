@@ -14,21 +14,19 @@ function getAll(rolle, tabelle, callback) {
     switch (rolle) {
         case 'kunde':
             switch (tabelle){
-                case 0:
+                case '0':
 
                     getterFunctions.getallkundeAuftragsuebersicht(function(data){
-
-
                         return callback(data);
 
                     });
                     break;
-                case 1:
+                case '1':
                     getterFunctions.getallkundeUmsatz(function(data){
                         return callback(data);
                     })
                     break;
-                case 2:
+                case '2':
                    // getterFunctions.getallkunde
             }
         break;
@@ -54,17 +52,17 @@ function getAll(rolle, tabelle, callback) {
             break;
         case 'distributioncenter':
             switch (tabelle) {
-                case 0:
+                case '0':
                     getterFunctions.getalldistributionLagerzugang(function(data){
                         return callback(data);
                     });
                     break;
-                case 1:
+                case '1':
                     getterFunctions.getalldistributionLagerbestand(function(data){
                         return callback(data);
                     });
                     break;
-                case 2:
+                case '2':
                     getterFunctions.getalldistributionAuftragsbearbeitung(function(data){
                         return callback(data);
                     });
@@ -73,17 +71,17 @@ function getAll(rolle, tabelle, callback) {
             break;
         case 'endmontage':
             switch (tabelle){
-                case 0:
+                case '0':
                     getterFunctions.getallendmontageFertigungsplan(function(data){
                         return callback(data);
                     });
                     break;
-                case 1:
+                case '1':
                     getterFunctions.getallendmontageLagerbestand(function(data){
                         return callback(data);
                     });
                     break;
-                case 2:
+                case '2':
                     getterFunctions.getallendmontageLagerzugang(function(data){
                         return callback(data);
                     });
@@ -92,17 +90,17 @@ function getAll(rolle, tabelle, callback) {
             break;
         case 'vorfertigung':
             switch (tabelle){
-                case 0:
+                case '0':
                     getterFunctions.getallvorfertigungFertigungsplan(function(data){
                         return callback(data);
                     });
                     break;
-                case 1:
+                case '1':
                     getterFunctions.getallvorfertigungLagerbestand(function(data){
                         return callback(data);
                     });
                     break;
-                case 2:
+                case '2':
                     getterFunctions.getallvorfertigungLagerzugang(function(data){
                         return callback(data);
                     });
