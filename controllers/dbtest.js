@@ -68,6 +68,30 @@ module.exports = {
     ;
     }
 
+    /*
+    var test = [];
+    kundeAuftragsuebersicht.find({'artikel': 'schwarz'}, function (err, data) {
+        if (err) return handleError(err);
+        test.push(data);
+
+        kundeAuftragsuebersicht.find({'artikel': 'weiß'}, function (err, data) {
+            if (err) return handleError(err);
+            test.push(data);
+
+            kundeAuftragsuebersicht.find({'artikel': 'rot'}, function (err, data) {
+                if (err) return handleError(err);
+                test.push(data);
+                return callback(test);
+            })
+
+            return callback(test);
+        }
+        );
+     return callback(test);
+    });
+
+*/
+
 
     function getOrder(req, res) {
         //normalerweise ID aus req

@@ -150,26 +150,11 @@ function getallendmontageLosesumme(callback){
 }
 
 function getallkundeAuftragsuebersicht(callback){
-    var test = [];
-    kundeAuftragsuebersicht.find({'artikel': 'schwarz'}, function (err, data) {
+    kundeAuftragsuebersicht.find({}, function (err, data) {
         if (err) return handleError(err);
-        test.push(data);
-
-        kundeAuftragsuebersicht.find({'artikel': 'weiß'}, function (err, data) {
-            if (err) return handleError(err);
-            test.push(data);
-
-            kundeAuftragsuebersicht.find({'artikel': 'rot'}, function (err, data) {
-                if (err) return handleError(err);
-                test.push(data);
-                return callback(test);
-            })
-
-            return callback(test);
-        }
-        );
-     return callback(test);
+        return callback(data);
     });
+
 }
 
 function getallkundeKPI(callback){
