@@ -1,4 +1,22 @@
 extends layout
 
 block content
-    p "Komplizierte Ansicht für den Spielleiter (Statistik, Speichern von spielständen etc)"
+    h1 Spielleiter
+    p "Komplizierte Ansicht für den Spielleiter (Statistik, Speichern von Spielständen etc)"
+
+    div
+        - var spiele = [{name: "Spiel 1", datum: "29.9.2017"},{name: "Spiel 2", datum: "30.9.2017"}]
+        ol
+            each item in spiele
+                li= ""
+                    p   #{item.name},&nbsp;#{item.datum} &nbsp;&nbsp;
+                        button(onclick='loadGame("#{item.name}", "#{item.datum}")') laden
+
+
+
+    div
+        p Neues Spiel&nbsp;
+            input(id="neu")
+            button(onclick= 'newGame()') speichern
+
+    div(id="fertig")
