@@ -5,11 +5,9 @@ block profilecontent
 
 
         table(class="tabelle")
-            caption Zu bearbeitenden Bestellscheine
+            caption Zu bearbeitende Kundenbestellscheine
                 thead
                     tr
-                        th(scope="col" rowspan="2") Interner/Externer Bestellschein
-                        th(scope="col" rowspan="2") Von
                         th(scope="col" rowspan="2") Nr.
                         th(scope="col" rowspan="2") Ausstellungstakt
                         th(scope="col" rowspan="2") Artikelfarbe
@@ -23,20 +21,19 @@ block profilecontent
                         th Bestätigt
                         th Erhalten
                 tbody
-                    - var versuch = [{Bestellschein: 'I', von: 'Kunde', Nr: '12', Takt:'3', Farbe:"schwarz", Mengew:"3",Mengeb:"3", Mengee:"3", Taktw:"2", Taktb:"2", Takte:"2" }];
+                    //- var versuch = [{ Nr: '12', Takt:'3', Farbe:"schwarz", Mengew:"3",Mengeb:"3", Mengee:"3", Taktw:"2", Taktb:"2", Takte:"2" }];
                     each item in versuch
                         tr
-                            td= item.Bestellschein
-                            td= item.von
-                            td= item.Nr
-                            td= item.Takt
-                            td= item.Farbe
-                            td= item.Mengew
-                            td= item.Mengeb
-                            td= item.Mengee
-                            td= item.Taktw
-                            td= item.Taktb
-                            td= item.Takte
+
+                            td= item.nr
+                            td= item.austellungstakt
+                            td= item.artikel
+                            td= item.wunschmenge
+                            td= item.bestaetigteMenge
+                            td= item.erhalteneMenge
+                            td= item.wunschtakt
+                            td= item.bestaetigterTakt
+                            td= item.erhaltenerTakt
 
 
                             td(class="button")
