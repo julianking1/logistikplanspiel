@@ -87,8 +87,14 @@ module.exports = {
         schemaFunctions.createDistributionLagerzugang(spielID,1,1,12,13,function () {})
         schemaFunctions.createDistributionLagerzugang(spielID,1,2,12,13,function () {})
 
-
-
+        schemaFunctions.createKundeUmsatz(spielID,1,1,function (data) {
+            updateFunctions.updateKundeUmsatz(data._id,"schwarz",20);
+            updateFunctions.updateKundeUmsatz(data._id,"weiss",30)
+        })
+        schemaFunctions.createKundeUmsatz(spielID,1,2,function (data) {
+            updateFunctions.updateKundeUmsatz(data._id,"schwarz",40);
+            updateFunctions.updateKundeUmsatz(data._id,"weiss",6)
+        })
 
 
         schemaFunctions.createSpielstand(5,"WI 2015", function () {});
