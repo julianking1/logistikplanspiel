@@ -16,9 +16,9 @@ block profilecontent
                     th Ist
 
             tbody
-                
-                - var versuch = [{takt: '1', Solls: '0', Ists: '1', Sollw: '8', Istw: '3'},{takt: '1', Solls: '0', Ists: '1', Sollw: '8', Istw: '3'}];
-                each item in versuch
+                - var neu = currentTable.sort(function(a, b){return a.takt - b.takt;});
+                //- var versuch = [{takt: '1', Solls: '0', Ists: '1', Sollw: '8', Istw: '3'},{takt: '1', Solls: '0', Ists: '1', Sollw: '8', Istw: '3'}];
+                each item in neu
                     tr
                         td= item.takt
                         td= item.Solls
