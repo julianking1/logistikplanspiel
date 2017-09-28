@@ -52,7 +52,7 @@ router.post(/.*loadGame$/, function(req, res, next){
 });
 
 router.post(/.*saveGame$/, function(req, res, next){
-    //hier dann speichern einfügen
+    //hier dann speichern einfügenn
 
     res.render('gameadmin', {text: req.body.name + " erfolgreich gespeichert"});
 });
