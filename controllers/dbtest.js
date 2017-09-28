@@ -81,6 +81,10 @@ module.exports = {
         schemaFunctions.createEndmontageLagerzugang(spielID,1,2,10,20,30,function () {})
         schemaFunctions.createEndmontageLagerzugang(spielID,1,3,10,20,30,function () {})
 
+        schemaFunctions.createKundeBestellung(spielID,1,3,"schwarz",20,30,function () {})
+        schemaFunctions.createKundeBestellung(spielID,2,2,"schwarz",20,30,function () {})
+        schemaFunctions.createKundeBestellung(spielID,3,5,"schwarz",20,30,function () {})
+
         schemaFunctions.createDistributionAuftragsbearbeitung(spielID,1,1,5,function () {})
         schemaFunctions.createDistributionAuftragsbearbeitung(spielID,1,2,10,function () {})
 

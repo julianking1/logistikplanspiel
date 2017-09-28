@@ -425,4 +425,8 @@ module.exports = {
     createLieferabwicklungSummen:createLieferabwicklungSummen,
     createOrderManagement:createOrderManagement,
     createSpielstand:createSpielstand
+    createKundeBestellung:createKundeBestellung,
+    createKundeLieferverzugskosten:createKundeLieferverzugskosten,
+    createInterneBestellung:createInterneBestellung
+
     }
