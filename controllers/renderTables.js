@@ -11,13 +11,7 @@ module.exports = {
         var names = tableInfo.getNames(profile);
 
         getallFunctions.getAll(profile, tableNum, function (data) {
-            console.log(data[2]);
-
-            var daten = data.sort(function(a, b){
-               return a.bestellnr - b.bestellnr;
-            });
-
-            res.render('tables', {numTable: tableNum, paramType: type, paramProfil: profile, nameTables: names, currentTable: daten});
+            res.render('tables', {numTable: tableNum, paramType: type, paramProfil: profile, nameTables: names, currentTable: data});
         });
 
 
