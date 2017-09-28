@@ -77,3 +77,25 @@ function save(profil, type, contentNum){
     console.log(data);
 }
 
+function loadGame(name, datum){
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'loadGame', true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.onload = function () {
+
+        var spielName = this.responseText;
+        var fertig = document.getElementById('fertig');
+        fertig.innerHTML = spielName + " erfolgreich geladen!";
+
+    };
+    xhr.send(JSON.stringify({
+        name: name,
+        datum: datum
+    }));
+
+}
+
+function newGame(){
+    console.log('ok');
+}

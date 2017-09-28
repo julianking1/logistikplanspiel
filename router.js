@@ -44,6 +44,10 @@ router.get('/startseite', function(req, res, next) {
 router.get('/spielleiter', function(req, res, next) {
     res.render('gameadmin');
 });
+router.post(/.*loadGame$/, function(req, res, next){
+    //hier dann speichern
+    res.send(req.body.name);
+});
 
 //Test Urls
 router.get('/dbtestCreate', dbtest.createOrder); // /localhost:3000/dbtestCreate
