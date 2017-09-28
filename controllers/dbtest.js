@@ -15,10 +15,6 @@ module.exports = {
 }
 
     function createOrder(req, res) {
-        getallFunctions.getAll('beschaffung', '2', function(data){
-            console.log('ok');
-        });
-
         //normalerweise Werte aus req laden (Body-Parser)
         /*schemaFunctions.createLieferantenBestellung(1,2000,1,"schwarz",1,1);
         schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);
@@ -56,14 +52,19 @@ module.exports = {
         schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);*/
 
         dbDefaultValues.generateDefaultValuesInDB();
+
+        schemaFunctions.createSpielstand(5,"WI 2015", function () {});
+        schemaFunctions.createSpielstand(2,"Test2", function () {});
+        schemaFunctions.createSpielstand(3,"Test3", function () {});
+        schemaFunctions.createSpielstand(4,"Test4", function () {});
         res.send("created");
 
     }
 
     function  getAllOrders(req, res){
 
-        getallFunctions.getAll("vorfertigung",0,function(data){
-            console.log(data[0]);
+        getallFunctions.getAll("endmontage",0,function(data){
+            console.log(data);
         })
         ;
     }

@@ -24,24 +24,22 @@ block profilecontent
                     th Plan-Takt
                     th Ist-Takt
 
-
             tbody
-                - var versuch = [{takt: '1', Nrs: '0', Menges: '1', Plans: '8', Ists: '3',Nrw: '0', Mengew: '1', Planw: '8', Istw: '3',Nrr: '0', Menger: '1', Planr: '8', Istr: '3'},{takt: '1', Nrs: '0', Menges: '1', Plans: '8', Ists: '3',Nrw: '0', Mengew: '1', Planw: '8', Istw: '3',Nrr: '0', Menger: '1', Planr: '8', Istr: '3'} ];
-                each item in versuch
+                //- var versuch = [{takt: '1', Nrs: '0', Menges: '1', Plans: '8', Ists: '3',Nrw: '0', Mengew: '1', Planw: '8', Istw: '3',Nrr: '0', Menger: '1', Planr: '8', Istr: '3'},{takt: '1', Nrs: '0', Menges: '1', Plans: '8', Ists: '3',Nrw: '0', Mengew: '1', Planw: '8', Istw: '3',Nrr: '0', Menger: '1', Planr: '8', Istr: '3'} ];
+                - var sData = currentTable[0].sort(function(a, b){return a.takt - b.takt});
+                - var wData = currentTable[1].sort(function(a, b){return a.takt - b.takt});
+                - var rData = currentTable[2].sort(function(a, b){return a.takt - b.takt});
+                - var newData = {}
+                - for (i = 0; i < sData.length; i++){ newData.add()}
+
+
+                each item in sData
                     tr
                         td= item.takt
-                        td= item.Nrs
-                        td= item.Menges
-                        td= item.Plans
-                        td= item.Ists
-                        td= item.Nrw
-                        td= item.Mengew
-                        td= item.Planw
-                        td= item.Istw
-                        td= item.Nrr
-                        td= item.Menger
-                        td= item.Planr
-                        td= item.Istr
+                        td= item.bestellnr
+                        td= item.menge
+                        td= item.plantakt
+                        td= item.isttakt
 
 
                         td(class="button")
@@ -57,9 +55,9 @@ block profilecontent
                     td(class="input")
                         input(id="menges" placeholder="Menge")
                     td(class="input")
-                        input(id="plans" placeholder="Plan-Takt")
+                        input(id="plantakt" placeholder="Plan-Takt")
                     td(class="input")
-                        input(id="ists" placeholder="Ist-Takt")
+                        input(id="isttakt" placeholder="Ist-Takt")
                     td(class="input")
                         input(id="nrw" placeholder="Nr.")
                     td(class="input")

@@ -10,6 +10,9 @@ var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
 var formularSpeichern = require('./controllers/formularSpeichern');
 var getterFunctions = require('./helpers/getterFunctions');
+var setterFunctions = require('./helpers/setterFunctions');
+var app = require('./app');
+spielID = app.spielID;
 
 //Einstieg
 router.get('/', profilechoice.rendering);                       // localhost:3000/
@@ -43,18 +46,33 @@ router.get('/startseite', function(req, res, next) {
 
 //Spielleiter
 router.get('/spielleiter', function(req, res, next) {
-    res.render('gameadmin', {text: ""});
+    getterFunctions.getAllSpielstaende(function (data){
+        res.render('gameadmin', {text:"", spiele: data});
+    })
+
 });
 
 router.post(/.*loadGame$/, function(req, res, next){
-    //hier dann ID speichern
-    res.send(req.body.name);
+
+    getterFunctions.getSpielstand(req.body.name, req.body.datum, function (data) {
+        app.spielID = data.spielID;
+        console.log("aktuelle SpielID:" + app.spielID);
+        res.send(data.name);
+    })
 });
 
 router.post(/.*saveGame$/, function(req, res, next){
-    //hier dann speichern einfügenn
 
-    res.render('gameadmin', {text: req.body.name + " erfolgreich gespeichert"});
+    getterFunctions.getNeueSpielID(function (neueSpielID) {
+        setterFunctions.createSpielstand(neueSpielID,req.body.name,function (data) {
+            app.spielID = neueSpielID;
+            console.log("neue SpielID: " + app.spielID);
+            getterFunctions.getAllSpielstaende(function (data){
+
+                res.render('gameadmin', {text: req.body.name + " erfolgreich gespeichert", spiele: data});
+            })
+        })
+    })
 });
 
 //Test Urls

@@ -10,8 +10,9 @@ module.exports = {
 
         getallFunctions.getAll(profile, tableNum, function (data) {
             console.log(data);
+
             var daten = data.sort(function(a, b){
-                return a.bestellnr - b.bestellnr;
+               return a.bestellnr - b.bestellnr;
             });
 
             res.render('tables', {numTable: tableNum, paramType: type, paramProfil: profile, nameTables: names, currentTable: daten});
