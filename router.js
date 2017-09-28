@@ -40,13 +40,21 @@ router.get('/startseite', function(req, res, next) {
     res.render('startseite');
 });
 
+
 //Spielleiter
 router.get('/spielleiter', function(req, res, next) {
-    res.render('gameadmin');
+    res.render('gameadmin', {text: ""});
 });
+
 router.post(/.*loadGame$/, function(req, res, next){
-    //hier dann speichern einfügen
+    //hier dann ID speichern
     res.send(req.body.name);
+});
+
+router.post(/.*saveGame$/, function(req, res, next){
+    //hier dann speichern einfügenn
+
+    res.render('gameadmin', {text: req.body.name + " erfolgreich gespeichert"});
 });
 
 //Test Urls

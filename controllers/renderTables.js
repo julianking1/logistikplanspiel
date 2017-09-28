@@ -9,7 +9,7 @@ module.exports = {
         var names = tableInfo.getNames(profile);
 
         getallFunctions.getAll(profile, tableNum, function (data) {
-            //console.log(data);
+            console.log(data);
             var daten = data.sort(function(a, b){
                 return a.bestellnr - b.bestellnr;
             });
