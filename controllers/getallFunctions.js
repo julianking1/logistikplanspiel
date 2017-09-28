@@ -8,6 +8,7 @@ module.exports = {
 getAll: getAll
 }
 
+//Commit
 
 function getAll(rolle, tabelle, callback) {
     switch (rolle) {

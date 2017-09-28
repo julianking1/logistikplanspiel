@@ -1,6 +1,8 @@
 var tableInfo = require("../models/tables.js");
 var getallFunctions = require("./getallFunctions.js");
 
+//Commit
+
 module.exports = {
 
     getContent: function (res, profile, type, tableNum) {
@@ -9,7 +11,7 @@ module.exports = {
         var names = tableInfo.getNames(profile);
 
         getallFunctions.getAll(profile, tableNum, function (data) {
-            console.log(data);
+            console.log(data[1]);
 
             var daten = data.sort(function(a, b){
                return a.bestellnr - b.bestellnr;

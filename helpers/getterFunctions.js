@@ -35,8 +35,6 @@ var orderManagement= require("../models/orderManagement");
 var spielstand = require("../models/spielstand");
 
 
-//Methoden, die alle Datensätze zurückgeben
-
 function getallbeschaffungBestandswert(callback) {
     beschaffungBestandswert.find({}, function (err, data) {
         if (err) return handleError(err);
