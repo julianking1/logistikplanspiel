@@ -3,6 +3,15 @@ block profilecontent
     link(rel='stylesheet', href='/stylesheets/checklist.css')
     ol
         each item in rows
-            li= item
-                input(type = "checkbox")
+
+            li
+                input(type="checkbox")
+                label=item
+
+
+
+
+
+
+
 

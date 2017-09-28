@@ -299,7 +299,7 @@ function getbeschaffungBestandswert(spielID, periode, callback) {
         return callback(data);
     });
 
-};
+}
 
 function getbeschaffungBestelluebersicht(spielID, periode, takt, artikel, callback) {
     beschaffungBestelluebersicht.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {
@@ -307,7 +307,7 @@ function getbeschaffungBestelluebersicht(spielID, periode, takt, artikel, callba
         return callback(data);
     });
 
-};
+}
 
 
 function getbeschaffungKPI(spielID, periode, callback) {
@@ -316,7 +316,7 @@ function getbeschaffungKPI(spielID, periode, callback) {
         return callback(data);
     });
 
-};
+}
 
 function getbeschaffungsUebersicht(spielID, periode, callback) {
     beschaffungsUebersicht.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
@@ -324,7 +324,7 @@ function getbeschaffungsUebersicht(spielID, periode, callback) {
         return callback(data);
     });
 
-};
+}
 
 function getdistributionAuftragsbearbeitung(spielID, periode, takt, callback) {
     distributionAuftragsbearbeitung.findOne({'spielID':spielID, 'periode': periode, 'takt':takt}, function (err, data) {
@@ -332,49 +332,49 @@ function getdistributionAuftragsbearbeitung(spielID, periode, takt, callback) {
         return callback(data);
     });
 
-};
+}
 
 function getdistributionKPI(spielID, periode, callback){
     distributionKPI.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
-};
+}
 
 function getdistributionLagerbestand(spielID, periode, takt, artikel, callback){
     distributionLagerbestand.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
-};
+}
 
 function getdistributionLagerzugang(spielID, periode, takt, artikel, callback){
     distributionLagerzugang.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
-};
+}
 
 function getdistributionSummen(spielID, periode, callback){
     distributionSummen.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
-};
+}
 
 function getendmontageFertigungsplan(spielID, periode, takt, artikel, callback){
     endmontageFertigungsplan.findOne({'spielID': spielID, 'periode': periode, 'takt':takt, 'artikel':artikel}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
-};
+}
 
 function getendmontageKPI(spielID, periode, callback){
     endmontageKPI.findOne({'spielID': spielID, 'periode': periode}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
-};
+}
 
 function getendmontageLagerbestand(spielID, periode, takt, artikel, callback) {
     endmontageLagerbestand.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {
@@ -382,7 +382,7 @@ function getendmontageLagerbestand(spielID, periode, takt, artikel, callback) {
         return callback(data);
     });
 
-};
+}
 
 function getendmontageLagersumme(spielID, periode, callback) {
     endmontageLagersumme.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
@@ -390,7 +390,7 @@ function getendmontageLagersumme(spielID, periode, callback) {
         return callback(data);
     });
 
-};
+}
 
 function getendmontageLagerzugang(spielID, periode, takt, artikel, callback) {
     endmontageLagerzugang.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {
@@ -398,7 +398,7 @@ function getendmontageLagerzugang(spielID, periode, takt, artikel, callback) {
         return callback(data);
     });
 
-};
+}
 
 function getendmontageLosesumme(spielID, periode, artikel, callback) {
     endmontageLosesumme.findOne({'spielID':spielID, 'periode': periode, 'artikel': artikel}, function (err, data) {
@@ -406,28 +406,28 @@ function getendmontageLosesumme(spielID, periode, artikel, callback) {
         return callback(data);
     });
 
-};
+}
 
 function getkundeAuftragsuebersicht(spielID, periode, bestellnr, callback) {
     kundeAuftragsuebersicht.findOne({'spielID':spielID, 'periode': periode, 'bestellnr': bestellnr}, function (err, data) {
         if(err) return handleError (err);
         return callback(data);
     });
-};
+}
 
 function getkundeKPI(spielID, periode, callback) {
     kundeKPI.findOne({'spielID':spielID, 'periode': periode}, function (err, data) {
         if(err) return handleError (err);
         return callback(data);
     });
-};
+}
 
 function getkundeUmsatz(spielID, periode, takt, artikel, callback) {
     kundeUmsatz.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel':artikel}, function (err, data) {
         if(err) return handleError (err);
         return callback(data);
     });
-};
+}
 
 
 

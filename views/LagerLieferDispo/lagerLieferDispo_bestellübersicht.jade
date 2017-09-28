@@ -11,13 +11,13 @@ block profilecontent
                     th Wunschtermin
                     th bestätigt
             tbody
-                - var versuch = [{nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'},{nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'}, {nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'}, {nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'}];
-                each item in versuch
+                //- var versuch = [{nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'},{nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'}, {nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'}, {nr: '1', menge: 'w1', wunschtermin: 'b1', bestätigt: 'r1'}];
+                each item in currentTable
                     tr
-                        td= item.nr
+                        td= item.bestellnr
                         td= item.menge
                         td= item.wunschtermin
-                        td= item.bestätigt
+                        td= item.bestätigtertermin
 
                         td(class="button")
                             button(class="button2") bearbeiten
@@ -26,13 +26,13 @@ block profilecontent
 
                 tr
                     td(class="input")
-                        input(id="nr" placeholder="Nr.")
+                        input(id="bestellnr" placeholder="Nr.")
                     td(class="input")
                         input(id="menge" placeholder="Menge")
                     td(class="input")
                         input(id="wunschtermin" placeholder="Takt")
                     td(class="input")
-                        input(id="bestätigt" placeholder="Takt")
+                        input(id="bestätigterTermin" placeholder="Takt")
 
                     td(class="button")
                         button(class="button2") speichern
