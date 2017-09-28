@@ -1,6 +1,6 @@
 body{
-    background-image: url("http://nistmep.blogs.govdelivery.com/wp-content/uploads/2016/02/ExportNEWBlogFeaturedImage702x330-702x330.jpg");
-    color: ghostwhite;
+    background-image: url("https://s1.cdn.autoevolution.com/images/news/gallery/mercedes-benz-unveils-future-truck-2025-video-photo-gallery_3.jpg");
+    color: black;
     font-size: 60px;
     font-weight: bold;
     text-align: center;
@@ -11,13 +11,12 @@ body{
 
     width: 200px;
     height: 120px;
-    background-color: skyblue;
-    color: black;
+    background-color: black;
+    color: white;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
     padding: 20px 20px 20px 20px;
-
     margin-bottom: 20px;
     margin-top: 20px;
     border-radius: 20%;
