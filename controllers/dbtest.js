@@ -15,10 +15,6 @@ module.exports = {
 }
 
     function createOrder(req, res) {
-        getallFunctions.getAll('beschaffung', '2', function(data){
-            console.log('ok');
-        });
-
         //normalerweise Werte aus req laden (Body-Parser)
         /*schemaFunctions.createLieferantenBestellung(1,2000,1,"schwarz",1,1);
         schemaFunctions.createBeschaffungsBestandswert(1,1,1,1,1,1,1,1);

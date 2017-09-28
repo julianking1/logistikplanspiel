@@ -46,28 +46,33 @@ router.get('/startseite', function(req, res, next) {
 
 //Spielleiter
 router.get('/spielleiter', function(req, res, next) {
-    res.render('gameadmin', {text: ""});
+    getterFunctions.getAllSpielstaende(function (data){
+        res.render('gameadmin', {text:"", spiele: data});
+    })
+
 });
 
 router.post(/.*loadGame$/, function(req, res, next){
 
     getterFunctions.getSpielstand(req.body.name, req.body.datum, function (data) {
         app.spielID = data.spielID;
-        console.log(app.spielID);
+        console.log("aktuelle SpielID:" + app.spielID);
         res.send(data.name);
     })
 });
 
 router.post(/.*saveGame$/, function(req, res, next){
-    //hier dann speichern einfügenn
+
     getterFunctions.getNeueSpielID(function (neueSpielID) {
         setterFunctions.createSpielstand(neueSpielID,req.body.name,function (data) {
             app.spielID = neueSpielID;
-            console.log(data);
-            console.log("aktuelle SpielID: " + app.spielID);
+            console.log("neue SpielID: " + app.spielID);
+            getterFunctions.getAllSpielstaende(function (data){
+
+                res.render('gameadmin', {text: req.body.name + " erfolgreich gespeichert", spiele: data});
+            })
         })
     })
-    res.render('gameadmin', {text: req.body.name + " erfolgreich gespeichert"});
 });
 
 //Test Urls
