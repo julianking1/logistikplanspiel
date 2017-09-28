@@ -5,7 +5,7 @@ link(rel='stylesheet', href='/stylesheets/tables.css')
 each item in nameTables
 
     span= ""
-        button(id = ''+i onclick="loadContent('#{paramProfil}', '#{paramType}', this.id)") #{item}
+        button(class="steuerbuttons" id = ''+i onclick="loadContent('#{paramProfil}', '#{paramType}', this.id)") #{item}
         - i = i+1;
 
 span
@@ -16,6 +16,8 @@ span
             case numTable
                 when '0'
                     include ./Kunde/kunde_auftragsübersicht
+                when '1'
+                    include
 
         when 'lieferabwicklung'
             case numTable
