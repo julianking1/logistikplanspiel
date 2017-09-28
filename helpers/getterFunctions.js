@@ -44,17 +44,24 @@ function getallbeschaffungBestandswert(callback) {
 }
 
 function getallbeschaffungBestelluebersicht(callback){
-    beschaffungBestelluebersicht.find({'artikel': 'schwarz'}, function (err, data){
-       if (err) return handleError(err);
-       return callback(data);
-    });
-    beschaffungBestelluebersicht.find({'artikel': 'weiß'}, function (err, data){
+    var test = [];
+    beschaffungBestelluebersicht.find({'artikel': 'schwarz'}, function (err, data) {
         if (err) return handleError(err);
-        return callback2(data);
-    });
-    beschaffungBestelluebersicht.find({'artikel': 'rot'}, function (err, data){
-        if (err) return handleError(err);
-        return callback3(data);
+        test.push(data);
+
+        beschaffungBestelluebersicht.find({'artikel': 'weiß'}, function (err, data) {
+                if (err) return handleError(err);
+                test.push(data);
+
+                beschaffungBestelluebersicht.find({'artikel': 'rot'}, function (err, data) {
+                    if (err) return handleError(err);
+                    test.push(data);
+                    return callback(test);
+                })
+                return callback(test);
+            }
+        );
+        return callback(test);
     });
 }
 
