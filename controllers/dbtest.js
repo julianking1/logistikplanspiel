@@ -62,10 +62,11 @@ module.exports = {
 
     function  getAllOrders(req, res){
 
-    getallFunctions.getAll("kunde",0,function(data){
-        console.log(data[1]);
-    })
-    ;
+ 
+        getallFunctions.getAll("beschaffung",2,function(data){
+            console.log(data[1]);
+        })
+        ;
     }
 
     /*
