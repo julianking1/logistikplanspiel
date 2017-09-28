@@ -50,19 +50,19 @@ function getallbeschaffungBestelluebersicht(callback){
         if (err) return handleError(err);
         test.push(data);
 
-        beschaffungBestelluebersicht.find({'artikel': 'weiß'}, function (err, data) {
+        return beschaffungBestelluebersicht.find({'artikel': 'weiß'}, function (err, data) {
                 if (err) return handleError(err);
                 test.push(data);
 
-                beschaffungBestelluebersicht.find({'artikel': 'rot'}, function (err, data) {
+                 return beschaffungBestelluebersicht.find({'artikel': 'rot'}, function (err, data) {
                     if (err) return handleError(err);
                     test.push(data);
                     return callback(test);
                 })
-                return callback(test);
+
             }
         );
-        return callback(test);
+
     });
 }
 
@@ -251,14 +251,14 @@ function getallorderManagement(callback){
         if (err) return handleError(err);
         test.push(data);
 
-        orderManagement.find({'artikel': 'weiß'}, function (err, data) {
+        return orderManagement.find({'artikel': 'weiß'}, function (err, data) {
                 if (err) return handleError(err);
                 test.push(data);
 
                 return callback(test);
             }
         );
-        return callback(test);
+
     });
 }
 

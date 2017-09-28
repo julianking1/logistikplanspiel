@@ -63,8 +63,9 @@ module.exports = {
 
     function  getAllOrders(req, res){
 
-        getallFunctions.getAll("ordermanagement",0,function(data){
+        getallFunctions.getAll("beschaffung",'2',function(data){
             console.log(data[1]);
+            res.send(data);
         })
         ;
     }
