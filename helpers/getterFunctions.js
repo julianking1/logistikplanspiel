@@ -243,9 +243,19 @@ function getallorderManagement(callback){
 }
 
 function getallvorfertigungFertigungsplan(callback){
-    vorfertigungFertigungsplan.find({}, function (err, data) {
+    var test = [];
+    vorfertigungFertigungsplan.find({'artikel': 'schwarz'}, function (err, data) {
         if (err) return handleError(err);
-        return callback(data);
+        test.push(data);
+
+        vorfertigungFertigungsplan.find({'artikel': 'weiß'}, function (err, data) {
+                if (err) return handleError(err);
+                test.push(data);
+
+                return callback(test);
+            }
+        );
+        return callback(test);
     });
 }
 
@@ -454,16 +464,16 @@ function getkundeUmsatz(spielID, periode, takt, artikel, callback) {
 
 
 // liefert den letzten Bestand aus der Eingangsprüfung zurück
-function getlagerbestandEingangspruefung(spielID, periode, takt, artikel, callback) {
-    lagerbestandEingangspruefung.findOne({'spielID':spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function (err, data) {
+function getlagerbestandEingangspruefung(spielID, periode, takt, callback) {
+    lagerbestandEingangspruefung.findOne({'spielID':spielID, 'periode': periode, 'takt':takt}, function (err, data) {
         if(err) return handleError (err);
         return callback(data);
     });
 
     };
 
-function getlagerbestandvorEingangspruefung(spielID, periode, takt, artikel, callback){
-    lagerbestandvorEingangspruefung.findOne({'spielID': spielID, 'periode': periode, 'takt':takt, 'artikel': artikel}, function(err, data){
+function getlagerbestandvorEingangspruefung(spielID, periode, takt, callback){
+    lagerbestandvorEingangspruefung.findOne({'spielID': spielID, 'periode': periode, 'takt':takt}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
@@ -532,8 +542,8 @@ function getvorfertigungKPI(spielID, periode, callback) {
     });
 };
 
-function getvorfertigungLagerbestand(spielID, periode, takt, artikel, callback) {
-    vorfertigungLagerbestand.findOne({'spielID': spielID, 'periode': periode, 'takt': takt, 'artikel':artikel}, function(err, data){
+function getvorfertigungLagerbestand(spielID, periode, takt, callback) {
+    vorfertigungLagerbestand.findOne({'spielID': spielID, 'periode': periode, 'takt': takt}, function(err, data){
         if (err) return handleError (err);
         return callback(data);
     });
@@ -546,8 +556,8 @@ function getvorfertigungLagersumme(spielID, periode, callback) {
     });
 };
 
-function getvorfertigungLagerzugang(spielID, periode, takt, artikel, callback) {
-    vorfertigungLagerzugang.findOne({'spielID': spielID, 'periode': periode, 'takt': takt, 'artikel': artikel}, function(err, data){
+function getvorfertigungLagerzugang(spielID, periode, takt,callback) {
+    vorfertigungLagerzugang.findOne({'spielID': spielID, 'periode': periode, 'takt': takt}, function(err, data){
         if (err) return handleError (err);
         return callback(data);
     });

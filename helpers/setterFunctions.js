@@ -91,18 +91,18 @@ function createBeschaffungsUebersicht(spielID,periode,summebestSchwarz,summebest
     });
 }
 
-function createLagerbestandEingangspruefung(spielID,periode,takt,artikel,bestand,callback) {
+function createLagerbestandEingangspruefung(spielID,periode,takt,schwarz, weiss, rot, callback) {
     var data = new lagerbestandEingangspruefung({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,bestand:bestand});
+        takt:takt, schwarz: schwarz, weiss: weiss, rot:rot});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);
     });
 }
 
-function createLagerbestandVorEingangspruefung(spielID,periode,takt,artikel,bestand,callback) {
+function createLagerbestandVorEingangspruefung(spielID,periode,takt,schwarz, weiss, rot, callback) {
     var data = new lagerbestandvorEingangspruefung({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,bestand:bestand});
+        takt:takt, schwarz: schwarz, weiss: weiss, rot: rot});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);
@@ -126,9 +126,9 @@ function createVorfertigungsKPI(spielID,periode,callback) {
     });
 }
 
-function createVorfertigungLagerbestand(spielID,periode,takt,artikel,anzahl,callback) {
+function createVorfertigungLagerbestand(spielID,periode,takt,schwarz,weiss,callback) {
     var data = new vorfertigungLagerbestand({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,anzahl:anzahl});
+        takt:takt,schwarz:schwarz,weiss:weiss});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);
@@ -146,9 +146,9 @@ function createVorfertigungLagersumme(spielID,periode,bestandschwarz,zugangschwa
     });
 }
 
-function createVorfertigungLagerzugang(spielID,periode,takt,artikel,anzahl,callback) {
+function createVorfertigungLagerzugang(spielID,periode,takt,schwarz,weiss,callback) {
     var data = new vorfertigungLagerzugang({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,anzahl:anzahl});
+        takt:takt,schwarz:schwarz,weiss:weiss});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);
