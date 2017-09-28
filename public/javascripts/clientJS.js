@@ -3,7 +3,7 @@
 function loadContent(profil, type, contentNum) {
 
     if (contentNum === undefined){
-        contentNum = '1';
+        contentNum = '0';
     }
 
     var xhr = new XMLHttpRequest();
