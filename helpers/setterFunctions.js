@@ -236,9 +236,9 @@ function createDistributionKPI(spielID,periode,callback) {
     });
 }
 
-function createDistributionLagerbestand(spielID,periode,takt,artikel,anzahl,callback) {
+function createDistributionLagerbestand(spielID,periode,takt,schwarz,weiss,callback) {
     var data = new distributionLagerbestand({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,anzahl:anzahl});
+        takt:takt,schwarz: schwarz, weiss: weiss});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);
@@ -256,9 +256,9 @@ function createDistributionSummen(spielID,periode,bestandschwarz, bestandweiss,
     });
 }
 
-function createDistributionLagerzugang(spielID,periode,takt,artikel,zugang,callback) {
+function createDistributionLagerzugang(spielID,periode,takt,schwarz,weiss,callback) {
     var data = new distributionLagerzugang({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,zugang:zugang});
+        takt:takt,schwarz:schwarz, weiss: weiss});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);
@@ -308,18 +308,18 @@ function createLieferabwicklungKPI(spielID,periode,callback) {
     });
 }
 
-function createLieferabwicklungLagerbestand(spielID,periode,takt,artikel,anzahl,callback) {
+function createLieferabwicklungLagerbestand(spielID,periode,takt, schwarz, weiss,callback) {
     var data = new lieferabwicklungLagerbestand({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,anzahl:anzahl});
+        takt:takt,schwarz: schwarz, weiss: weiss});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);
     });
 }
 
-function createLieferabwicklungLagerzugang(spielID,periode,takt,artikel,zugang,callback) {
+function createLieferabwicklungLagerzugang(spielID,periode,takt,schwarz, weiss,callback) {
     var data = new lieferabwicklungLagerzugang({spielID:spielID,periode:periode,
-        takt:takt,artikel:artikel,zugang:zugang});
+        takt:takt, schwarz: schwarz, weiss: weiss});
     data.save(function (err,data) {
         if (err) throw err;
         return callback(data);

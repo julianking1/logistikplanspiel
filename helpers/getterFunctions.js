@@ -246,9 +246,19 @@ function getalllieferantenBestellung(callback){
 }
 
 function getallorderManagement(callback){
-    orderManagement.find({}, function (err, data) {
+    var test = [];
+    orderManagement.find({'artikel': 'schwarz'}, function (err, data) {
         if (err) return handleError(err);
-        return callback(data);
+        test.push(data);
+
+        orderManagement.find({'artikel': 'weiß'}, function (err, data) {
+                if (err) return handleError(err);
+                test.push(data);
+
+                return callback(test);
+            }
+        );
+        return callback(test);
     });
 }
 
@@ -376,14 +386,14 @@ function getdistributionKPI(spielID, periode, callback){
     });
 }
 
-function getdistributionLagerbestand(spielID, periode, takt, artikel, callback){
+function getdistributionLagerbestand(spielID, periode, takt, callback){
     distributionLagerbestand.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
 }
 
-function getdistributionLagerzugang(spielID, periode, takt, artikel, callback){
+function getdistributionLagerzugang(spielID, periode, takt, callback){
     distributionLagerzugang.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
@@ -503,15 +513,15 @@ function getlieferabwicklungKPI(spielID, periode, callback){
     });
 };
 
-function getlieferabwicklungLagerbestand(spielID, periode, takt, artikel, callback){
-    lieferabwicklungLagerbestand.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
+function getlieferabwicklungLagerbestand(spielID, periode, takt, callback){
+    lieferabwicklungLagerbestand.findOne({'spielID': spielID, 'periode': periode,'takt':takt}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
 };
 
-function getlieferabwicklungLagerzugang(spielID, periode, takt, artikel, callback){
-    lieferabwicklungLagerzugang.findOne({'spielID': spielID, 'periode': periode,'takt':takt, 'artikel':artikel}, function(err, data){
+function getlieferabwicklungLagerzugang(spielID, periode, takt, callback){
+    lieferabwicklungLagerzugang.findOne({'spielID': spielID, 'periode': periode,'takt':takt}, function(err, data){
         if(err) return handleError (err);
         return callback(data);
     });
