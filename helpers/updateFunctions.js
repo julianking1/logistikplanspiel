@@ -15,6 +15,7 @@ var kundeUmsatz= require("../models/kundeUmsatz");
 var lieferabwicklungBestelluebersicht= require("../models/lieferabwicklungBestelluebersicht");
 var lieferabwicklungKPI= require("../models/lieferabwicklungKPI");
 var orderManagement= require("../models/orderManagement");
+var spielstand = require("../models/spielstand");
 
 
 function updateLieferantenBestellung(objectID, attribut, neuerWert) {
@@ -154,6 +155,16 @@ function updateOrderManagement(objectID, attribut, neuerWert) {
         data.set(attribut,neuerWert);
         data.save(function (err,updatedData) {
             if (err) throw err;
+        })
+    })
+}
+
+function updateSpielstand(objectID,attribut,neuerWert) {
+    spielstand.findByID(objectID,function (err,data) {
+        if(err) throw err;
+        data.set(attribut,neuerWert);
+        data.save(function (err, updatedData) {
+            if(err) throw err;
         })
     })
 }

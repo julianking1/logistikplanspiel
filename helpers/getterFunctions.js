@@ -32,6 +32,7 @@ var lieferabwicklungLagerbestand= require("../models/lieferabwicklungLagerbestan
 var lieferabwicklungLagerzugang= require("../models/lieferabwicklungLagerzugang");
 var lieferabwicklungSummen= require("../models/lieferabwicklungSummen");
 var orderManagement= require("../models/orderManagement");
+var spielstand = require("../models/spielstand");
 
 
 //Methoden, die alle Datensätze zurückgeben
@@ -301,6 +302,28 @@ function getallvorfertigungLosesumme(callback){
     });
 }
 
+function getAllSpielstaende(callback) {
+    spielstand.find({}, function (err,data) {
+        if(err) return handleError(err);
+        return callback(data);
+    });
+}
+
+function getNeueSpielID(callback) {
+    spielstand.find({},'spielID', function (err,data) {
+        if(err) return handleError(err);
+        var spielID=1;
+        for (var i=0;i<data.length;i++){
+            if (data[i].spielID > spielID){
+                spielID = data[i].spielID;
+            }
+        }
+        //um 1 erhöhen, da neue SpielID 1 größer sein muss
+        spielID++;
+        return callback(spielID);
+    });
+}
+
 //Methoden, die einzelne Datensätze rückgeben
 
 function getbeschaffungBestandswert(spielID, periode, callback) {
@@ -555,6 +578,19 @@ function getvorfertigungLosesumme(spielID, periode, artikel, callback) {
     });
 };
 
+function getSpielstand(spielID, callback) {
+    spielstand.findOne({'spielID':spielID},function (err, data) {
+        if (err) return handleError (err);
+        return callback(data);
+    });
+}
+
+function getSpielstand(name, datum, callback) {
+    spielstand.findOne({'name':name, 'datum':datum},function (err,data) {
+        if (err) return handleError (err);
+        return callback(data);
+    });
+}
 
 
 module.exports = {
@@ -591,6 +627,8 @@ module.exports = {
     getallvorfertigungLagersumme:getallvorfertigungLagersumme,
     getallvorfertigungLagerzugang:getallvorfertigungLagerzugang,
     getallvorfertigungLosesumme:getallvorfertigungLosesumme,
+    getAllSpielstaende:getAllSpielstaende,
+    getNeueSpielID:getNeueSpielID,
 
     getdistributionAuftragsbearbeitung:getdistributionAuftragsbearbeitung,
     getdistributionKPI:getdistributionKPI,
@@ -624,5 +662,6 @@ module.exports = {
     getbeschaffungBestandswert: getbeschaffungBestandswert,
     getbeschaffungBestelluebersicht: getbeschaffungBestelluebersicht,
     getbeschaffungKPI: getbeschaffungKPI,
-    getbeschaffungsUebersicht: getbeschaffungsUebersicht
+    getbeschaffungsUebersicht: getbeschaffungsUebersicht,
+    getSpielstand:getSpielstand
 }
