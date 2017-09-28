@@ -45,7 +45,7 @@ router.get('/spielleiter', function(req, res, next) {
     res.render('gameadmin');
 });
 router.post(/.*loadGame$/, function(req, res, next){
-    //hier dann speichern
+    //hier dann speichern einfügen
     res.send(req.body.name);
 });
 
