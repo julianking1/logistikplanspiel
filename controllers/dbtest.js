@@ -62,6 +62,14 @@ module.exports = {
 
         schemaFunctions.createDistributionLagerbestand(spielID,1,1,40,12,function () {});
         schemaFunctions.createDistributionLagerbestand(spielID,1,2,40,12,function () {});
+        
+        schemaFunctions.createLieferabwicklungLagerbestand(spielID,1,1,2,3,function () {
+            
+        })
+        
+        schemaFunctions.createLieferabwicklungLagerzugang(spielID,1,1,2,5,function () {
+            
+        })
 
 
         schemaFunctions.createSpielstand(5,"WI 2015", function () {});
