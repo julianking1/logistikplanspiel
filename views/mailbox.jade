@@ -1,10 +1,16 @@
 link(rel='stylesheet', href='/stylesheets/mailbox.css')
 
 span= ""
-    button(class="buttons") Bestellung bearbeiten
-    button(class="buttons") Neue Bestellung
+    button(class="buttons" onclick="loadContent('#{paramProfil}', '#{paramType}', '0')") Bestellung bearbeiten
+    button(class="buttons" onclick="loadContent('#{paramProfil}', '#{paramType}', '1')") Neue Bestellung
 
 
 span
     p
-    include mailbox_bearbeiten
+
+
+    case mailboxNum
+                when '0'
+                    include mailbox_bearbeiten
+                when '1'
+                    include mailbox_neu

@@ -25,6 +25,21 @@ block profilecontent
                 th Erhalten
 
         tbody
+            tbody
+                //- var versuch = [{ Nr: '12', Takt:'3', Farbe:"schwarz", Mengew:"3",Mengeb:"3", Mengee:"3", Taktw:"2", Taktb:"2", Takte:"2" }];
+                each item in currentMailbox
+                    tr
+
+                        td= item.bestellnr
+                        td= item.austellungstakt
+                        td= item.artikel
+                        td= item.wunschmenge
+                        td= item.bestaetigteMenge
+                        td= item.erhalteneMenge
+                        td= item.wunschtakt
+                        td= item.bestaetigterTakt
+                        td= item.erhaltenerTakt
+
             tr
                 td(class="Leerzeile")
 
