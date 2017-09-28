@@ -10,6 +10,9 @@ var dbtest = require('./controllers/dbtest.js');
 var lagerbestandRechner = require('./controllers/lagerbestandRechner.js');
 var formularSpeichern = require('./controllers/formularSpeichern');
 var getterFunctions = require('./helpers/getterFunctions');
+var setterFunctions = require('./helpers/setterFunctions');
+var app = require('./app');
+spielID = app.spielID;
 
 //Einstieg
 router.get('/', profilechoice.rendering);                       // localhost:3000/
@@ -47,13 +50,23 @@ router.get('/spielleiter', function(req, res, next) {
 });
 
 router.post(/.*loadGame$/, function(req, res, next){
-    //hier dann ID speichern
-    res.send(req.body.name);
+
+    getterFunctions.getSpielstand(req.body.name, req.body.datum, function (data) {
+        app.spielID = data.spielID;
+        console.log(app.spielID);
+        res.send(data.name);
+    })
 });
 
 router.post(/.*saveGame$/, function(req, res, next){
     //hier dann speichern einfügenn
-
+    getterFunctions.getNeueSpielID(function (neueSpielID) {
+        setterFunctions.createSpielstand(neueSpielID,req.body.name,function (data) {
+            app.spielID = neueSpielID;
+            console.log(data);
+            console.log("aktuelle SpielID: " + app.spielID);
+        })
+    })
     res.render('gameadmin', {text: req.body.name + " erfolgreich gespeichert"});
 });
 

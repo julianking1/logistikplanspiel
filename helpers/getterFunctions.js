@@ -561,14 +561,14 @@ function getvorfertigungLosesumme(spielID, periode, artikel, callback) {
 };
 
 function getSpielstand(spielID, callback) {
-    spielstand.findOne({'spielID':spielID},function (err) {
+    spielstand.findOne({'spielID':spielID},function (err, data) {
         if (err) return handleError (err);
         return callback(data);
     });
 }
 
 function getSpielstand(name, datum, callback) {
-    spielstand.findOne({'name':spielID, 'datum':datum},function (err) {
+    spielstand.findOne({'name':name, 'datum':datum},function (err,data) {
         if (err) return handleError (err);
         return callback(data);
     });

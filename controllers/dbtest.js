@@ -56,6 +56,11 @@ module.exports = {
         schemaFunctions.createVorfertigungLagerzugang(1, 1, 1,"schwarz",4);*/
 
         dbDefaultValues.generateDefaultValuesInDB();
+
+        schemaFunctions.createSpielstand(5,"WI 2015", function () {});
+        schemaFunctions.createSpielstand(2,"Test2", function () {});
+        schemaFunctions.createSpielstand(3,"Test3", function () {});
+        schemaFunctions.createSpielstand(4,"Test4", function () {});
         res.send("created");
 
     }
